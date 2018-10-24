@@ -2,7 +2,7 @@ sap.ui.define([
 	"sap/ui/core/UIComponent",
 	"sap/ui/Device",
 	"com/itcActivitybook/model/models"
-], function(UIComponent, Device, models) {
+], function (UIComponent, Device, models) {
 	"use strict";
 
 	return UIComponent.extend("com.itcActivitybook.Component", {
@@ -16,13 +16,11 @@ sap.ui.define([
 		 * @public
 		 * @override
 		 */
-		init: function() {
+		init: function () {
 			// call the base component's init function
 			UIComponent.prototype.init.apply(this, arguments);
 
-
-
-       this.getRouter().initialize();
+			this.getRouter().initialize();
 			// set the device model
 			this.setModel(models.createDeviceModel(), "device");
 		}
