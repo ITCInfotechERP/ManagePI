@@ -1,111 +1,54 @@
 <mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="com.itcActivitybook.controller.launchpad"
-	xmlns:html="http://www.w3.org/1999/xhtml"  xmlns:l="sap.ui.layout">
+	xmlns:html="http://www.w3.org/1999/xhtml" xmlns:l="sap.ui.layout">
 	<App>
 		<pages>
 			<Page title="{i18n>title}" class="page">
 				<content >
-			<FlexBox
-				width="51%"
-				class="columns"
-			   direction = "Column">
-				<items  class="item">
-					<Text class="text" text="Hi Parag!">
-						<layoutData>
-							<FlexItemData growFactor="0" order="0"  />
-						</layoutData>
-						
-						</Text>
-						
-					</items>
-					<items>
-						
-								
-				    <Text class="text2"  text="Welcome to Activity  Book Application">
-				    		<layoutData>
-							<FlexItemData growFactor="0" order="1" />
-						</layoutData>
-				    </Text>
-				    
-				    <Button class="firstButton" width="10%" icon="sap-icon://activity-individual">
-				    	
-				    		<layoutData>
-							<FlexItemData growFactor="0" order="1" />
-						</layoutData>
-				    	
-				    </Button>
-				    
-				      <Text class="text3"  text="About Al Turki">
-				    		<layoutData>
-							<FlexItemData growFactor="0" order="1" />
-						</layoutData>
-				    </Text>
-				  
-				    
-				    
-				</items>
-				
-				 
-			
-			</FlexBox>		
-			
-			
-			
-		
-		
-		
-		
-		<Panel width="auto" class="sapUiResponsiveMargin" accessibleRole="Region">
-		<headerToolbar>
-			<Toolbar height="2rem">
-				<Title text="Activity Book Application"/>
-			</Toolbar>
-		</headerToolbar>
-		<content>
-	
-			<l:HorizontalLayout>
-			<Button icon="sap-icon://activity-individual"/>
-				<Text text="mod tempor invidunt ut lamet" />
-				
-				<Button icon="sap-icon://activity-individual"/>
-					<Text text="Create Bookingt" />
-					<Button icon="sap-icon://activity-individual"/>
-						<Button icon="sap-icon://activity-individual"/>
-			</l:HorizontalLayout>
-		
-		</content>
-	</Panel>	
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			<!-- FlexBox 2 -->
-			
-			
-		<!--	
+					<FlexBox width="51%" class="columns" direction="Column">
+						<items class="item">
+							<Text class="text" text="Hi Parag!">
+								<layoutData>
+									<FlexItemData growFactor="0" order="0"/>
+								</layoutData>
+							</Text>
+						</items>
+						<items>
+							<Text class="text2" text="Welcome to Activity Book Application">
+								<layoutData>
+									<FlexItemData growFactor="0" order="1"/>
+								</layoutData>
+							</Text>
+							<Button class="firstButton" width="10%" icon="sap-icon://activity-individual">
+								<layoutData>
+									<FlexItemData growFactor="0" order="1"/>
+								</layoutData>
+							</Button>
+							<Text class="text3" text="About Al Turki">
+								<layoutData>
+									<FlexItemData growFactor="0" order="1"/>
+								</layoutData>
+							</Text>
+						</items>
+					</FlexBox>
+					<Panel width="auto" class="sapUiResponsiveMargin" accessibleRole="Region">
+						<headerToolbar>
+							<Toolbar height="2rem">
+								<Title text="Activity Book Application"/>
+							</Toolbar>
+						</headerToolbar>
+						<content>
+							<l:HorizontalLayout>
+								<Button icon="sap-icon://activity-individual"/>
+								<Text text="mod tempor invidunt ut lamet"/>
+								<Button icon="sap-icon://activity-individual"/>
+								<Text text="Create Bookingt"/>
+								<Button icon="sap-icon://activity-individual"/>
+								<Button icon="sap-icon://activity-individual"/>
+							</l:HorizontalLayout>
+						</content>
+					</Panel>
+					<!-- FlexBox 2 -->
+					<!--	
 				<FlexBox
 				width="51%"
 				class="columns"
@@ -162,60 +105,36 @@
 			
 			</FlexBox>		
 			-->
-			
-			
-			
-		<!-- Flex Box 3 -->	
-				<FlexBox
-				width="51%"
-				class="columns"
-			   direction = "Column">
-				<items  class="item">
-					<Text class="text" text="Reports">
-						<layoutData>
-							<FlexItemData growFactor="0" order="0"  />
-						</layoutData>
-						
-						</Text>
-						
-					</items>
-					<items>
-						
-								
-				   	<l:HorizontalLayout>
-				    
-				    <Button class="firstButton" width="10%" icon="sap-icon://activity-individual">
-				    	
-				    		<layoutData>
-							<FlexItemData growFactor="0" order="1" />
-						</layoutData>
-				    	
-				    </Button>
-				    
-				      <Text class="text3"  text="About Al Turki">
-				    		<layoutData>
-							<FlexItemData growFactor="0" order="1" />
-						</layoutData>
-				    </Text>
-				  
-				    
-				    </l:HorizontalLayout>
-				</items>
-				
-				 
-			
-			</FlexBox>		
-					
-	<!--	<GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout " header="Hi Parag" sizeBehavior="Responsive"
+					<!-- Flex Box 3 -->
+					<FlexBox width="51%" class="columns" direction="Column">
+						<items class="item">
+							<Text class="text" text="Reports">
+								<layoutData>
+									<FlexItemData growFactor="0" order="0"/>
+								</layoutData>
+							</Text>
+						</items>
+						<items>
+							<l:HorizontalLayout>
+								<Button class="firstButton" width="10%" icon="sap-icon://activity-individual">
+									<layoutData>
+										<FlexItemData growFactor="0" order="1"/>
+									</layoutData>
+								</Button>
+								<Text class="text3" text="About Al Turki">
+									<layoutData>
+										<FlexItemData growFactor="0" order="1"/>
+									</layoutData>
+								</Text>
+							</l:HorizontalLayout>
+						</items>
+					</FlexBox>
+					<!--	<GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout " header="Hi Parag" sizeBehavior="Responsive"
 		subheader="Welcome to Activity Book Application" press="press">
 		<TileContent unit="EUR" footer="Current Quarter">
 			<ImageContent src="sap-icon://home-share" />
 		</TileContent>
     	</GenericTile>-->
-
-					
-					
-					
 				</content>
 			</Page>
 		</pages>
