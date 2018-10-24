@@ -11,6 +11,5 @@ sap.ui.define([
 		navToDailyActivity: function(oEvent) {
 			this.getRouter().navTo("activies");
 		}
-
 	});
 });
