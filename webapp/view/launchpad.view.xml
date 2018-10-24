@@ -4,8 +4,6 @@
 		<pages>
 			<Page title="{i18n>title}" class="page">
 				<content >
-			
-			
 			<FlexBox
 				width="51%"
 				class="columns"
