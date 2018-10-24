@@ -1,0 +1,145 @@
+{
+	"_version": "1.7.0",
+	"sap.app": {
+		"id": "com.itcActivitybook",
+		"type": "application",
+		"i18n": "i18n/i18n.properties",
+		"applicationVersion": {
+			"version": "1.0.0"
+		},
+		"title": "{{appTitle}}",
+		"description": "{{appDescription}}",
+		"sourceTemplate": {
+			"id": "ui5template.basicSAPUI5ApplicationProject",
+			"version": "1.40.12"
+		}
+	},
+
+	"sap.ui": {
+		"technology": "UI5",
+		"icons": {
+			"icon": "",
+			"favIcon": "",
+			"phone": "",
+			"phone@2": "",
+			"tablet": "",
+			"tablet@2": ""
+		},
+		"deviceTypes": {
+			"desktop": true,
+			"tablet": true,
+			"phone": true
+		},
+		"supportedThemes": [
+			"sap_hcb",
+			"sap_belize"
+
+		]
+	},
+
+	"sap.ui5": {
+		"rootView": {
+			"viewName": "com.itcActivitybook.view.app",
+			"type": "XML"
+		},
+		"dependencies": {
+			"minUI5Version": "1.30.0",
+			"libs": {
+				"sap.ui.core": {},
+				"sap.m": {},
+				"sap.ui.layout": {},
+				"sap.ushell": {},
+				"sap.collaboration": {},
+				"sap.ui.comp": {},
+				"sap.uxap": {}
+			}
+		},
+		"contentDensities": {
+			"compact": true,
+			"cozy": true
+		},
+		"models": {
+			"i18n": {
+				"type": "sap.ui.model.resource.ResourceModel",
+				"settings": {
+					"bundleName": "com.itcActivitybook.i18n.i18n"
+				}
+			}
+		},
+		
+			"routing": {
+			"config": {
+				"routerClass": "sap.m.routing.Router",
+				"viewType": "XML",
+				"viewPath": "com.itcActivitybook.view",
+				"controlId": "app",
+				"controlAggregation": "pages",
+				"transition": "slide",
+				"async": true,
+				 "bypassed" :{
+				 	"target" : "notFound"
+				 }
+			},
+
+			"routes": [{
+				"pattern": "",
+				"name": "appHome",
+				"target": "home"
+			},
+			{
+				"pattern": "employees",
+				"name": "employeeList",
+				"target": "employees"
+			},
+			{
+				"pattern": "employees/{employeeId}",
+				"name": "employee",
+				"target": "employee"
+			},
+			{
+				"pattern": "employees/{employeeId}/resume",
+				"name": "employeeResume",
+				"target": "employeeResume"
+			}
+			],
+			"targets": {
+				"home": {
+					"viewId": "home",
+					"viewName": "launchpad",
+					"viewLevel": 1
+				
+				},
+				"notFound": {
+					"viewId": "notFound",
+					"viewName": "NotFound",
+					"transition" : "show"
+				},
+				"employees" : {
+					
+					"viewId": "employeeList",
+					"viewPath": "com.routeRoutingAndNavigation.view.employee",
+					"viewName": "EmployeeList",
+					"viewLevel" : 2
+					
+				},
+				"employee": {
+					"viewId": "employee",
+					"viewName": "employee.Employee",
+					"viewLevel" : 3
+				},
+				
+				"employeeResume": {
+					"viewId": "resume",
+					"viewName": "employee.Resume",
+					"viewLevel" : 4,
+					"transition": "flip"
+				}
+			}
+		},
+		"resources": {
+			"css": [{
+				"uri": "css/style.css"
+			}]
+		}
+	}
+}
