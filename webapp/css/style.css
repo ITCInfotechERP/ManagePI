@@ -11,14 +11,20 @@
 }
 
 .columns{
-	height: 200px;
+	height: 210px;
 	background-color: #fff;
   
    margin: auto;
    margin-top: 20px;
    
    border-style: outset;
-    box-shadow: 5px 5px 8px #888888;
+   box-shadow: 5px 5px 8px #888888;
+    
+}
+
+.panelcol{
+	margin-left: 25px;
+
     
 }
 
@@ -53,11 +59,11 @@
     font-size: 16px;
     text-align: left;
     color: #4ABFD3;
-   	margin-left: 330px;
+   	margin-left: 430px;
 }
 
 .firstButton{
-	margin-left: 350px;
+	margin-left: 450px;
      
 }
 
@@ -69,3 +75,86 @@
 .secondText{
 	margin-left: 0px;
 }
+
+.bt{
+	margin-top: 30px;
+	margin-left: 20px;
+}
+
+.tt{
+	margin-top: 10px;
+	margin-left: 20px;
+}
+
+
+.bt1{
+	margin-top: 30px;
+	margin-left: 30px;
+}
+
+.tt1{
+	margin-top: 10px;
+	margin-left: 30px;
+}
+
+
+.title{
+	font-family: 'Segoe UI';
+    font-weight: 400;
+    font-style: normal;
+    font-size: 16px;
+    text-align: left;
+    margin-left: 10px;
+    margin-top: 10px;
+    color: #999999;
+}
+
+
+/* <!~~~~~~~~~~~~~~~~~~~~~~~ Daily Activity Book  Css Code ~~~~~~~~~~~~~~~~~~~~~~~> */
+
+.objectText{
+	margin-top:20px;
+	margin-left: 0px;
+}
+
+
+html.sapUiMedia-Std-Tablet .sapUxAPObjectPageHeaderContent .sapUxAPObjectPageHeaderObjectImage-Circle .sapUxAPObjectPageHeaderObjectImage {
+    border-width: 0.188rem;
+    margin-right: 5rem;
+    margin-bottom: 2rem;
+    width: 6rem;
+    height: 6rem;
+}
+
+
+
+html.sapUiMedia-Std-Desktop .sapUxAPObjectPageHeaderContent .sapUxAPObjectPageHeaderObjectImage-Circle .sapUxAPObjectPageHeaderObjectImage{
+	 border-width: 0.188rem;
+    margin-right: 5rem;
+    margin-bottom: 2rem;
+    width: 10rem;
+    height: 10rem;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -86,9 +86,9 @@
 				"name": "appHome",
 				"target": "home"
 			}, {
-				"pattern": "employees",
-				"name": "employeeList",
-				"target": "employees"
+				"pattern": "activities",
+				"name": "activies",
+				"target": "activies"
 			}, {
 				"pattern": "employees/{employeeId}",
 				"name": "employee",
@@ -110,11 +110,11 @@
 					"viewName": "NotFound",
 					"transition": "show"
 				},
-				"employees": {
+				"activies": {
 
-					"viewId": "employeeList",
-					"viewPath": "com.routeRoutingAndNavigation.view.employee",
-					"viewName": "EmployeeList",
+					"viewId": "dailyactivity",
+
+					"viewName": "Dailyactivity",
 					"viewLevel": 2
 
 				},

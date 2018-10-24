@@ -1,0 +1,69 @@
+<core:View xmlns:core="sap.ui.core"
+		   xmlns="sap.uxap"
+		   xmlns:layout="sap.ui.layout"
+		   xmlns:m="sap.m"
+		   
+		   height="100%"
+		   controllerName="com.itcActivitybook.controller.Dailyactivity"
+		>
+
+	<ObjectPageLayout id="ObjectPageLayout" enableLazyLoading="false" showTitleInHeaderContent="true"
+					  showHeaderContent="true">
+		<headerTitle>
+			<ObjectPageHeader objectImageURI="https://nulm.gov.in/images/user.png"
+			                
+							  objectImageShape="Circle"
+							  objectTitle="Parag"
+							  objectImageAlt="Senior UI Developer"
+							  id="ObjectPageLayoutHeaderTitle"
+							  isObjectIconAlwaysVisible="false"
+							  isObjectTitleAlwaysVisible="false"
+							  showPlaceholder="true">
+			<!--	<actions>
+					<ObjectPageHeaderActionButton icon="sap-icon://pull-down" text="show section" type="Emphasized" tooltip="pull-down"/>
+					<ObjectPageHeaderActionButton icon="sap-icon://show" text="show state" type="Emphasized" tooltip="show"/>
+				</actions>-->
+			</ObjectPageHeader>
+		</headerTitle>
+
+		<headerContent>
+			<layout:VerticalLayout>
+				<m:ObjectStatus  class="objectText" text="http://www.alturki.com" active="true"/>
+				<!--<m:ObjectStatus title="Language" text="English"/>-->
+				<m:ObjectStatus class="objectTex" text="Bangalore City, IN"/>
+				<!--<m:ObjectStatus title="Phone Number" text="1-844-726-7733"/>-->
+			</layout:VerticalLayout>
+
+			<layout:VerticalLayout>
+				<!--<layout:layoutData>-->
+				<!--	<ObjectPageHeaderLayoutData visibleS="false"/>-->
+				<!--</layout:layoutData>-->
+				<m:ObjectStatus  class="objectTex" title="Status" text="Active"/>
+				<!--<m:ObjectStatus title="Cost Center" text="PI DFA GD Programs and Product"/>-->
+				<m:ObjectStatus  class="objectTex" title="Industry" text="Manufacturing"/>
+				<!--<m:Token text="Visible on M and L size"/>-->
+			</layout:VerticalLayout>
+
+			<layout:VerticalLayout>
+				<layout:layoutData>
+					<ObjectPageHeaderLayoutData visibleS="false" visibleM="false"/>
+				</layout:layoutData>
+				<m:ObjectStatus  class="objectTex" title="Role Classification" text="Charge Hand"/>
+				<!--<m:RatingIndicator maxValue="6" class="sapUiSmallMarginBottom" value="5" tooltip="Rating Tooltip"/>-->
+				<!--<m:Token text="Visible on L size"/>-->
+			</layout:VerticalLayout>
+		</headerContent>
+
+		<sections>
+			<ObjectPageSection title="2014 Goals Plan">
+				<subSections>
+					<ObjectPageSubSection title="Goal summary">
+						<blocks>
+						
+						</blocks>
+					</ObjectPageSubSection>
+				</subSections>
+			</ObjectPageSection>
+		</sections>
+	</ObjectPageLayout>
+</core:View>
