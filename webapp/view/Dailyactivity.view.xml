@@ -1,69 +1,95 @@
-<core:View xmlns:core="sap.ui.core"
-		   xmlns="sap.uxap"
-		   xmlns:layout="sap.ui.layout"
-		   xmlns:m="sap.m"
-		   
-		   height="100%"
-		   controllerName="com.itcActivitybook.controller.Dailyactivity"
-		>
-
-	<ObjectPageLayout id="ObjectPageLayout" enableLazyLoading="false" showTitleInHeaderContent="true"
-					  showHeaderContent="true">
-		<headerTitle>
-			<ObjectPageHeader objectImageURI="https://nulm.gov.in/images/user.png"
-			                
-							  objectImageShape="Circle"
-							  objectTitle="Parag"
-							  objectImageAlt="Senior UI Developer"
-							  id="ObjectPageLayoutHeaderTitle"
-							  isObjectIconAlwaysVisible="false"
-							  isObjectTitleAlwaysVisible="false"
-							  showPlaceholder="true">
-			<!--	<actions>
+<core:View xmlns:core="sap.ui.core" xmlns="sap.uxap" xmlns:layout="sap.ui.layout" xmlns:m="sap.m" height="100%"
+	controllerName="com.itcActivitybook.controller.Dailyactivity" xmlns:f="sap.ui.layout.form">
+	<m:Page title="Daily Activity Book (Coastal)" class="page">
+		<m:headerContent>
+			<m:Text text="Charge Hand ID"/>
+			<m:Image class="img" alt="UserImage" tooltip="" src="https://nulm.gov.in/images/user.png" densityAware="false" width="10%"
+				backgroundSize="cover"></m:Image>
+		</m:headerContent>
+		<m:content>
+			<ObjectPageLayout id="ObjectPageLayout" enableLazyLoading="false" showTitleInHeaderContent="true" showHeaderContent="true">
+				<headerTitle>
+					<ObjectPageHeader objectImageURI="https://nulm.gov.in/images/user.png" objectImageShape="Circle" objectImageAlt="Senior UI Developer"
+						id="ObjectPageLayoutHeaderTitle" isObjectIconAlwaysVisible="false" isObjectTitleAlwaysVisible="false" showPlaceholder="true">
+						<!--	<actions>
 					<ObjectPageHeaderActionButton icon="sap-icon://pull-down" text="show section" type="Emphasized" tooltip="pull-down"/>
 					<ObjectPageHeaderActionButton icon="sap-icon://show" text="show state" type="Emphasized" tooltip="show"/>
 				</actions>-->
-			</ObjectPageHeader>
-		</headerTitle>
-
-		<headerContent>
-			<layout:VerticalLayout>
-				<m:ObjectStatus  class="objectText" text="http://www.alturki.com" active="true"/>
-				<!--<m:ObjectStatus title="Language" text="English"/>-->
-				<m:ObjectStatus class="objectTex" text="Bangalore City, IN"/>
-				<!--<m:ObjectStatus title="Phone Number" text="1-844-726-7733"/>-->
-			</layout:VerticalLayout>
-
-			<layout:VerticalLayout>
-				<!--<layout:layoutData>-->
-				<!--	<ObjectPageHeaderLayoutData visibleS="false"/>-->
-				<!--</layout:layoutData>-->
-				<m:ObjectStatus  class="objectTex" title="Status" text="Active"/>
-				<!--<m:ObjectStatus title="Cost Center" text="PI DFA GD Programs and Product"/>-->
-				<m:ObjectStatus  class="objectTex" title="Industry" text="Manufacturing"/>
-				<!--<m:Token text="Visible on M and L size"/>-->
-			</layout:VerticalLayout>
-
-			<layout:VerticalLayout>
-				<layout:layoutData>
-					<ObjectPageHeaderLayoutData visibleS="false" visibleM="false"/>
-				</layout:layoutData>
-				<m:ObjectStatus  class="objectTex" title="Role Classification" text="Charge Hand"/>
-				<!--<m:RatingIndicator maxValue="6" class="sapUiSmallMarginBottom" value="5" tooltip="Rating Tooltip"/>-->
-				<!--<m:Token text="Visible on L size"/>-->
-			</layout:VerticalLayout>
-		</headerContent>
-
-		<sections>
-			<ObjectPageSection title="2014 Goals Plan">
-				<subSections>
-					<ObjectPageSubSection title="Goal summary">
-						<blocks>
-						
-						</blocks>
-					</ObjectPageSubSection>
-				</subSections>
-			</ObjectPageSection>
-		</sections>
-	</ObjectPageLayout>
+					</ObjectPageHeader>
+				</headerTitle>
+				<headerContent>
+					<layout:VerticalLayout>
+						<m:ObjectStatus class="nameText" text="Parag" active = "true" />
+						<m:ObjectStatus class="objectText" text="http://www.alturki.com" active="true"/>
+						<!--<m:ObjectStatus title="Language" text="English"/>-->
+						<m:ObjectStatus class="objectTextA" text="Bangalore City, IN"/>
+						<!--<m:ObjectStatus title="Phone Number" text="1-844-726-7733"/>-->
+					</layout:VerticalLayout>
+					<layout:VerticalLayout>
+						<!--<layout:layoutData>-->
+						<!--	<ObjectPageHeaderLayoutData visibleS="false"/>-->
+						<!--</layout:layoutData>-->
+						<m:ObjectStatus class="objectText2" title="Status" text="Active"/>
+						<!--<m:ObjectStatus title="Cost Center" text="PI DFA GD Programs and Product"/>-->
+						<m:ObjectStatus class="objectText2A" title="Industry" text="Manufacturing"/>
+						<!--<m:Token text="Visible on M and L size"/>-->
+					</layout:VerticalLayout>
+					<layout:VerticalLayout>
+						<m:ObjectStatus class="objectText2" title="Role Classification" text="Charge Hand"/>
+						<!--<m:RatingIndicator maxValue="6" class="sapUiSmallMarginBottom" value="5" tooltip="Rating Tooltip"/>-->
+						<!--<m:Token text="Visible on L size"/>-->
+					</layout:VerticalLayout>
+				</headerContent>
+				<sections>
+					<ObjectPageSection>
+						<subSections>
+							<ObjectPageSubSection>
+								<m:VBox class="vbox">
+									<f:SimpleForm title="Book Header" id="SimpleFormDisplay480_12120" columnsM="2" columnsL="2" emptySpanM="0" emptySpanL="0"
+										adjustLabelSpan="false" labelSpanM="12" labelSpanL="4" layout="ResponsiveGridLayout" editable="false">
+										<f:content>
+											<core:Title/>
+											<m:Label text="Activity Book No"/>
+											<m:Input value="Auto generated field once Book is 'saved'."/>
+											<m:Label text="Activity Date"/>
+											<m:Input value="11/10/2018"/>
+											<m:Label text="Personnel Area"/>
+											<m:Input value="Area 1"/>
+											<m:Input value="Maintown"/>
+											<m:Label text="Personnel Sub Area"/>
+											<m:Input value="Area 1A"/>
+											<m:Input value="Maintown"/>
+											<m:Label text="Personnel Sub Area" visible="false"/>
+											<m:Input value="Area 1A" visible="false"/>
+											<m:Input value="Maintown" visible="false"/>
+											<m:Label text="Personnel Sub Area" visible="false"/>
+											<m:Input value="Area 1A" visible="false"/>
+											<m:Input value="Maintown" visible="false"/>
+											<core:Title/>
+											<m:Label text="Area ID / Description"/>
+											<m:Input value="A-ID3453"/>
+											<m:Input value="Maintown Area"/>
+											<m:Label text="Location / Building"/>
+											<m:Input value="Bangalore"/>
+											<m:Label text="Area Foreman ID"/>
+											<m:Input value="ID234567"/>
+											<m:Label text="Site Engineer ID"/>
+											<m:Input value="ID95637"/>
+										</f:content>
+									</f:SimpleForm>
+								</m:VBox>
+							</ObjectPageSubSection>
+						</subSections>
+					</ObjectPageSection>
+				</sections>
+			</ObjectPageLayout>
+		</m:content>
+		<m:footer>
+			<m:Toolbar>
+				<m:ToolbarSpacer/>
+				<m:Button type="Emphasized" text="Add Activity Details"/>
+				<m:Button text="Cancel"/>
+			</m:Toolbar>
+		</m:footer>
+	</m:Page>
 </core:View>

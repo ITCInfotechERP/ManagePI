@@ -3,7 +3,6 @@
 	<App>
 		<pages>
 			<Page title="{i18n>title}" class="page">
-				=======
 				<headerContent>
 					<Button icon="sap-icon://bell" tooltip="Notification"/>
 					<Text text="Parag"/>
@@ -239,7 +238,7 @@
 					<!--		</l:HorizontalLayout>-->
 					<!--	</content>-->
 					<!--</Panel>-->
-					>>>>>>> bd69fe8 View Added
+				
 					<!--	<GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout " header="Hi Parag" sizeBehavior="Responsive"
 		subheader="Welcome to Activity Book Application" press="press">
 		<TileContent unit="EUR" footer="Current Quarter">

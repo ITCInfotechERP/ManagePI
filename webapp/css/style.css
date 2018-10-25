@@ -113,14 +113,30 @@
 /* <!~~~~~~~~~~~~~~~~~~~~~~~ Daily Activity Book  Css Code ~~~~~~~~~~~~~~~~~~~~~~~> */
 
 .objectText{
-	margin-top:20px;
-	margin-left: 0px;
+	font-family: 'Segoe UI';
+	margin-top:30px;
+
+}
+
+.objectText2{
+	font-family: 'Segoe UI';
+	margin-top:70px;
+	margin-left: 40px;
+}
+.objectText2A{
+	font-family: 'Segoe UI';
+	margin-top:10px;
+	margin-left: 40px;
+}
+.objectTextA{
+	font-family: 'Segoe UI';
+	margin-top:10px;
 }
 
 
 html.sapUiMedia-Std-Tablet .sapUxAPObjectPageHeaderContent .sapUxAPObjectPageHeaderObjectImage-Circle .sapUxAPObjectPageHeaderObjectImage {
     border-width: 0.188rem;
-    margin-right: 5rem;
+    margin-right: 4rem;
     margin-bottom: 2rem;
     width: 6rem;
     height: 6rem;
@@ -130,31 +146,44 @@ html.sapUiMedia-Std-Tablet .sapUxAPObjectPageHeaderContent .sapUxAPObjectPageHea
 
 html.sapUiMedia-Std-Desktop .sapUxAPObjectPageHeaderContent .sapUxAPObjectPageHeaderObjectImage-Circle .sapUxAPObjectPageHeaderObjectImage{
 	 border-width: 0.188rem;
-    margin-right: 5rem;
+    margin-right: 4rem;
     margin-bottom: 2rem;
-    width: 10rem;
-    height: 10rem;
+    width: 8rem;
+    height: 8rem;
 }
 
+.nameText{
 
+    margin-top: 10px;
+	font-family: 'Segoe UI';
+    font-weight: bold;
+    font-style: normal;
+    font-size: 16px;
+ }
 
+.sapUxAPObjectPageSectionHeader {
+    box-sizing: border-box;
+    height: 0rem;
+    line-height: 0rem;
+   
+    display: none;
+}
 
+.sapMLabel {
+   
+    margin-top: 11px;
+}
 
+.vbox{
+	margin-bottom: 128px;
+}
 
+.sapMIBar.sapMHeader-CTX {
+   
+    background-color: rgb(171, 199, 222);
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+.img {
+	 border: 1px solid #ffffff;
+  border-radius: 50%;
+}
