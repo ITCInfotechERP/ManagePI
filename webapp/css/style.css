@@ -9,9 +9,10 @@
     height: 170px;
     background-color: #fff;
     margin: auto;
-    margin-top: 20px;
+    margin-top: 60px;
     border-style: outset;
     box-shadow: 5px 5px 8px #888888;
+    
 }
 
 .panelcol {
@@ -352,4 +353,8 @@ html.sapUiMedia-Std-Desktop .sapUxAPObjectPageHeaderContent .sapUxAPObjectPageHe
     color: #333333;
     margin: 0;
     line-height: 4rem;
+}
+
+.activityMasterPageColor{
+	background-color: #ffffff;
 }

@@ -10,7 +10,7 @@
 			<m:Button icon="sap-icon://home"  tooltip="Home" press="homeButton"></m:Button>
 		</m:contentLeft>
 		<m:contentMiddle>
-		<m:Title text="Daily Activity Book (Coastal)" level="H3"/>	
+		<m:Title text="Create Activity Book (Coastal)" level="H3"/>	
 		</m:contentMiddle>
 		
 
