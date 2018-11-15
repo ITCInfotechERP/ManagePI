@@ -17,7 +17,6 @@
 				</contentRight>
 			</Bar>
 		</customHeader>
-		
 		<content>
 			<SplitContainer>
 				<masterPages>
@@ -25,20 +24,18 @@
 						<SearchField width="100%" search="onFilterProducts"/>
 						<List id="List1" mode="SingleSelectMaster" selectionChange="showDetails" items="{ path : '/Employees'}">
 							<items>
-								<ObjectListItem title="{Book}" number="{PSID}"  intro="{GroupID}"></ObjectListItem>
+								<ObjectListItem title="{Book}" number="{PSID}" intro="{GroupID}"></ObjectListItem>
 							</items>
 						</List>
 						<semantic:customFooterContent>
-							<OverflowToolbarButton icon="sap-icon://add"  press="navToDailyActivity"/>
+							<OverflowToolbarButton icon="sap-icon://add" press="navToDailyActivity"/>
 						</semantic:customFooterContent>
 					</semantic:MasterPage>
 				</masterPages>
-				
-				
 				<detailPages>
-					<semantic:DetailPage title="Activity Book Detail"  class="activityMasterPageColor">
+					<semantic:DetailPage title="Activity Book Detail" class="activityMasterPageColor">
 						<semantic:content>
-							<ObjectHeader   id="objectHeader" title="{DialogModel>/ActivitySelected/0/Book}" titleActive="false" titlePress="onShowDetailPopover"
+							<ObjectHeader id="objectHeader" title="{DialogModel>/ActivitySelected/0/Book}" titleActive="false" titlePress="onShowDetailPopover"
 								responsive="true" number="{DialogModel>/ActivitySelected/0/CodeID}">
 								<attributes>
 									<ObjectAttribute text="{DialogModel>/ActivitySelected/0/GroupID}"/>

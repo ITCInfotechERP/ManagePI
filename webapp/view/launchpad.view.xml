@@ -2,35 +2,28 @@
 	xmlns:l="sap.ui.layout" controllerName="com.itcActivitybook.controller.launchpad">
 	<App>
 		<pages>
-			 <Page  class="sapUiContentPadding" >
-			 <customHeader>
-			<Bar class="headerToolBarBackground">
-		<contentLeft>
-			
-		</contentLeft>
-		<contentMiddle>
-		<Title text="Launchpad" level="H3"/>	
-		</contentMiddle>
-		
-		
-		<contentRight>
-			<Button icon="sap-icon://bell" tooltip="Notification"/>
-					<Text text="Parag"/>
-					<Button text="Logout"/>
-	
-		</contentRight>		
-		</Bar>
-			<!--<Toolbar>-->
-			
-			<!--	<ToolbarSpacer/>-->
-			<!--	<Title text= "Launchpad" level="H3"/>-->
-			<!--	<ToolbarSpacer/>-->
-			<!--	<Button icon="sap-icon://bell" tooltip="Notification"/>-->
-			<!--		<Text text="Parag"/>-->
-			<!--		<Button text="Logout"/>-->
-			<!--</Toolbar>-->
-			
-			</customHeader>
+			<Page class="sapUiContentPadding">
+				<customHeader>
+					<Bar class="headerToolBarBackground">
+						<contentLeft></contentLeft>
+						<contentMiddle>
+							<Title text="Launchpad" level="H3"/>
+						</contentMiddle>
+						<contentRight>
+							<Button icon="sap-icon://bell" tooltip="Notification"/>
+							<Text text="Parag"/>
+							<Button text="Logout"/>
+						</contentRight>
+					</Bar>
+					<!--<Toolbar>-->
+					<!--	<ToolbarSpacer/>-->
+					<!--	<Title text= "Launchpad" level="H3"/>-->
+					<!--	<ToolbarSpacer/>-->
+					<!--	<Button icon="sap-icon://bell" tooltip="Notification"/>-->
+					<!--		<Text text="Parag"/>-->
+					<!--		<Button text="Logout"/>-->
+					<!--</Toolbar>-->
+				</customHeader>
 				<content>
 					<FlexBox width="51%" class="columns" direction="Column">
 						<items class="item">
@@ -46,7 +39,7 @@
 									<FlexItemData growFactor="0" order="1"/>
 								</layoutData>
 							</Text>
-							<Button class="firstButton"  icon="sap-icon://message-information">
+							<Button class="firstButton" icon="sap-icon://message-information">
 								<layoutData>
 									<FlexItemData growFactor="0" order="1"/>
 								</layoutData>
@@ -111,8 +104,7 @@
 								</FlexBox>
 								<FlexBox width="100%" direction="Column" alignItems="Center">
 									<items>
-									
-									<Button class="bt" press="navToReports" width="10%" icon="sap-icon://employee">
+										<Button class="bt" press="navToReports" width="10%" icon="sap-icon://employee">
 											<layoutData>
 												<FlexItemData growFactor="0" order="1"/>
 											</layoutData>
@@ -262,7 +254,6 @@
 					<!--		</l:HorizontalLayout>-->
 					<!--	</content>-->
 					<!--</Panel>-->
-				
 					<!--	<GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout " header="Hi Parag" sizeBehavior="Responsive"
 		subheader="Welcome to Activity Book Application" press="press">
 		<TileContent unit="EUR" footer="Current Quarter">
