@@ -34,20 +34,20 @@
 			<!--</m:Toolbar>-->
 	        </m:customHeader>
 		<m:content>
-			<ObjectPageLayout id="ObjectPageLayout" enableLazyLoading="false" showTitleInHeaderContent="true" showHeaderContent="true">
+			<ObjectPageLayout id="ObjectPageLayout" enableLazyLoading="false" showTitleInHeaderContent="false" showHeaderContent="true" useIconTabBar="true">
 				<headerTitle>
-					<ObjectPageHeader objectImageURI="https://nulm.gov.in/images/user.png" objectImageShape="Circle" objectImageAlt="Senior UI Developer"
-						id="ObjectPageLayoutHeaderTitle" isObjectIconAlwaysVisible="false" isObjectTitleAlwaysVisible="false" showPlaceholder="true">
+					<ObjectPageHeader objectImageURI="https://nulm.gov.in/images/user.png" objectImageShape="Circle" objectTitle="Parag" objectImageAlt="Senior UI Developer"
+						id="ObjectPageLayoutHeaderTitle" isObjectIconAlwaysVisible="true" isObjectTitleAlwaysVisible="true" showPlaceholder="true">
 						<!--	<actions>
 					<ObjectPageHeaderActionButton icon="sap-icon://pull-down" text="show section" type="Emphasized" tooltip="pull-down"/>
 					<ObjectPageHeaderActionButton icon="sap-icon://show" text="show state" type="Emphasized" tooltip="show"/>
 				</actions>-->
 					</ObjectPageHeader>
 				</headerTitle>
-				<headerContent>
+				<headerContent objectImageURI="https://nulm.gov.in/images/user.png" objectImageShape="Circle">
 					<layout:VerticalLayout>
-						<m:ObjectStatus class="nameText" text="Parag" active = "true" />
-						<m:ObjectStatus class="objectText" text="http://www.alturki.com" active="true"/>
+						<!--<m:ObjectStatus class="nameText" text="Parag" active="true"/>
+	-->					<m:ObjectStatus class="objectText" text="http://www.alturki.com" active="true"/>
 						<!--<m:ObjectStatus title="Language" text="English"/>-->
 						<m:ObjectStatus class="objectTextA" text="Bangalore City, IN"/>
 						<!--<m:ObjectStatus title="Phone Number" text="1-844-726-7733"/>-->
@@ -56,13 +56,13 @@
 						<!--<layout:layoutData>-->
 						<!--	<ObjectPageHeaderLayoutData visibleS="false"/>-->
 						<!--</layout:layoutData>-->
-						<m:ObjectStatus class="objectText2" title="Status" text="Active"/>
+						<m:ObjectStatus class="objectText" title="Status" text="Active"/>
 						<!--<m:ObjectStatus title="Cost Center" text="PI DFA GD Programs and Product"/>-->
-						<m:ObjectStatus class="objectText2A" title="Industry" text="Manufacturing"/>
+						<m:ObjectStatus class="objectTextA" title="Industry" text="Manufacturing"/>
 						<!--<m:Token text="Visible on M and L size"/>-->
 					</layout:VerticalLayout>
 					<layout:VerticalLayout>
-						<m:ObjectStatus class="objectText2" title="Role Classification" text="Charge Hand"/>
+						<m:ObjectStatus class="objectText" title="Role Classification" text="Charge Hand"/>
 						<!--<m:RatingIndicator maxValue="6" class="sapUiSmallMarginBottom" value="5" tooltip="Rating Tooltip"/>-->
 						<!--<m:Token text="Visible on L size"/>-->
 					</layout:VerticalLayout>
