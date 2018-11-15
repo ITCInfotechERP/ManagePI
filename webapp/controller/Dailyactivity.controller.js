@@ -1,8 +1,15 @@
 sap.ui.define([
-	"sap/ui/core/mvc/Controller"
-], function(Controller) {
+"com/itcActivitybook/controller/BaseController"
+], function(BaseController) {
 	"use strict";
 
-	return Controller.extend("com.itcActivitybook.controller.Dailyactivity", {
+	return BaseController.extend("com.itcActivitybook.controller.Dailyactivity", {
+		
+		
+			navToActivitydetails: function(oEvent) {
+			this.getRouter().navTo("activityDetail");
+		}
+		
+	
 });
 });

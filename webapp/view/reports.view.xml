@@ -1,0 +1,91 @@
+<mvc:View controllerName="com.itcActivitybook.controller.reports" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc"
+	xmlns:layout="sap.ui.layout" xmlns:viz="sap.viz.ui5.controls" displayBlock="true" xmlns="sap.m" xmlns:viz.data="sap.viz.ui5.data"
+	xmlns:viz.feeds="sap.viz.ui5.controls.common.feeds">
+	<App>
+		<pages>
+			<Page>
+				<customHeader>
+		<Bar>
+		<contentLeft>
+			<Button text="Home" press="homeButton"></Button>
+		</contentLeft>
+		<contentMiddle>
+		<Title text="Chart Table" level="H3"/>	
+		</contentMiddle>
+		
+		
+		<contentRight>
+			<Button icon="sap-icon://bell" tooltip="Notification"/>
+					<Text text="Parag"/>
+					<Button text="Logout"/>
+	
+		</contentRight>		
+		</Bar>
+		
+	
+		</customHeader>
+		
+				<content>
+					
+						<FlexBox height="100px" alignItems="Start" justifyContent="End">
+							<items>
+								<Button icon="sap-icon://bar-chart" press="onpressbar" class="sapUiSmallMarginEnd" tooltip="Bar Chart"/>
+								<Button icon="sap-icon://pie-chart" press="onpresspie" class="sapUiSmallMarginEnd" tooltip="Pie Chart"/>
+								<Button icon="sap-icon://table-view" press="onpressTable" class="sapUiSmallMarginEnd" tooltip="Table"/>
+							</items>
+						</FlexBox>
+				
+					<Table id="idProductsTable" visible="false" inset="false" items="{/items}">
+						<columns>
+							<Column>
+								<Text text="Year"/>
+							</Column>
+							<Column>
+								<Text text="Milk"/>
+							</Column>
+							<Column>
+								<Text text="Sugar"/>
+							</Column>
+							<Column>
+								<Text text="Tea"/>
+							</Column>
+						</columns>
+						<items>
+							<ColumnListItem>
+								<cells>
+									<Text text="{Year}"/>
+									<Text text="{Milk}"/>
+									<Text text="{Sugar}"/>
+									<Text text="{Tea}"/>
+								</cells>
+							</ColumnListItem>
+						</items>
+					</Table>
+					<viz:Popover id="idPopOver"></viz:Popover>
+					<viz:VizFrame id="idbarChart" uiConfig="{applicationSet:'fiori'}" height='100%' width="100%" vizType='column' title="Bar Chart"
+						visible="true">
+						<viz:dataset>
+							<viz.data:FlattenedDataset data="{/items}">
+								<viz.data:dimensions>
+									<viz.data:DimensionDefinition name="Year" value="{Year}"/>
+								</viz.data:dimensions>
+								<viz.data:measures>
+									<viz.data:MeasureDefinition name="Milk" value="{Milk}"/>
+									<viz.data:MeasureDefinition name="Sugar" value="{Sugar}"/>
+									<viz.data:MeasureDefinition name="Tea" value="{Tea}"/>
+								</viz.data:measures>
+							</viz.data:FlattenedDataset>
+						</viz:dataset>
+						<viz:feeds>
+							<viz.feeds:FeedItem id='valueAxisFeed' uid="valueAxis" type="Measure" values="Milk"/>
+							<viz.feeds:FeedItem id='valueAxisFeed1' uid="valueAxis" type="Measure" values="Sugar"/>
+							<viz.feeds:FeedItem id='valueAxisFeed2' uid="valueAxis" type="Measure" values="Tea"/>
+							<viz.feeds:FeedItem id='categoryAxisFeed' uid="categoryAxis" type="Dimension" values="Year"/>
+						</viz:feeds>
+					</viz:VizFrame>
+					<viz:VizFrame id="idVizFramePie" legendVisible="true" vizType="pie" height="100%" width="100%" visible="false"></viz:VizFrame>
+				</content>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>

@@ -1,15 +1,21 @@
 sap.ui.define([
-	"sap/ui/core/mvc/Controller"
-], function(Controller) {
+	"com/itcActivitybook/controller/BaseController"
+], function(BaseController) {
 	"use strict";
 
-	return Controller.extend("com.itcActivitybook.controller.launchpad", {
+	return BaseController.extend("com.itcActivitybook.controller.launchpad", {
 
-		getRouter: function() {
-			return sap.ui.core.UIComponent.getRouterFor(this);
-		},
+		
 		navToDailyActivity: function(oEvent) {
 			this.getRouter().navTo("activies");
+		},
+		
+			navToReports: function(oEvent) {
+			this.getRouter().navTo("reports");
+		},
+		
+		navToEditActivity: function(oEvent){
+			this.getRouter().navTo("booklist");
 		}
 	});
 });

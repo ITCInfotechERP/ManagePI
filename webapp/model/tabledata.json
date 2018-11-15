@@ -1,0 +1,29 @@
+{
+	"Employee": [{
+		"EmployeeID": "E87393499",
+		"Name": "John Doe",
+		"Payroll Type": "Type  1",
+		"Should be PI": "2 Hrs",
+		"PI By CH": "3 Hrs"
+		
+
+	}, {
+			"EmployeeID": "E87393499",
+		"Name": "John Doe",
+		"Payroll Type": "Type  1",
+		"Should be PI": "2 Hrs",
+		"PI By CH": "3 Hrs"
+	}, {
+			"EmployeeID": "E87393499",
+		"Name": "John Doe",
+		"Payroll Type": "Type  1",
+		"Should be PI": "2 Hrs",
+		"PI By CH": "3 Hrs"
+	}, {
+			"EmployeeID": "E87393499",
+		"Name": "John Doe",
+		"Payroll Type": "Type  1",
+		"Should be PI": "2 Hrs",
+		"PI By CH": "3 Hrs"
+	}]
+}
