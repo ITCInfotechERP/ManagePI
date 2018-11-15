@@ -5,36 +5,28 @@
 		<pages>
 			<Page>
 				<customHeader>
-		<Bar class="headerToolBarBackground">
-		<contentLeft>
-			<Button icon="sap-icon://home" tooltip="Home" press="homeButton"></Button>
-		</contentLeft>
-		<contentMiddle>
-		<Title text="Chart Table" level="H3"/>	
-		</contentMiddle>
-		
-		
-		<contentRight>
-			<Button icon="sap-icon://bell" tooltip="Notification"/>
-					<Text text="Parag"/>
-					<Button text="Logout"/>
-	
-		</contentRight>		
-		</Bar>
-		
-	
-		</customHeader>
-		
+					<Bar class="headerToolBarBackground">
+						<contentLeft>
+							<Button icon="sap-icon://home" tooltip="Home" press="homeButton"></Button>
+						</contentLeft>
+						<contentMiddle>
+							<Title text="Chart Table" level="H3"/>
+						</contentMiddle>
+						<contentRight>
+							<Button icon="sap-icon://bell" tooltip="Notification"/>
+							<Text text="Parag"/>
+							<Button text="Logout"/>
+						</contentRight>
+					</Bar>
+				</customHeader>
 				<content>
-					
-						<FlexBox height="100px" alignItems="Start" justifyContent="End">
-							<items>
-								<Button icon="sap-icon://bar-chart" press="onpressbar" class="sapUiSmallMarginEnd" tooltip="Bar Chart"/>
-								<Button icon="sap-icon://pie-chart" press="onpresspie" class="sapUiSmallMarginEnd" tooltip="Pie Chart"/>
-								<Button icon="sap-icon://table-view" press="onpressTable" class="sapUiSmallMarginEnd" tooltip="Table"/>
-							</items>
-						</FlexBox>
-				
+					<FlexBox height="100px" alignItems="Start" justifyContent="End">
+						<items>
+							<Button icon="sap-icon://bar-chart" press="onpressbar" class="sapUiSmallMarginEnd" tooltip="Bar Chart"/>
+							<Button icon="sap-icon://pie-chart" press="onpresspie" class="sapUiSmallMarginEnd" tooltip="Pie Chart"/>
+							<Button icon="sap-icon://table-view" press="onpressTable" class="sapUiSmallMarginEnd" tooltip="Table"/>
+						</items>
+					</FlexBox>
 					<Table id="idProductsTable" visible="false" inset="false" items="{/items}">
 						<columns>
 							<Column>

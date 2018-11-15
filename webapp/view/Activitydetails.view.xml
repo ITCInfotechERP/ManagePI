@@ -1,6 +1,6 @@
 <mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns:m="sap.m" xmlns:html="http://www.w3.org/1999/xhtml" xmlns="sap.uxap"
 	xmlns:layout="sap.ui.layout" xmlns:f="sap.ui.layout.form" controllerName="com.itcActivitybook.controller.Activitydetails">
-	<m:Page  class="page sapUiContentPadding">
+	<m:Page class="page sapUiContentPadding">
 		<m:customHeader>
 			<m:Bar class="headerToolBarBackground">
 				<m:contentLeft>
@@ -15,7 +15,6 @@
 					<m:Button text="Logout"/>
 				</m:contentRight>
 			</m:Bar>
-		
 		</m:customHeader>
 		<m:content>
 			<ObjectPageLayout id="ObjectPageLayout" enableLazyLoading="false" showTitleInHeaderContent="true">
@@ -128,7 +127,6 @@
 															<m:Input width="80%" value="12"/>
 															<m:Input width="60%" class="label" value="UoM"/>
 														</f:content>
-														
 													</f:SimpleForm>
 													<!--</m:VBox>-->
 												</m:content>
