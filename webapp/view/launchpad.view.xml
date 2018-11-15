@@ -3,8 +3,8 @@
 	<App>
 		<pages>
 			 <Page  class="sapUiContentPadding" >
-			 		<customHeader>
-			 				<Bar>
+			 <customHeader>
+			<Bar class="headerToolBarBackground">
 		<contentLeft>
 			
 		</contentLeft>

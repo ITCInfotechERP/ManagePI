@@ -5,7 +5,7 @@
             	
            	<m:customHeader>
            		
-           <m:Bar>
+           <m:Bar class="headerToolBarBackground">
 		<m:contentLeft>
 			<m:Button icon="sap-icon://home"  tooltip="Home" press="homeButton"></m:Button>
 		</m:contentLeft>
@@ -23,15 +23,7 @@
 		</m:Bar>
 		
 		
-			<!--<m:Toolbar>-->
-			<!--	<m:Button  text="Home" type="Accept" press="homeButton" />-->
-			<!--	<m:ToolbarSpacer/>-->
-			<!--	<m:Title text= "Daily Activity Book (Coastal)" level="H3"/>-->
-			<!--	<m:ToolbarSpacer/>-->
-			<!--	<m:Button icon="sap-icon://bell" tooltip="Notification"/>-->
-			<!--		<m:Text text="Parag"/>-->
-			<!--		<m:Button text="Logout"/>-->
-			<!--</m:Toolbar>-->
+		
 	        </m:customHeader>
 		<m:content>
 			<ObjectPageLayout id="ObjectPageLayout" enableLazyLoading="false" showTitleInHeaderContent="false" showHeaderContent="true" useIconTabBar="true">
@@ -45,14 +37,14 @@
 					</ObjectPageHeader>
 				</headerTitle>
 				<headerContent objectImageURI="https://nulm.gov.in/images/user.png" objectImageShape="Circle">
-					<layout:VerticalLayout>
+					<layout:VerticalLayout width="20%">
 						<!--<m:ObjectStatus class="nameText" text="Parag" active="true"/>
 	-->					<m:ObjectStatus class="objectText" text="http://www.alturki.com" active="true"/>
 						<!--<m:ObjectStatus title="Language" text="English"/>-->
 						<m:ObjectStatus class="objectTextA" text="Bangalore City, IN"/>
 						<!--<m:ObjectStatus title="Phone Number" text="1-844-726-7733"/>-->
 					</layout:VerticalLayout>
-					<layout:VerticalLayout>
+					<layout:VerticalLayout width="20%">
 						<!--<layout:layoutData>-->
 						<!--	<ObjectPageHeaderLayoutData visibleS="false"/>-->
 						<!--</layout:layoutData>-->

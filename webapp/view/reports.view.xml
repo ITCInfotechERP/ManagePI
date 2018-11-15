@@ -5,7 +5,7 @@
 		<pages>
 			<Page>
 				<customHeader>
-		<Bar>
+		<Bar class="headerToolBarBackground">
 		<contentLeft>
 			<Button icon="sap-icon://home" tooltip="Home" press="homeButton"></Button>
 		</contentLeft>
