@@ -156,12 +156,10 @@ html.sapUiMedia-Std-Desktop .sapUxAPObjectPageHeaderContent .sapUxAPObjectPageHe
 }
 
 .vbox {
-    margin-bottom: 128px;
+/*    margin-bottom: 128px;*/
 }
 
-.sapMIBar.sapMHeader-CTX {
-    background-color: rgb(171, 199, 222);
-}
+
 
 .img {
     border: 1px solid #ffffff;
@@ -173,8 +171,8 @@ html.sapUiMedia-Std-Desktop .sapUxAPObjectPageHeaderContent .sapUxAPObjectPageHe
 
 
 .sapUxAPObjectPageLayout {
-    width: 104%;
-    padding-right: 30px;
+    width: 100%;
+   
 }
 
 
@@ -182,15 +180,14 @@ html.sapUiMedia-Std-Desktop .sapUxAPObjectPageHeaderContent .sapUxAPObjectPageHe
     background-color: #f2f2f2;
 }
 
-.detailflexbox {
+/*.detailflexbox {
     height: 200px;
     background-color: #fafafa;
-    ;
     margin: auto;
     margin-top: 120px;
-}
+}*/
 
-.detailtext {
+/*.detailtext {
     margin-top: 10px;
     font-family: 'Segoe UI';
     font-weight: 400;
@@ -202,8 +199,8 @@ html.sapUiMedia-Std-Desktop .sapUxAPObjectPageHeaderContent .sapUxAPObjectPageHe
 .detailbutton {
     margin-top: 20px;
 }
-
-.detailtext1 {
+*/
+/*.detailtext1 {
     margin-top: 10px;
     font-family: 'Segoe UI';
     font-weight: 400;
@@ -211,7 +208,7 @@ html.sapUiMedia-Std-Desktop .sapUxAPObjectPageHeaderContent .sapUxAPObjectPageHe
     font-size: 16px;
     text-align: center;
     color: #999999;
-}
+}*/
 
 .form {
     margin-left: 40px;
@@ -357,4 +354,9 @@ html.sapUiMedia-Std-Desktop .sapUxAPObjectPageHeaderContent .sapUxAPObjectPageHe
 
 .activityMasterPageColor{
 	background-color: #ffffff;
+}
+
+
+.headerToolBarBackground{
+    background-color: rgb(171, 199, 222)!important; 
 }
