@@ -7,7 +7,7 @@
 				<customHeader>
 		<Bar>
 		<contentLeft>
-			<Button text="Home" press="homeButton"></Button>
+			<Button icon="sap-icon://home" tooltip="Home" press="homeButton"></Button>
 		</contentLeft>
 		<contentMiddle>
 		<Title text="Chart Table" level="H3"/>	

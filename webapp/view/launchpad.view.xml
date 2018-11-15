@@ -111,12 +111,13 @@
 								</FlexBox>
 								<FlexBox width="100%" direction="Column" alignItems="Center">
 									<items>
-										<Button class="bt" width="10%" icon="sap-icon://approvals">
+									
+									<Button class="bt" press="navToReports" width="10%" icon="sap-icon://employee">
 											<layoutData>
 												<FlexItemData growFactor="0" order="1"/>
 											</layoutData>
 										</Button>
-										<Text class="tt" text="Approve" textAlign="Center">
+										<Text class="tt" text="Reports" textAlign="Center">
 											<layoutData>
 												<FlexItemData growFactor="0" order="1"/>
 											</layoutData>
@@ -127,73 +128,73 @@
 						</content>
 					</Panel>
 					<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~ Panel 2 With inside FlexBox ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-					<Panel class="columns" accessibleRole="Region" width="51%" height="200px" backgroundDesign="Solid">
-						<headerToolbar>
-							<Toolbar height="3rem">
-								<Title class="title" text="Reports"/>
-							</Toolbar>
-						</headerToolbar>
-						<content>
-							<l:HorizontalLayout>
-								<FlexBox class="panelcol" width="70%" direction="Column" alignItems="Center">
-									<items>
-										<Button class="bt1" press="navToReports" width="10%" icon="sap-icon://employee">
-											<layoutData>
-												<FlexItemData growFactor="0" order="1"/>
-											</layoutData>
-										</Button>
-										<Text class="tt1" text="PI for Employees" textAlign="Center">
-											<layoutData>
-												<FlexItemData growFactor="0" order="1"/>
-											</layoutData>
-										</Text>
-									</items>
-								</FlexBox>
-								<FlexBox width="70%" direction="Column" alignItems="Center">
-									<items>
-										<Button class="bt1" press="navToReports" width="10%" icon="sap-icon://manager">
-											<layoutData>
-												<FlexItemData growFactor="0" order="1"/>
-											</layoutData>
-										</Button>
-										<Text class="tt1" text="PI for Supervisors" textAlign="Center">
-											<layoutData>
-												<FlexItemData growFactor="0" order="1"/>
-											</layoutData>
-										</Text>
-									</items>
-								</FlexBox>
-								<FlexBox width="70%" direction="Column" alignItems="Center">
-									<items>
-										<Button class="bt1"  press="navToReports" width="10%" icon="sap-icon://employee-rejections">
-											<layoutData>
-												<FlexItemData growFactor="0" order="1"/>
-											</layoutData>
-										</Button>
-										<Text class="tt1" text="Employees with no PI" textAlign="Center">
-											<layoutData>
-												<FlexItemData growFactor="0" order="1"/>
-											</layoutData>
-										</Text>
-									</items>
-								</FlexBox>
-								<FlexBox width="100%" direction="Column" alignItems="Center">
-									<items>
-										<Button class="bt" press="navToReports" width="10%" icon="sap-icon://validate">
-											<layoutData>
-												<FlexItemData growFactor="0" order="1"/>
-											</layoutData>
-										</Button>
-										<Text class="tt" text="Exceptions" textAlign="Center">
-											<layoutData>
-												<FlexItemData growFactor="0" order="1"/>
-											</layoutData>
-										</Text>
-									</items>
-								</FlexBox>
-							</l:HorizontalLayout>
-						</content>
-					</Panel>
+					<!--<Panel class="columns" accessibleRole="Region" width="51%" height="200px" backgroundDesign="Solid">-->
+					<!--	<headerToolbar>-->
+					<!--		<Toolbar height="3rem">-->
+					<!--			<Title class="title" text="Reports"/>-->
+					<!--		</Toolbar>-->
+					<!--	</headerToolbar>-->
+					<!--	<content>-->
+					<!--		<l:HorizontalLayout>-->
+					<!--			<FlexBox class="panelcol" width="70%" direction="Column" alignItems="Center">-->
+					<!--				<items>-->
+					<!--					<Button class="bt1" press="navToReports" width="10%" icon="sap-icon://employee">-->
+					<!--						<layoutData>-->
+					<!--							<FlexItemData growFactor="0" order="1"/>-->
+					<!--						</layoutData>-->
+					<!--					</Button>-->
+					<!--					<Text class="tt1" text="PI for Employees" textAlign="Center">-->
+					<!--						<layoutData>-->
+					<!--							<FlexItemData growFactor="0" order="1"/>-->
+					<!--						</layoutData>-->
+					<!--					</Text>-->
+					<!--				</items>-->
+					<!--			</FlexBox>-->
+					<!--			<FlexBox width="70%" direction="Column" alignItems="Center">-->
+					<!--				<items>-->
+					<!--					<Button class="bt1" press="navToReports" width="10%" icon="sap-icon://manager">-->
+					<!--						<layoutData>-->
+					<!--							<FlexItemData growFactor="0" order="1"/>-->
+					<!--						</layoutData>-->
+					<!--					</Button>-->
+					<!--					<Text class="tt1" text="PI for Supervisors" textAlign="Center">-->
+					<!--						<layoutData>-->
+					<!--							<FlexItemData growFactor="0" order="1"/>-->
+					<!--						</layoutData>-->
+					<!--					</Text>-->
+					<!--				</items>-->
+					<!--			</FlexBox>-->
+					<!--			<FlexBox width="70%" direction="Column" alignItems="Center">-->
+					<!--				<items>-->
+					<!--					<Button class="bt1"  press="navToReports" width="10%" icon="sap-icon://employee-rejections">-->
+					<!--						<layoutData>-->
+					<!--							<FlexItemData growFactor="0" order="1"/>-->
+					<!--						</layoutData>-->
+					<!--					</Button>-->
+					<!--					<Text class="tt1" text="Employees with no PI" textAlign="Center">-->
+					<!--						<layoutData>-->
+					<!--							<FlexItemData growFactor="0" order="1"/>-->
+					<!--						</layoutData>-->
+					<!--					</Text>-->
+					<!--				</items>-->
+					<!--			</FlexBox>-->
+					<!--			<FlexBox width="100%" direction="Column" alignItems="Center">-->
+					<!--				<items>-->
+					<!--					<Button class="bt" press="navToReports" width="10%" icon="sap-icon://validate">-->
+					<!--						<layoutData>-->
+					<!--							<FlexItemData growFactor="0" order="1"/>-->
+					<!--						</layoutData>-->
+					<!--					</Button>-->
+					<!--					<Text class="tt" text="Exceptions" textAlign="Center">-->
+					<!--						<layoutData>-->
+					<!--							<FlexItemData growFactor="0" order="1"/>-->
+					<!--						</layoutData>-->
+					<!--					</Text>-->
+					<!--				</items>-->
+					<!--			</FlexBox>-->
+					<!--		</l:HorizontalLayout>-->
+					<!--	</content>-->
+					<!--</Panel>-->
 					<!--<Panel class="columns" accessibleRole="Region" width="51%" height="250px" backgroundDesign="Solid" headerText="Reports">-->
 					<!--<headerToolbar>-->
 					<!--	<Toolbar height="2rem">-->

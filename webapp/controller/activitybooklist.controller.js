@@ -9,11 +9,11 @@ sap.ui.define([
 			
 	    	this.getView().setModel(this.getOwnerComponent().getModel("jsonData"));
 		//	this.getView().setModel(this.getOwnerComponent().getModel("json"));
-			this.getSplitAppObj().setHomeIcon({
-				"phone": "phone-icon.png",
-				"tablet": "tablet-icon.png",
-				"icon": "desktop.ico"
-			});
+			// this.getSplitAppObj().setHomeIcon({
+			// 	"phone": "phone-icon.png",
+			// 	"tablet": "tablet-icon.png",
+			// 	"icon": "desktop.ico"
+			// });
 		},
 		onPressNavToDetail: function(oEvent) {
 

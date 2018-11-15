@@ -1,36 +1,109 @@
-<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m"
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:semantic="sap.m.semantic"
 	controllerName="com.itcActivitybook.controller.activitybooklist" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:layout="sap.ui.layout"
 	xmlns:f="sap.ui.layout.form">
-	<Page class="sapUiContentPadding">
+	<Page>
 		<customHeader>
 			<Toolbar>
 				<Button icon="sap-icon://home" tooltip="Home" press="homeButton"/>
 				<ToolbarSpacer/>
-				<Title text="Create Activity" level="H3"/>
+				<Title text="Activity Book" level="H3"/>
 				<ToolbarSpacer/>
 				<Button icon="sap-icon://bell" tooltip="Notification"/>
 				<Text text="Parag"/>
 				<Button text="Logout"/>
 			</Toolbar>
 		</customHeader>
+		<!--	<SplitApp id="SplitAppDemo" initialDetail="detail" initialMaster="master" orientationChange="onOrientationChange">-->
+		<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~  Activity Detail View (ID  "detail2") ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+		<!--		<detailPages>-->
+		<!--			<Page title="Activity Detail" class="sapUiStdPage">-->
+		<!--<Toolbar height="3rem">-->
+		<!--	<Title visible="false" text="View Activity"/>-->
+		<!--	<ToolbarSpacer/>-->
+		<!--	<Button visible="true" type="Emphasized" text="A" press="incentivesView"/>-->
+		<!--	<Button visible="true" text="B" press="backToAddActivityView"/>-->
+		<!--	<Button visible="true" text="C"/>-->
+		<!--</Toolbar>-->
+		<!--				<content>-->
+		<!--					<f:SimpleForm id="SimpleFormDisplay354" editable="false" layout="ResponsiveGridLayout" title="{DialogModel>/ActivitySelected/0/Book}"-->
+		<!--						labelSpanXL="3" labelSpanL="3" labelSpanM="3" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="4" emptySpanL="4" emptySpanM="4"-->
+		<!--						emptySpanS="0" columnsXL="1" columnsL="1" columnsM="1" singleContainerFullSize="false">-->
+		<!--						<f:content>-->
+		<!--							<Label text="Discipline" class="fname"/>-->
+		<!--							<Text id="nameText" text="{DialogModel>/ActivitySelected/0/Discipline ID}"/>-->
+		<!--							<Label text="Group" class="fname"/>-->
+		<!--							<Text text="{DialogModel>/ActivitySelected/0/GroupID}"/>-->
+		<!--							<Label text="Code" class="fname"/>-->
+		<!--							<Text text="{DialogModel>/ActivitySelected/0/CodeID}"/>-->
+		<!--							<Label text="Hours" class="fname"/>-->
+		<!--							<Text id="countryText" text="{DialogModel>/ActivitySelected/0/Hours}"/>-->
+		<!--							<Label text="Quantity" class="fname"/>-->
+		<!--							<Text id="countryText1" text="{DialogModel>/ActivitySelected/0/Quantity}"/>-->
+		<!--						</f:content>-->
+		<!--					</f:SimpleForm>-->
+		<!--				</content>-->
+		<!--					<footer>-->
+		<!--	<Toolbar>-->
+		<!--		<ToolbarSpacer/>-->
+		<!--		<Button visible="true" text="Submit"/>-->
+		<!--		<Button visible="true" text="Save"/>-->
+		<!--		<Button visible="true" text="Cancel" press="onNavBack"/>-->
+		<!--	</Toolbar>-->
+		<!--</footer>-->
+		<!--			</Page>-->
+		<!--		</detailPages>-->
+		<!--		<masterPages>-->
+		<!--			<Page title="Activity List" class="sapUiStdPage">-->
+		<!--				<content>-->
+		<!--					<List id="List1" mode="SingleSelectMaster" selectionChange="showDetails" items="{ path : '/Employees'}">-->
+		<!--						<items>-->
+		<!--							<ObjectListItem title="{Book}" number="{PSID}" type="Navigation" intro="{GroupID}"></ObjectListItem>-->
+		<!--						</items>-->
+		<!--					</List>-->
+		<!--				</content>-->
+		<!--				<footer>-->
+		<!--	<Toolbar>-->
+		<!--		<ToolbarSpacer/>-->
+		<!--		<Button visible="true" tooltip="Add Activity Book" icon="sap-icon://add"/>-->
+		<!--	</Toolbar>-->
+		<!--</footer>-->
+		<!--			</Page>-->
+		<!--		</masterPages>-->
+		<!--	</SplitApp>-->
 		<content>
-			<SplitApp id="SplitAppDemo" initialDetail="detail" initialMaster="master" orientationChange="onOrientationChange">
-				<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~  Activity Detail View (ID  "detail2") ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+			<SplitContainer>
+				<masterPages>
+					<semantic:MasterPage class="activityMasterPageColor"   title="Activity Book List" >
+						<SearchField width="100%"  search="onFilterProducts"/>
+						<List id="List1" mode="SingleSelectMaster" selectionChange="showDetails" items="{ path : '/Employees'}">
+							<items>
+								<ObjectListItem title="{Book}" number="{PSID}" type="Navigation" intro="{GroupID}"></ObjectListItem>
+							</items>
+						</List>
+						<semantic:customFooterContent>
+							<OverflowToolbarButton icon="sap-icon://add" press="openDialog"/>
+						</semantic:customFooterContent>
+					</semantic:MasterPage>
+				</masterPages>
 				<detailPages>
-					<Page title="Activity Detail" class="sapUiStdPage">
-						<!--<Toolbar height="3rem">-->
-						<!--	<Title visible="false" text="View Activity"/>-->
-						<!--	<ToolbarSpacer/>-->
-						<!--	<Button visible="true" type="Emphasized" text="A" press="incentivesView"/>-->
-						<!--	<Button visible="true" text="B" press="backToAddActivityView"/>-->
-						<!--	<Button visible="true" text="C"/>-->
-						<!--</Toolbar>-->
-						<content>
-							<f:SimpleForm id="SimpleFormDisplay354" editable="false" layout="ResponsiveGridLayout" title="{DialogModel>/ActivitySelected/0/Book}"
-								labelSpanXL="3" labelSpanL="3" labelSpanM="3" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="4" emptySpanL="4" emptySpanM="4"
-								emptySpanS="0" columnsXL="1" columnsL="1" columnsM="1" singleContainerFullSize="false">
-								<f:content>
-									<Label text="Discipline" class="fname"/>
+					<semantic:DetailPage title="Activity Book Detail">
+						<semantic:content>
+							<ObjectHeader id="objectHeader" title="{DialogModel>/ActivitySelected/0/Book}" titleActive="false" titlePress="onShowDetailPopover"
+								responsive="true" number="{DialogModel>/ActivitySelected/0/CodeID}">
+								<attributes>
+									<ObjectAttribute text="{DialogModel>/ActivitySelected/0/GroupID}"/>
+								</attributes>
+							</ObjectHeader>
+							<IconTabBar id="iconTabBar" class="tabBar" select="handleIconTabBarSelect">
+								<items>
+									<IconTabFilter icon="sap-icon://group" 	 text="Employee Data" key="Emp Data" tooltip="Employee Data">
+										<content>
+											<VBox class="sapUiSmallMargin">
+												<f:SimpleForm id="SimpleFormDisplay354" editable="false" layout="ResponsiveGridLayout" title="" labelSpanXL="3" labelSpanL="3"
+													labelSpanM="3" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="4" emptySpanL="4" emptySpanM="4" emptySpanS="0" columnsXL="1"
+													columnsL="1" columnsM="1" singleContainerFullSize="false">
+													<f:content>
+														<Label text="Discipline" class="fname"/>
 									<Text id="nameText" text="{DialogModel>/ActivitySelected/0/Discipline ID}"/>
 									<Label text="Group" class="fname"/>
 									<Text text="{DialogModel>/ActivitySelected/0/GroupID}"/>
@@ -40,31 +113,65 @@
 									<Text id="countryText" text="{DialogModel>/ActivitySelected/0/Hours}"/>
 									<Label text="Quantity" class="fname"/>
 									<Text id="countryText1" text="{DialogModel>/ActivitySelected/0/Quantity}"/>
-								</f:content>
-							</f:SimpleForm>
-						</content>
-					</Page>
-				</detailPages>
-				<masterPages>
-					<Page title="Activity List" class="sapUiStdPage">
-						<content>
-							<List id="List1" mode="SingleSelectMaster" selectionChange="showDetails" items="{ path : '/Employees'}">
-								<items>
-									<ObjectListItem title="{Book}" number="{PSID}" type="Navigation" intro="{GroupID}"></ObjectListItem>
+													</f:content>
+												</f:SimpleForm>
+											</VBox>
+										</content>
+									</IconTabFilter>
+									<IconTabSeparator/>
+									<IconTabFilter icon="sap-icon://manager" 	 count="" text="Project Details" key="Project Details"
+										tooltip="Project Details">
+										<content>
+											<f:SimpleForm id="SimpleFormDisplay" editable="false" layout="ResponsiveGridLayout" title="" labelSpanXL="3" labelSpanL="3" labelSpanM="3"
+												labelSpanS="12" adjustLabelSpan="false" emptySpanXL="4" emptySpanL="4" emptySpanM="4" emptySpanS="0" columnsXL="1" columnsL="1" columnsM="1"
+												singleContainerFullSize="false">
+												<f:content>
+												<Table id="idProductsTable" alternateRowColors="true" mode="SingleSelectLeft" inset="false" items="{ path: '/Employees', sorter: { path: 'Name' } }">
+														<columns>
+															<Column width="13em">
+																<Text text="Employee ID"/>
+															</Column>
+															<Column minScreenWidth="Tablet" demandPopin="true">
+																<Text text="Name"/>
+															</Column>
+															<Column minScreenWidth="Desktop" demandPopin="true" hAlign="End">
+																<Text text="Payroll Type"/>
+															</Column>
+															<Column minScreenWidth="Desktop" demandPopin="true" hAlign="Center">
+																<Text text="Should be PI"/>
+															</Column>
+															<Column  hAlign="End" >
+																<Text text="PI By CH"/>
+															</Column>
+														</columns>
+														<items>
+															<ColumnListItem>
+																<cells>
+																	<ObjectIdentifier title="{EmployeeID}"/>
+																	<Text text="{Name}"/>
+																	<Text text="{Payroll Type}"/>
+																	<ObjectNumber number="{Should be PI}"/>
+																	<ObjectNumber number="{PI By CH}"/>
+																</cells>
+															</ColumnListItem>
+														</items>
+													</Table>
+												</f:content>
+											</f:SimpleForm>
+										</content>
+									</IconTabFilter>
 								</items>
-							</List>
-						</content>
-					</Page>
-				</masterPages>
-			</SplitApp>
+							</IconTabBar>
+						</semantic:content>
+						<semantic:customFooterContent>
+							<Button text="Submit" press="onPress"/>
+							<Button text="Save" press="onPress"/>
+							<Button text="Cancel" press="onPress"/>
+							<Button icon="sap-icon://action"  tooltip="Send Email"     press="onPress"/>
+						</semantic:customFooterContent>
+					</semantic:DetailPage>
+				</detailPages>
+			</SplitContainer>
 		</content>
-		<footer>
-			<Toolbar>
-				<ToolbarSpacer/>
-				<Button visible="true" text="Submit"/>
-				<Button visible="true" text="Save"/>
-				<Button visible="true" text="Cancel" press="onNavBack"/>
-			</Toolbar>
-		</footer>
 	</Page>
 </mvc:View>
