@@ -1,11 +1,38 @@
 <core:View xmlns:core="sap.ui.core" xmlns="sap.uxap" xmlns:layout="sap.ui.layout" xmlns:m="sap.m" height="100%"
 	controllerName="com.itcActivitybook.controller.Dailyactivity" xmlns:f="sap.ui.layout.form">
-	<m:Page title="Daily Activity Book (Coastal)" class="page">
-		<m:headerContent>
-			<m:Text text="Charge Hand ID"/>
-			<m:Image class="img" alt="UserImage" tooltip="" src="https://nulm.gov.in/images/user.png" densityAware="false" width="10%"
-				backgroundSize="cover"></m:Image>
-		</m:headerContent>
+	
+		<m:Page  class="page sapUiContentPadding">
+            	
+           	<m:customHeader>
+           		
+           <m:Bar>
+		<m:contentLeft>
+			<m:Button icon="sap-icon://home"  tooltip="Home" press="homeButton"></m:Button>
+		</m:contentLeft>
+		<m:contentMiddle>
+		<m:Title text="Daily Activity Book (Coastal)" level="H3"/>	
+		</m:contentMiddle>
+		
+
+		<m:contentRight>
+			<m:Button icon="sap-icon://bell" tooltip="Notification"/>
+					<m:Text text="Parag"/>
+					<m:Button text="Logout"/>
+	
+		</m:contentRight>		
+		</m:Bar>
+		
+		
+			<!--<m:Toolbar>-->
+			<!--	<m:Button  text="Home" type="Accept" press="homeButton" />-->
+			<!--	<m:ToolbarSpacer/>-->
+			<!--	<m:Title text= "Daily Activity Book (Coastal)" level="H3"/>-->
+			<!--	<m:ToolbarSpacer/>-->
+			<!--	<m:Button icon="sap-icon://bell" tooltip="Notification"/>-->
+			<!--		<m:Text text="Parag"/>-->
+			<!--		<m:Button text="Logout"/>-->
+			<!--</m:Toolbar>-->
+	        </m:customHeader>
 		<m:content>
 			<ObjectPageLayout id="ObjectPageLayout" enableLazyLoading="false" showTitleInHeaderContent="true" showHeaderContent="true">
 				<headerTitle>
@@ -59,12 +86,7 @@
 											<m:Label text="Personnel Sub Area"/>
 											<m:Input value="Area 1A"/>
 											<m:Input value="Maintown"/>
-											<m:Label text="Personnel Sub Area" visible="false"/>
-											<m:Input value="Area 1A" visible="false"/>
-											<m:Input value="Maintown" visible="false"/>
-											<m:Label text="Personnel Sub Area" visible="false"/>
-											<m:Input value="Area 1A" visible="false"/>
-											<m:Input value="Maintown" visible="false"/>
+									
 											<core:Title/>
 											<m:Label text="Area ID / Description"/>
 											<m:Input value="A-ID3453"/>
@@ -87,8 +109,9 @@
 		<m:footer>
 			<m:Toolbar>
 				<m:ToolbarSpacer/>
-				<m:Button type="Emphasized" text="Add Activity Details"/>
-				<m:Button text="Cancel"/>
+				
+				<m:Button type="Emphasized" text="Add Activity Details"  press="navToActivitydetails"/>
+				<m:Button text="Cancel" press="onNavBack"/>
 			</m:Toolbar>
 		</m:footer>
 	</m:Page>

@@ -1,35 +1,25 @@
-/* Enter your custom styles here */
-
-
-
-
+/*Enter your custom styles here */
 
 .page {
+    background-color: #f5f8fc;
    
-    background-color: #f5f8fc;;
-    
 }
 
-.columns{
-	height: 210px;
-	background-color: #fff;
-  
-   margin: auto;
-   margin-top: 20px;
-   
-   border-style: outset;
-   box-shadow: 5px 5px 8px #888888;
-    
+.columns {
+    height: 170px;
+    background-color: #fff;
+    margin: auto;
+    margin-top: 20px;
+    border-style: outset;
+    box-shadow: 5px 5px 8px #888888;
 }
 
-.panelcol{
-	margin-left: 25px;
-
-    
+.panelcol {
+    margin-left: 25px;
 }
 
-.text{
-	font-family: 'Segoe UI';
+.text {
+    font-family: 'Segoe UI';
     font-weight: 400;
     font-style: normal;
     font-size: 16px;
@@ -37,13 +27,12 @@
     margin-left: 10px;
     margin-top: 10px;
     color: #999999;
-    
 }
 
-.text2{
- margin-left: 10px;
- margin-top: 10px;
-	font-family: 'Segoe UI';
+.text2 {
+    margin-left: 10px;
+    margin-top: 10px;
+    font-family: 'Segoe UI';
     font-weight: 400;
     font-style: normal;
     font-size: 16px;
@@ -51,55 +40,52 @@
     color: #999999;
 }
 
-.text3{
-
-	font-family: 'Segoe UI';
+.text3 {
+    font-family: 'Segoe UI';
     font-weight: 400;
     font-style: normal;
     font-size: 16px;
     text-align: left;
     color: #4ABFD3;
-   	margin-left: 430px;
+    margin-left: 415px;
 }
 
-.firstButton{
-	margin-left: 450px;
-     
+.firstButton {
+    margin-left: 450px;
 }
 
-.secondButton{
-	display: inline-block;
-	margin-top:20px;
-	margin-left: 0px;
-}
-.secondText{
-	margin-left: 0px;
+.secondButton {
+    display: inline-block;
+    margin-top: 20px;
+    margin-left: 0px;
 }
 
-.bt{
-	margin-top: 30px;
-	margin-left: 20px;
+.secondText {
+    margin-left: 0px;
 }
 
-.tt{
-	margin-top: 10px;
-	margin-left: 20px;
+.bt {
+    margin-top: 10px;
+    margin-left: 20px;
 }
 
-
-.bt1{
-	margin-top: 30px;
-	margin-left: 30px;
+.tt {
+    margin-top: 10px;
+    margin-left: 20px;
 }
 
-.tt1{
-	margin-top: 10px;
-	margin-left: 30px;
+.bt1 {
+    margin-top: 10px;
+    margin-left: 30px;
 }
 
+.tt1 {
+    margin-top: 10px;
+    margin-left: 30px;
+}
 
-.title{
-	font-family: 'Segoe UI';
+.title {
+    font-family: 'Segoe UI';
     font-weight: 400;
     font-style: normal;
     font-size: 16px;
@@ -110,80 +96,260 @@
 }
 
 
-/* <!~~~~~~~~~~~~~~~~~~~~~~~ Daily Activity Book  Css Code ~~~~~~~~~~~~~~~~~~~~~~~> */
+ /*<!~~~~~~~~~~~~~~~~~~~~~~~ Daily Activity Book  Css Code ~~~~~~~~~~~~~~~~~~~~~~~> */
 
-.objectText{
-	font-family: 'Segoe UI';
-	margin-top:30px;
-
+.objectText {
+    font-family: 'Segoe UI';
+    margin-top: 30px;
 }
 
-.objectText2{
-	font-family: 'Segoe UI';
-	margin-top:70px;
-	margin-left: 40px;
-}
-.objectText2A{
-	font-family: 'Segoe UI';
-	margin-top:10px;
-	margin-left: 40px;
-}
-.objectTextA{
-	font-family: 'Segoe UI';
-	margin-top:10px;
+.objectText2 {
+    font-family: 'Segoe UI';
+    margin-top: 70px;
+    margin-left: 40px;
 }
 
+.objectText2A {
+    font-family: 'Segoe UI';
+    margin-top: 10px;
+    margin-left: 40px;
+}
+
+.objectTextA {
+    font-family: 'Segoe UI';
+    margin-top: 10px;
+}
 
 html.sapUiMedia-Std-Tablet .sapUxAPObjectPageHeaderContent .sapUxAPObjectPageHeaderObjectImage-Circle .sapUxAPObjectPageHeaderObjectImage {
     border-width: 0.188rem;
     margin-right: 4rem;
-    margin-bottom: 2rem;
     width: 6rem;
     height: 6rem;
 }
 
-
-
-html.sapUiMedia-Std-Desktop .sapUxAPObjectPageHeaderContent .sapUxAPObjectPageHeaderObjectImage-Circle .sapUxAPObjectPageHeaderObjectImage{
-	 border-width: 0.188rem;
+html.sapUiMedia-Std-Desktop .sapUxAPObjectPageHeaderContent .sapUxAPObjectPageHeaderObjectImage-Circle .sapUxAPObjectPageHeaderObjectImage {
+    border-width: 0.188rem;
     margin-right: 4rem;
     margin-bottom: 2rem;
     width: 8rem;
     height: 8rem;
 }
 
-.nameText{
-
+.nameText {
     margin-top: 10px;
-	font-family: 'Segoe UI';
+    font-family: 'Segoe UI';
     font-weight: bold;
     font-style: normal;
     font-size: 16px;
- }
+}
 
 .sapUxAPObjectPageSectionHeader {
     box-sizing: border-box;
     height: 0rem;
     line-height: 0rem;
-   
     display: none;
 }
 
 .sapMLabel {
-   
     margin-top: 11px;
 }
 
-.vbox{
-	margin-bottom: 128px;
+.vbox {
+    margin-bottom: 128px;
 }
 
 .sapMIBar.sapMHeader-CTX {
-   
     background-color: rgb(171, 199, 222);
 }
 
 .img {
-	 border: 1px solid #ffffff;
-  border-radius: 50%;
+    border: 1px solid #ffffff;
+    border-radius: 50%;
+}
+
+
+ /*<!~~~~~~~~~~~~~~~~~~~~~~~ Daily Activity Book Detail Css Code ~~~~~~~~~~~~~~~~~~~~~~~> */
+
+
+.sapUxAPObjectPageLayout {
+    width: 104%;
+    padding-right: 30px;
+}
+
+
+#detail {
+    background-color: #f2f2f2;
+}
+
+.detailflexbox {
+    height: 200px;
+    background-color: #fafafa;
+    ;
+    margin: auto;
+    margin-top: 120px;
+}
+
+.detailtext {
+    margin-top: 10px;
+    font-family: 'Segoe UI';
+    font-weight: 400;
+    font-style: normal;
+    font-size: 16px;
+    text-align: center;
+}
+
+.detailbutton {
+    margin-top: 20px;
+}
+
+.detailtext1 {
+    margin-top: 10px;
+    font-family: 'Segoe UI';
+    font-weight: 400;
+    font-style: normal;
+    font-size: 16px;
+    text-align: center;
+    color: #999999;
+}
+
+.form {
+    margin-left: 40px;
+    
+}
+
+.sapUiFormTitle {
+    border-bottom: none;
+    
+   
+}
+
+
+
+.date {
+    margin-top: 25px;
+    margin-left: 70px;
+}
+
+.area {
+    margin-left: 70px;
+}
+
+.status {
+    margin-left: 70px;
+}
+
+.img1 {
+    border: 1px;
+    border-radius: 50%;
+    height: 50px;
+    width: auto;
+    margin-left: 30px;
+}
+
+.foreman {
+    margin-top: 22px;
+    margin-left: 40px;
+}
+
+.michael {
+    margin-left: 0px;
+}
+
+.id2 {
+    margin-left: 0px;
+}
+
+.engineer {
+    margin-top: 21px;
+    margin-left: 40px;
+}
+
+.john {
+    margin-left: 0px;
+}
+
+.id9 {
+    margin-left: 0px;
+}
+
+.sapMTB-Transparent-CTX.sapMTB.toolBar {
+    padding-top: 3.75rem;
+}
+
+
+ /*<!--------- Panel Botton Line Hidden --------------------> */
+
+.sapMPanelContent:not(.sapMPanelBGTransparent) {
+    border-bottom: 0px solid #cccccc;
+}
+
+
+ /*<!--------------------- From Top Space Reduced -------------------------> */
+
+.sapUiFormM .sapUiFormContainerTitle>.sapUiFormTitle {
+    height: 0rem;
+    line-height: 0rem;
+}
+
+.splitapp {
+    width: 100%;
+    padding: 0;
+}
+
+.fname {
+    margin-top: 0px;
+}
+
+
+
+ /*<!--------------------- activitybooklist View -------------------------> */
+
+
+ /*Breadcrumbs link / will not be displayed  */
+.sapMBreadcrumbs .sapMBreadcrumbsSeparator {
+    
+    display: none;
+}
+
+
+.link {
+   color:#1d1e1e;
+    text-decoration: none;
+   
+    word-wrap: normal;
+    font-family: "72",Arial,Helvetica,sans-serif;
+    font-size: 1rem;
+    margin-left:20px;
+    margin-top:20px;
+}
+
+.editButton{
+	margin-right:40px;
+	margin-top:16px;
+}
+
+
+.sapUxAPObjectPageHeaderIdentifier .sapUxAPObjectPageHeaderIdentifierContainer {
+    display: inline-block;
+    line-height: normal;
+    vertical-align: middle;
+    width: 60%;
+    box-sizing: border-box;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+   
+}
+
+
+ activitybooklist  
+.sapUiFormTitle {
+     border-bottom: 1px solid #cccccc; 
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    display: block;
+    width: 100%;
+    color: #333333;
+    margin: 0;
+    line-height: 4rem;
 }

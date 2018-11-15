@@ -2,12 +2,35 @@
 	xmlns:l="sap.ui.layout" controllerName="com.itcActivitybook.controller.launchpad">
 	<App>
 		<pages>
-			<Page title="{i18n>title}" class="page">
-				<headerContent>
-					<Button icon="sap-icon://bell" tooltip="Notification"/>
+			 <Page  class="sapUiContentPadding" >
+			 		<customHeader>
+			 				<Bar>
+		<contentLeft>
+			
+		</contentLeft>
+		<contentMiddle>
+		<Title text="Launchpad" level="H3"/>	
+		</contentMiddle>
+		
+		
+		<contentRight>
+			<Button icon="sap-icon://bell" tooltip="Notification"/>
 					<Text text="Parag"/>
 					<Button text="Logout"/>
-				</headerContent>
+	
+		</contentRight>		
+		</Bar>
+			<!--<Toolbar>-->
+			
+			<!--	<ToolbarSpacer/>-->
+			<!--	<Title text= "Launchpad" level="H3"/>-->
+			<!--	<ToolbarSpacer/>-->
+			<!--	<Button icon="sap-icon://bell" tooltip="Notification"/>-->
+			<!--		<Text text="Parag"/>-->
+			<!--		<Button text="Logout"/>-->
+			<!--</Toolbar>-->
+			
+			</customHeader>
 				<content>
 					<FlexBox width="51%" class="columns" direction="Column">
 						<items class="item">
@@ -23,7 +46,7 @@
 									<FlexItemData growFactor="0" order="1"/>
 								</layoutData>
 							</Text>
-							<Button class="firstButton" width="10%" icon="sap-icon://activity-individual">
+							<Button class="firstButton"  icon="sap-icon://message-information">
 								<layoutData>
 									<FlexItemData growFactor="0" order="1"/>
 								</layoutData>
@@ -36,7 +59,7 @@
 						</items>
 					</FlexBox>
 					<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~ Panel 1 With inside FlexBox ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-					<Panel class="columns" accessibleRole="Region" width="51%" height="210px" backgroundDesign="Solid">
+					<Panel class="columns" accessibleRole="Region" width="51%" height="200px" backgroundDesign="Solid">
 						<headerToolbar>
 							<Toolbar height="3rem">
 								<Title class="title" text="Activity Book"/>
@@ -46,7 +69,21 @@
 							<l:HorizontalLayout>
 								<FlexBox class="panelcol" width="70%" direction="Column" alignItems="Center">
 									<items>
-										<Button class="bt" width="10%" icon="sap-icon://create" press="navToDailyActivity" tooltip="Create Activity">
+										<Button class="bt" width="10%" icon="sap-icon://create" press="navToEditActivity" tooltip="Create Activity">
+											<layoutData>
+												<FlexItemData growFactor="0" order="1"/>
+											</layoutData>
+										</Button>
+										<Text class="tt" text="My Activity Book" textAlign="Center">
+											<layoutData>
+												<FlexItemData growFactor="0" order="1"/>
+											</layoutData>
+										</Text>
+									</items>
+								</FlexBox>
+								<FlexBox width="70%" direction="Column" alignItems="Center">
+									<items>
+										<Button class="bt" width="10%" icon="sap-icon://user-edit" press="navToDailyActivity" tooltip="Create Activity">
 											<layoutData>
 												<FlexItemData growFactor="0" order="1"/>
 											</layoutData>
@@ -60,21 +97,7 @@
 								</FlexBox>
 								<FlexBox width="70%" direction="Column" alignItems="Center">
 									<items>
-										<Button class="bt" width="10%" icon="sap-icon://activity-individual">
-											<layoutData>
-												<FlexItemData growFactor="0" order="1"/>
-											</layoutData>
-										</Button>
-										<Text class="tt" text="Modify Activity Book" textAlign="Center">
-											<layoutData>
-												<FlexItemData growFactor="0" order="1"/>
-											</layoutData>
-										</Text>
-									</items>
-								</FlexBox>
-								<FlexBox width="70%" direction="Column" alignItems="Center">
-									<items>
-										<Button class="bt" width="10%" icon="sap-icon://activity-individual">
+										<Button class="bt" width="10%" icon="sap-icon://delete">
 											<layoutData>
 												<FlexItemData growFactor="0" order="1"/>
 											</layoutData>
@@ -88,7 +111,7 @@
 								</FlexBox>
 								<FlexBox width="100%" direction="Column" alignItems="Center">
 									<items>
-										<Button class="bt" width="10%" icon="sap-icon://activity-individual">
+										<Button class="bt" width="10%" icon="sap-icon://approvals">
 											<layoutData>
 												<FlexItemData growFactor="0" order="1"/>
 											</layoutData>
@@ -104,7 +127,7 @@
 						</content>
 					</Panel>
 					<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~ Panel 2 With inside FlexBox ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-					<Panel class="columns" accessibleRole="Region" width="51%" height="210px" backgroundDesign="Solid">
+					<Panel class="columns" accessibleRole="Region" width="51%" height="200px" backgroundDesign="Solid">
 						<headerToolbar>
 							<Toolbar height="3rem">
 								<Title class="title" text="Reports"/>
@@ -114,7 +137,7 @@
 							<l:HorizontalLayout>
 								<FlexBox class="panelcol" width="70%" direction="Column" alignItems="Center">
 									<items>
-										<Button class="bt1" width="10%" icon="sap-icon://activity-individual">
+										<Button class="bt1" press="navToReports" width="10%" icon="sap-icon://employee">
 											<layoutData>
 												<FlexItemData growFactor="0" order="1"/>
 											</layoutData>
@@ -128,7 +151,7 @@
 								</FlexBox>
 								<FlexBox width="70%" direction="Column" alignItems="Center">
 									<items>
-										<Button class="bt1" width="10%" icon="sap-icon://activity-individual">
+										<Button class="bt1" press="navToReports" width="10%" icon="sap-icon://manager">
 											<layoutData>
 												<FlexItemData growFactor="0" order="1"/>
 											</layoutData>
@@ -142,7 +165,7 @@
 								</FlexBox>
 								<FlexBox width="70%" direction="Column" alignItems="Center">
 									<items>
-										<Button class="bt1" width="10%" icon="sap-icon://activity-individual">
+										<Button class="bt1"  press="navToReports" width="10%" icon="sap-icon://employee-rejections">
 											<layoutData>
 												<FlexItemData growFactor="0" order="1"/>
 											</layoutData>
@@ -156,7 +179,7 @@
 								</FlexBox>
 								<FlexBox width="100%" direction="Column" alignItems="Center">
 									<items>
-										<Button class="bt" width="10%" icon="sap-icon://activity-individual">
+										<Button class="bt" press="navToReports" width="10%" icon="sap-icon://validate">
 											<layoutData>
 												<FlexItemData growFactor="0" order="1"/>
 											</layoutData>

@@ -64,6 +64,20 @@
 				"settings": {
 					"bundleName": "com.itcActivitybook.i18n.i18n"
 				}
+			},
+			"Data": {
+				"type": "sap.ui.model.json.JSONModel",
+				"uri": "model/Data.json"
+			},
+			
+				"jsonData":{
+				"type": "sap.ui.model.json.JSONModel",
+				"uri": "model/newdata.json"
+			},
+			
+				"json":{
+				"type": "sap.ui.model.json.JSONModel",
+				"uri": "model/tabledata.json"
 			}
 		},
 
@@ -90,14 +104,26 @@
 				"name": "activies",
 				"target": "activies"
 			}, {
-				"pattern": "employees/{employeeId}",
-				"name": "employee",
-				"target": "employee"
+				"pattern": "activityDetail",
+				"name": "activityDetail",
+				"target": "activityDetail"
 			}, {
-				"pattern": "employees/{employeeId}/resume",
-				"name": "employeeResume",
-				"target": "employeeResume"
-			}],
+				"pattern": "reports",
+				"name": "reports",
+				"target": "reports"
+			},
+			{
+				"pattern": "activityBook",
+				"name": "booklist",
+				"target": "booklist"
+			}
+			
+			
+			
+			
+			
+			
+			],
 			"targets": {
 				"home": {
 					"viewId": "home",
@@ -118,18 +144,26 @@
 					"viewLevel": 2
 
 				},
-				"employee": {
+				"activityDetail": {
 					"viewId": "employee",
-					"viewName": "employee.Employee",
-					"viewLevel": 3
+					"viewName": "Activitydetails",
+					"viewLevel": 2
 				},
 
-				"employeeResume": {
-					"viewId": "resume",
-					"viewName": "employee.Resume",
-					"viewLevel": 4,
-					"transition": "flip"
+				"reports": {
+					"viewId": "reports",
+					"viewName": "reports",
+					"viewLevel": 2
+				
+				},
+					"booklist": {
+					"viewId": "activitylist",
+					"viewName": "activitybooklist",
+					"viewLevel": 2
+				
 				}
+				
+				
 			}
 		},
 		"resources": {

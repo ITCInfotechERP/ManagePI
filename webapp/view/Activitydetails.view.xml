@@ -1,0 +1,426 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns:m="sap.m" xmlns:html="http://www.w3.org/1999/xhtml" xmlns="sap.uxap" xmlns:layout="sap.ui.layout" xmlns:f="sap.ui.layout.form" controllerName="com.itcActivitybook.controller.Activitydetails"><m:Page class="page sapUiContentPadding">
+            	
+		<m:customHeader>
+		<m:Bar>
+		<m:contentLeft>
+			<m:Button icon="sap-icon://home" tooltip="Home" press="homeButton"/>
+		</m:contentLeft>
+		<m:contentMiddle>
+		<m:Title text="Activity Book" level="H3"/>	
+		</m:contentMiddle>
+		
+		
+		<m:contentRight>
+			<m:Button icon="sap-icon://bell" tooltip="Notification"/>
+					<m:Text text="Parag"/>
+					<m:Button text="Logout"/>
+	
+		</m:contentRight>		
+		</m:Bar>
+			<!--<m:Toolbar>-->
+			<!--	<m:Button  text="Home" type="Accept" press="homeButton" />-->
+			<!--	<m:ToolbarSpacer/>-->
+			<!--	<m:Title text="Activity Book" level="H3"/>-->
+			<!--	<m:ToolbarSpacer/>-->
+			<!--	<m:Button icon="sap-icon://bell" tooltip="Notification"/>-->
+			<!--		<m:Text text="Parag"/>-->
+			<!--		<m:Button text="Logout"/>-->
+			<!--</m:Toolbar>-->
+	
+		</m:customHeader>
+		
+	
+	<m:content>
+			
+		
+		
+		
+		
+		<ObjectPageLayout id="ObjectPageLayout" enableLazyLoading="false" showTitleInHeaderContent="true">
+		<headerTitle>
+	
+			<ObjectPageHeader objectImageURI="https://nulm.gov.in/images/user.png" objectImageShape="Circle">
+				<actions>
+			<m:Button text="Edit" class="editButton"/>
+				
+				</actions>
+					<breadCrumbsLinks>
+					<m:Link class="link" text="Book Number"/>
+				</breadCrumbsLinks>
+			</ObjectPageHeader>
+		</headerTitle>
+
+		<headerContent>
+		<layout:VerticalLayout>
+						<m:ObjectStatus class="name" title="Personnel Area" text="Area 1"/>
+						<m:ObjectStatus class="subarea" title="Personnel Sub-Area" text="Area 1A"/>
+						<m:ObjectStatus class="location" title="Location" text="Bangalore"/>
+					</layout:VerticalLayout>
+			
+		<layout:VerticalLayout>
+						<m:ObjectStatus class="date" title="Date" text="11/10/2018"/>
+						<m:ObjectStatus class="area" title="Area ID" text="A-ID3453"/>
+						<m:ObjectStatus class="status" title="Status" text="New"/>
+					</layout:VerticalLayout>
+					<layout:VerticalLayout>
+						<m:ObjectStatus class="foreman" text="Area Foreman"/>
+						<layout:HorizontalLayout>
+							<m:Image class="img1" src="https://nulm.gov.in/images/user.png" densityAware="true"/>
+							<layout:VerticalLayout>
+								<m:ObjectStatus class="michael" text="Michael Adams"/>
+								<m:ObjectStatus class="id2" text="ID234567"/>
+							</layout:VerticalLayout>
+						</layout:HorizontalLayout>
+					</layout:VerticalLayout>
+					<layout:VerticalLayout>
+						<m:ObjectStatus class="engineer" text="Site Engineer"/>
+						<layout:HorizontalLayout>
+							<m:Image class="img1" src="https://nulm.gov.in/images/user.png" densityAware="true"/>
+							<layout:VerticalLayout>
+								<m:ObjectStatus class="john" text="John Doe"/>
+								<m:ObjectStatus class="id9" text="ID95637"/>
+							</layout:VerticalLayout>
+						</layout:HorizontalLayout>
+					</layout:VerticalLayout>
+		</headerContent>
+
+		<sections>
+			<ObjectPageSection title="2014 Goals Plan">
+				<subSections>
+					<ObjectPageSubSection id="paymentSubSection" title="hkjahdkjhdj ">
+						<blocks>
+					
+					
+					
+					
+					
+						
+						<m:SplitApp id="SplitAppDemo" initialDetail="detail" initialMaster="master" orientationChange="onOrientationChange">
+		<m:detailPages>
+		
+			<m:Page id="detail" title="Activity Detail" class="sapUiStdPage">
+												<m:content>
+													<m:FlexBox width="51%" class="detailflexbox" direction="Column" alignItems="Center">
+														<m:items>
+															<m:Text class="detailtext" text="No activity exists for this record">
+																<m:layoutData>
+																	<m:FlexItemData growFactor="0" order="1"/>
+																</m:layoutData>
+															</m:Text>
+															<m:Button class="detailbutton" width="10%" icon="sap-icon://create-form" press="onPressNavToDetail">
+																<m:layoutData>
+																	<m:FlexItemData growFactor="0" order="1"/>
+																</m:layoutData>
+															</m:Button>
+															<m:Text class="detailtext1" text="Create an activity">
+																<m:layoutData>
+																	<m:FlexItemData growFactor="0" order="1"/>
+																</m:layoutData>
+															</m:Text>
+														</m:items>
+													</m:FlexBox>
+												</m:content>
+												<m:footer>
+													<m:Toolbar>
+														<m:ToolbarSpacer/>
+														<m:Button id="cancelOne" visible="true" text="Cancel" press="onNavBack"/>
+														<m:Button id="saveButton" visible="false" type="Emphasized" text="Save" press="navToActivitydetails"/>
+														<m:Button id="cancelTwo" visible="false" text="Cancel" press="onPressDetailBack"/>
+													</m:Toolbar>
+												</m:footer>
+												</m:Page>
+												</m:detailPages>
+													<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Add Activity View  (ID - "detailDetail") ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+												<m:detailPages>
+											<m:Page id="detailDetail" title="Detail Detail" class="sapUiStdPage" showNavButton="true" navButtonPress="onPressDetailBack">
+												<m:content>
+													<!--<m:VBox>-->
+													<f:SimpleForm class="form" title="Add Activity" id="SimpleFormDisplay480_12120" columnsM="2" columnsL="2" emptySpanM="0" emptySpanL="0" adjustLabelSpan="false" labelSpanM="12" labelSpanL="4" layout="ResponsiveGridLayout" editable="false" width="90%">
+														<f:content>
+															<core:Title/>
+															<m:Label text="Discipline"/>
+															<m:Input value="Discipline ID"/>
+															<m:Label text="Group"/>
+															<m:Input value="Group ID"/>
+															<m:Label text="Code"/>
+															<m:Input value="Code ID"/>
+															<m:Label text="Hours"/>
+															<m:Input value="2"/>
+															<core:Title/>
+															<m:Label text="Description"/>
+															<m:Input value="Discipline Description"/>
+															<m:Label text="Description"/>
+															<m:Input value="Group Description"/>
+															<m:Label text="Description"/>
+															<m:Input value="Code Description"/>
+															<m:Label text="Quantity"/>
+															<m:Input width="80%" value="12"/>
+															<m:Input width="60%" class="label" value="UoM"/>
+														</f:content>
+													</f:SimpleForm>
+													<!--</m:VBox>-->
+												</m:content>
+												<m:footer>
+													<m:Toolbar>
+														<m:ToolbarSpacer/>
+														<m:Button id="saveButton1" visible="true" type="Emphasized" text="Save" press="navToNextPage"/>
+														<m:Button id="cancelTwo1" visible="true" text="Cancel" press="onPressDetailBack"/>
+														<m:Button id="cancelOne1" visible="false" text="Cancel" press="onNavBack"/>
+													</m:Toolbar>
+												</m:footer>
+												
+												
+													</m:Page>
+												</m:detailPages>
+												<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~  Activity Detail View (ID  "detail2") ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+											<m:detailPages>
+											<m:Page id="detail2" title="Activity Detail" class="sapUiStdPage" showNavButton="true" navButtonText="Back" navButtonPress="onPressDetailBack">
+												<m:content>
+													<m:Panel width="auto" class="sapUiResponsiveMargin" accessibleRole="Region">
+														<m:headerToolbar>
+															<m:Toolbar height="3rem">
+																<m:Title text="View Activity"/>
+																<m:ToolbarSpacer/>
+																<m:Button visible="true" icon="sap-icon://create" type="Emphasized" tooltip="Press to Create a New Activity" press="incentivesView"/>
+																<m:Button visible="true" icon="sap-icon://edit" press="backToAddActivityView"/>
+																<m:Button visible="true" icon="sap-icon://delete"/>
+															</m:Toolbar>
+														</m:headerToolbar>
+														<m:content>
+															<m:VBox class="sapUiSmallMargin">
+																<f:SimpleForm id="SimpleFormDisplay354" editable="false" layout="ResponsiveGridLayout" title="{DialogModel>/ActivitySelected/0/Activity}" labelSpanXL="3" labelSpanL="3" labelSpanM="3" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="4" emptySpanL="4" emptySpanM="4" emptySpanS="0" columnsXL="1" columnsL="1" columnsM="1" singleContainerFullSize="false">
+																	<f:content>
+																		<m:Label text="Discipline" class="fname"/>
+																		<m:Text id="nameText" text="{DialogModel>/ActivitySelected/0/Discipline ID}"/>
+																		<m:Label text="Group" class="fname"/>
+																		<m:Text text="{DialogModel>/ActivitySelected/0/GroupID}"/>
+																		<m:Label text="Code" class="fname"/>
+																		<m:Text text="{DialogModel>/ActivitySelected/0/CodeID}"/>
+																		<m:Label text="Hours" class="fname"/>
+																		<m:Text id="countryText" text="{DialogModel>/ActivitySelected/0/Hours}"/>
+																		<m:Label text="Quantity" class="fname"/>
+																		<m:Text id="countryText1" text="{DialogModel>/ActivitySelected/0/Quantity}"/>
+																	</f:content>
+																</f:SimpleForm>
+															</m:VBox>
+														</m:content>
+													</m:Panel>
+												</m:content>
+												<m:footer>
+													<m:Toolbar>
+														<m:ToolbarSpacer/>
+														<m:Button visible="true" text="Submit"/>
+														<m:Button visible="true" text="Save"/>
+														<m:Button visible="true" text="Cancel" press="onPressDetailBack"/>
+													</m:Toolbar>
+												</m:footer>
+											</m:Page>
+											<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  Incentives View (ID "detail3") ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+											<m:Page id="detail3" title="Incentives" class="sapUiStdPage">
+												<m:content>
+													<m:Panel width="auto" class="sapUiResponsiveMargin" accessibleRole="Region">
+														<m:headerToolbar>
+															<m:Toolbar height="6rem" class="toolBar">
+																<m:Title text="Employee Details"/>
+																<m:ToolbarSpacer/>
+																<m:Button visible="true" type="Emphasized" icon="sap-icon://employee-approvals" press="activityBook5"/>
+															</m:Toolbar>
+														</m:headerToolbar>
+													</m:Panel>
+													<m:VBox class="sapUiSmallMargin">
+														<f:SimpleForm id="SimpleFormDisplay4" editable="false" layout="ResponsiveGridLayout" labelSpanXL="3" labelSpanL="3" labelSpanM="3" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="4" emptySpanL="4" emptySpanM="4" emptySpanS="0" columnsXL="1" columnsL="1" columnsM="1" singleContainerFullSize="false">
+															<f:content>
+																<m:Label text="Employee ID"/>
+																<m:Input value="E123445"/>
+																<m:Label text="Name"/>
+																<m:Input value="John Doe" enabled="false"/>
+																<m:Label text="Payroll Type"/>
+																<m:Input value="Payroll Type"/>
+																<m:Label text="Should be PI"/>
+																<m:Input value="2"/>
+																<m:Label text="PI by CH"/>
+																<m:Input value="3"/>
+															</f:content>
+														</f:SimpleForm>
+													</m:VBox>
+												</m:content>
+												<m:footer>
+													<m:Toolbar>
+														<m:ToolbarSpacer/>
+														<m:Button visible="true" text="Submit"/>
+														<m:Button visible="true" text="Save"/>
+														<m:Button visible="true" text="Cancel" press="backToActivityDetail"/>
+													</m:Toolbar>
+												</m:footer>
+											</m:Page>
+											<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  Incentives View (ID "detail4") ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+											<m:Page id="detail4" title="Incentives" class="sapUiStdPage">
+												<m:content>
+													<m:Panel width="auto" class="sapUiResponsiveMargin" accessibleRole="Region">
+														<m:headerToolbar>
+															<m:Toolbar height="6rem" class="toolBar">
+																<m:Title text="Employee Details"/>
+																<m:ToolbarSpacer/>
+																<m:Button visible="true" enabled="false" icon="sap-icon://employee-approvals" press="incentivesVie"/>
+															</m:Toolbar>
+														</m:headerToolbar>
+													</m:Panel>
+													<m:VBox class="sapUiSmallMargin">
+														<f:SimpleForm id="SimpleFormDisplay" editable="false" layout="ResponsiveGridLayout" labelSpanXL="3" labelSpanL="3" labelSpanM="3" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="4" emptySpanL="4" emptySpanM="4" emptySpanS="0" columnsXL="1" columnsL="1" columnsM="1" singleContainerFullSize="false">
+															<f:content>
+																<m:Label text="Employee ID"/>
+																<m:Input value="E123445" enabled="false"/>
+																<m:Label text="Name"/>
+																<m:Input value="John Doe" enabled="false"/>
+																<m:Label text="Payroll Type"/>
+																<m:Input value="Payroll Type" enabled="false"/>
+																<m:Label text="Should be PI"/>
+																<m:Input value="2" enabled="false"/>
+																<m:Label text="PI by CH"/>
+																<m:Input value="3" enabled="false"/>
+															</f:content>
+														</f:SimpleForm>
+													</m:VBox>
+												</m:content>
+												<m:footer>
+													<m:Toolbar>
+														<m:ToolbarSpacer/>
+														<m:Button visible="true" text="Submit"/>
+														<m:Button visible="true" text="Save" type="Emphasized" press="activityBook6"/>
+														<m:Button visible="true" text="Cancel" press="backToActivityDetail"/>
+													</m:Toolbar>
+												</m:footer>
+											</m:Page>
+											<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  Incentives View (ID "detail5") ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+											<m:Page id="detail5" title="Incentives" class="sapUiStdPage">
+												<m:content>
+													<m:Table id="idProductsTable" alternateRowColors="true" mode="SingleSelectLeft" inset="false" items="{ path: '/Employees', sorter: { path: 'Name' } }">
+														<m:columns>
+															<m:Column width="12em">
+																<m:Text text="Employee ID"/>
+															</m:Column>
+															<m:Column minScreenWidth="Tablet" demandPopin="true">
+																<m:Text text="Name"/>
+															</m:Column>
+															<m:Column minScreenWidth="Desktop" demandPopin="true" hAlign="End">
+																<m:Text text="Payroll Type"/>
+															</m:Column>
+															<m:Column minScreenWidth="Desktop" demandPopin="true" hAlign="Center">
+																<m:Text text="Should be PI"/>
+															</m:Column>
+															<m:Column hAlign="End">
+																<m:Text text="PI By CH"/>
+															</m:Column>
+														</m:columns>
+														<m:items>
+															<m:ColumnListItem>
+																<m:cells>
+																	<m:ObjectIdentifier title="{EmployeeID}"/>
+																	<m:Text text="{Name}"/>
+																	<m:Text text="{Payroll Type}"/>
+																	<m:ObjectNumber number="{Should be PI}"/>
+																	<m:ObjectNumber number="{PI By CH}"/>
+																</m:cells>
+															</m:ColumnListItem>
+														</m:items>
+													</m:Table>
+												</m:content>
+												<m:footer>
+													<m:Toolbar>
+														<m:ToolbarSpacer/>
+														<m:Button visible="true" type="Emphasized" text="Submit" press="onEscapePreventDialog"/>
+														<m:Button visible="true" text="Edit" type="Emphasized" press="backToAddActivityView"/>
+														<m:Button visible="true" text="Save"/>
+														<m:Button visible="true" text="Cancel" press="backToActivityDetail"/>
+													</m:Toolbar>
+												</m:footer>
+											</m:Page>
+										</m:detailPages>
+		
+		
+		
+		<m:masterPages>
+				<m:Page id="master" title="Activity List" class="sapUiStdPage">
+												<m:content>
+													<m:List>
+														<m:items/>
+													</m:List>
+												</m:content>
+												<m:footer>
+													<m:Toolbar>
+														<m:ToolbarSpacer/>
+														<m:Button id="saveButton2" visible="false" type="Emphasized" text="Save" press="navToActivitydetails"/>
+														<m:Button id="cancelTwo2" visible="false" text="Cancel" press="onPressDetailBack"/>
+														<m:Button id="cancelOne2" visible="false" text="Cancel" press="onNavBack"/>
+													</m:Toolbar>
+												</m:footer>
+											</m:Page>
+											
+		
+		</m:masterPages>
+		
+												<m:masterPages>
+											<m:Page id="master2" title="Activity List" class="sapUiStdPage">
+												<m:content>
+													<m:List id="List1" mode="SingleSelectMaster" selectionChange="showDetails" items="{ path : '/Employees'}">
+														<m:items>
+															<m:ObjectListItem title="{Activity}" number="{PSID}" type="Navigation" intro="{GroupID}"/>
+														</m:items>
+													</m:List>
+												</m:content>
+												<m:footer>
+													<m:Toolbar>
+														<m:ToolbarSpacer/>
+														<m:Button visible="false" type="Emphasized" text="Save" press="navToActivitydetails"/>
+														<m:Button visible="false" text="Cancel" press="onPressDetailBack"/>
+														<m:Button visible="true" icon="sap-icon://add-activity" press="backToAddActivityView"/>
+													</m:Toolbar>
+												</m:footer>
+											</m:Page>
+										</m:masterPages>
+	</m:SplitApp>	
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						</blocks>
+					</ObjectPageSubSection>
+				</subSections>
+			</ObjectPageSection>
+		</sections>
+	</ObjectPageLayout>
+		
+		
+		
+		
+		
+		
+	</m:content>
+	
+	
+	
+	
+	</m:Page>
+	
+</mvc:View>
