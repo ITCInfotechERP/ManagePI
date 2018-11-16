@@ -57,7 +57,7 @@ sap.ui.define([
 		
 		navToNextPage: function(oEvent){
 		this.getSplitAppObj().to(this.createId("detail2"));
-			this.getSplitAppObj().toMaster(this.createId("master2"));
+		this.getSplitAppObj().toMaster(this.createId("master2"));
 		},
 		
 		
