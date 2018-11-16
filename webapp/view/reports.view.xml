@@ -3,7 +3,7 @@
 	xmlns:viz.feeds="sap.viz.ui5.controls.common.feeds">
 	<App>
 		<pages>
-			<Page>
+			<Page class="sapUiContentPadding">
 				<customHeader>
 					<Bar class="headerToolBarBackground">
 						<contentLeft>

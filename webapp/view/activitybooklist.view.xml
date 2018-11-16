@@ -21,7 +21,7 @@
 			<SplitContainer>
 				<masterPages>
 					<semantic:MasterPage class="activityMasterPageColor" title="Activity Book List">
-						<SearchField width="100%" search="onFilterProducts"/>
+						<SearchField width="100%" search="onFilterProducts" />
 						<List id="List1" mode="SingleSelectMaster" selectionChange="showDetails" items="{ path : '/Employees'}">
 							<items>
 								<ObjectListItem title="{Book}" number="{PSID}" intro="{GroupID}"></ObjectListItem>
@@ -68,10 +68,10 @@
 									<IconTabSeparator/>
 									<IconTabFilter icon="sap-icon://manager" count="" text="Project Details" key="Project Details" tooltip="Project Details">
 										<content>
-											<f:SimpleForm id="SimpleFormDisplay" editable="false" layout="ResponsiveGridLayout" title="" labelSpanXL="3" labelSpanL="3" labelSpanM="3"
+											<!--<f:SimpleForm id="SimpleFormDisplay" editable="false" layout="ResponsiveGridLayout" title="" labelSpanXL="3" labelSpanL="3" labelSpanM="3"
 												labelSpanS="12" adjustLabelSpan="false" emptySpanXL="4" emptySpanL="4" emptySpanM="4" emptySpanS="0" columnsXL="1" columnsL="1" columnsM="1"
 												singleContainerFullSize="false">
-												<f:content>
+												<f:content>-->
 													<Table id="idProductsTable" alternateRowColors="true" mode="SingleSelectLeft" inset="false"
 														items="{ path: '/Employees', sorter: { path: 'Name' } }">
 														<columns>
@@ -103,8 +103,8 @@
 															</ColumnListItem>
 														</items>
 													</Table>
-												</f:content>
-											</f:SimpleForm>
+<!--												</f:content>
+											</f:SimpleForm>-->
 										</content>
 									</IconTabFilter>
 								</items>

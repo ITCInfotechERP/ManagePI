@@ -30,27 +30,26 @@
 					</ObjectPageHeader>
 				</headerTitle>
 				<headerContent objectImageURI="https://nulm.gov.in/images/user.png" objectImageShape="Circle">
-					<layout:VerticalLayout width="20%">
+					<layout:VerticalLayout width="300px">
 						<!--<m:ObjectStatus class="nameText" text="Parag" active="true"/>
 	-->
-						<m:ObjectStatus class="objectText" text="http://www.alturki.com" active="true"/>
-						<!--<m:ObjectStatus title="Language" text="English"/>-->
-						<m:ObjectStatus class="objectTextA" text="Bangalore City, IN"/>
+						<m:ObjectStatus class="objectText" title="Role Classification" text="Charge Hand"/>
+						<m:ObjectStatus class="objectText" title="Status" text="Active"/>
 						<!--<m:ObjectStatus title="Phone Number" text="1-844-726-7733"/>-->
 					</layout:VerticalLayout>
-					<layout:VerticalLayout width="20%">
+					<layout:VerticalLayout width="300px">
 						<!--<layout:layoutData>-->
 						<!--	<ObjectPageHeaderLayoutData visibleS="false"/>-->
 						<!--</layout:layoutData>-->
-						<m:ObjectStatus class="objectText" title="Status" text="Active"/>
-						<!--<m:ObjectStatus title="Cost Center" text="PI DFA GD Programs and Product"/>-->
-						<m:ObjectStatus class="objectTextA" title="Industry" text="Manufacturing"/>
+						<!--<m:ObjectStatus title="Language" text="English"/>-->
+						<m:ObjectStatus class="objectText" title="Industry" text="Manufacturing"/>
+						<m:ObjectStatus class="objectText" text="Bangalore City, IN"/>
 						<!--<m:Token text="Visible on M and L size"/>-->
 					</layout:VerticalLayout>
-					<layout:VerticalLayout>
-						<m:ObjectStatus class="objectText" title="Role Classification" text="Charge Hand"/>
+					<layout:VerticalLayout width="300px">
 						<!--<m:RatingIndicator maxValue="6" class="sapUiSmallMarginBottom" value="5" tooltip="Rating Tooltip"/>-->
 						<!--<m:Token text="Visible on L size"/>-->
+						<m:ObjectStatus class="objectText" text="http://www.alturki.com" active="true"/>
 					</layout:VerticalLayout>
 				</headerContent>
 				<sections>

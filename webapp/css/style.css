@@ -101,7 +101,7 @@
 
 .objectText {
     font-family: 'Segoe UI';
-    margin-top: 30px;
+   /* margin-top: 30px;*/
 }
 
 .objectText2 {
@@ -116,10 +116,10 @@
     margin-left: 40px;
 }
 
-.objectTextA {
+/*.objectTextA {
     font-family: 'Segoe UI';
     margin-top: 10px;
-}
+}*/
 
 html.sapUiMedia-Std-Tablet .sapUxAPObjectPageHeaderContent .sapUxAPObjectPageHeaderObjectImage-Circle .sapUxAPObjectPageHeaderObjectImage {
     border-width: 0.188rem;
