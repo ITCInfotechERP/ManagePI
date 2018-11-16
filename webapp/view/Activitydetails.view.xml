@@ -20,8 +20,8 @@
 			<ObjectPageLayout id="ObjectPageLayout" enableLazyLoading="false" showTitleInHeaderContent="false" showHeaderContent="true"
 				useIconTabBar="true">
 				<headerTitle>
-					<ObjectPageHeader objectImageURI="https://nulm.gov.in/images/user.png" objectImageShape="Circle" objectImageAlt="Book Number" id="ObjectPageLayoutHeaderTitle" isObjectIconAlwaysVisible="true" isObjectTitleAlwaysVisible="true"
-						showPlaceholder="true">
+					<ObjectPageHeader objectImageURI="https://nulm.gov.in/images/user.png" objectImageShape="Circle" objectImageAlt="Book Number"
+						id="ObjectPageLayoutHeaderTitle" isObjectIconAlwaysVisible="true" isObjectTitleAlwaysVisible="true" showPlaceholder="true">
 						<actions>
 							<m:Button text="Edit" class="editButton"/>
 						</actions>
@@ -103,10 +103,10 @@
 										<!--</m:detailPages>-->
 										<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Add Activity View  (ID - "detailDetail") ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 										<m:detailPages>
-											<m:Page id="detailDetail" title="Detail Detail" class="sapUiStdPage" showNavButton="true" navButtonPress="onPressDetailBack">
+											<m:Page id="detailDetail" title="Add Activity" class="sapUiStdPage sapUiContentPadding">
 												<m:content>
 													<!--<m:VBox>-->
-													<f:SimpleForm class="form" title="Add Activity" id="SimpleFormDisplay480_12120" columnsM="2" columnsL="2" emptySpanM="0" emptySpanL="0"
+													<f:SimpleForm class="form"  id="SimpleFormDisplay480_12120" columnsM="2" columnsL="2" emptySpanM="0" emptySpanL="0"
 														adjustLabelSpan="false" labelSpanM="12" labelSpanL="4" layout="ResponsiveGridLayout" editable="false" width="100%">
 														<f:content>
 															<core:Title/>
@@ -315,7 +315,22 @@
 											</m:Page>
 										</m:detailPages>
 										<m:masterPages>
-											<m:Page id="master" title="Activity List" class="sapUiStdPage">
+											<m:Page  id="master">
+												
+												<m:customHeader>
+													<m:Bar>
+														<m:contentLeft>
+															
+														</m:contentLeft>
+														<m:contentMiddle>
+															<m:Title text="Activity List" level="H3"/>
+														</m:contentMiddle>
+														<m:contentRight>
+															<m:Button icon="sap-icon://add" tooltip="Add Activity" press="onPressNavToDetail"/>
+															
+														</m:contentRight>
+													</m:Bar>
+												</m:customHeader>
 												<m:content>
 													<m:List>
 														<m:items/>
@@ -332,7 +347,19 @@
 											</m:Page>
 										</m:masterPages>
 										<m:masterPages>
-											<m:Page id="master2" title="Activity List" class="sapUiStdPage">
+											<m:Page id="master2">
+												<m:customHeader>
+													<m:Bar>
+														
+														<m:contentMiddle>
+															<m:Title text="Activity List" level="H3"/>
+														</m:contentMiddle>
+														<m:contentRight>
+															<m:Button icon="sap-icon://add" tooltip="Add Activity" press="onPressNavToDetail"/>
+															
+														</m:contentRight>
+													</m:Bar>
+												</m:customHeader>
 												<m:content>
 													<m:List id="List1" mode="SingleSelectMaster" selectionChange="showDetails" items="{ path : '/Employees'}">
 														<m:items>

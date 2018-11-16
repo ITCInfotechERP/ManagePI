@@ -125,7 +125,7 @@
 							<Button text="Submit" press="onPress"/>
 							<Button text="Save" press="onPress"/>
 							<Button text="Cancel" press="onNavBack"/>
-							<Button icon="sap-icon://email" tooltip="Send Email" press="onPress"/>
+							<Button icon="sap-icon://email" tooltip="Send Email" press="onShareEmailPress"/>
 						</semantic:customFooterContent>
 					</semantic:DetailPage>
 				</detailPages>

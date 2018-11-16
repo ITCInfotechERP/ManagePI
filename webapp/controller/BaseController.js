@@ -25,6 +25,20 @@ sap.ui.define([
 				} else {
 					this.getRouter().navTo("first", {}, true /*no history*/ );
 				}
+			},
+			
+			/* OnClick Email Button */
+			
+			onShareEmailPress : function(){
+			// var oViewModel = this.getModel("detailView");
+
+			sap.m.URLHelper.triggerEmail(
+				null,
+			"Email Subject",
+			"Email Body"
+			); 
+ 
+
 			}
 
 		});
