@@ -74,21 +74,32 @@
 												<f:content>-->
 													<Table id="idProductsTable" alternateRowColors="true" mode="SingleSelectLeft" inset="false"
 														items="{ path: '/Employees', sorter: { path: 'Name' } }">
+														
+														<headerToolbar>
+														<Toolbar>
+															<ToolbarSpacer/>
+															<SearchField width= "50%"/>
+															<Button icon="sap-icon://add" press="navToActivitydetails" />
+														</Toolbar>	
+															
+															
+														</headerToolbar>
+														
 														<columns>
 															<Column width="13em">
-																<Text text="Employee ID"/>
+																<Text text="Discipline ID"/>
 															</Column>
 															<Column minScreenWidth="Tablet" demandPopin="true">
-																<Text text="Name"/>
+																<Text text="Group ID"/>
 															</Column>
 															<Column minScreenWidth="Desktop" demandPopin="true" hAlign="End">
-																<Text text="Payroll Type"/>
+																<Text text="Code ID"/>
 															</Column>
 															<Column minScreenWidth="Desktop" demandPopin="true" hAlign="Center">
-																<Text text="Should be PI"/>
+																<Text text="Hours"/>
 															</Column>
 															<Column hAlign="End">
-																<Text text="PI By CH"/>
+																<Text text="Quantity"/>
 															</Column>
 														</columns>
 														<items>

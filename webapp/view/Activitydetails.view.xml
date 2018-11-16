@@ -193,7 +193,7 @@
 												<m:content>
 													<m:Panel width="auto" class="sapUiResponsiveMargin" accessibleRole="Region">
 														<m:headerToolbar>
-															<m:Toolbar height="6rem" class="toolBar">
+															<m:Toolbar>
 																<m:Title text="Employee Details"/>
 																<m:ToolbarSpacer/>
 																<m:Button visible="true" type="Emphasized" icon="sap-icon://employee-approvals" press="activityBook5"/>
@@ -233,7 +233,7 @@
 												<m:content>
 													<m:Panel width="auto" class="sapUiResponsiveMargin" accessibleRole="Region">
 														<m:headerToolbar>
-															<m:Toolbar height="6rem" class="toolBar">
+															<m:Toolbar>
 																<m:Title text="Employee Details"/>
 																<m:ToolbarSpacer/>
 																<m:Button visible="true" enabled="false" icon="sap-icon://employee-approvals" press="incentivesVie"/>
