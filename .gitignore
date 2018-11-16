@@ -6,3 +6,7 @@
 
 /.user.project.json
 >>>>>>> bd69fe8 View Added
+
+/mobile/hybrid/logon.js
+/mobile/hybrid/pulltorefresh.min.js
+/mobile/hybrid/sap-mobile-hybrid.js
