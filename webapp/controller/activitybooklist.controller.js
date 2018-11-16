@@ -15,6 +15,10 @@ sap.ui.define([
     	navToDailyActivity: function(oEvent) {
 			this.getRouter().navTo("activies");
 		},
+		
+		navToActivitydetails: function(oEvent){
+		  this.getRouter().navTo("activityDetail");	
+		},
 
 		// <! ~~~~~~~~~~~~~~~~~~~~~Show data to detail View, on click of listItems ~~~~~~~~~~~~~~~~>
 		showDetails: function(oEvent) {
