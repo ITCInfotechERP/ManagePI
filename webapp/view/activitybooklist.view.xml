@@ -21,7 +21,7 @@
 			<SplitContainer>
 				<masterPages>
 					<semantic:MasterPage class="activityMasterPageColor" title="Activity Book List">
-						<SearchField width="100%" search="onFilterProducts"/>
+						<SearchField width="100%" search="onFilterProducts" />
 						<List id="List1" mode="SingleSelectMaster" selectionChange="showDetails" items="{ path : '/Employees'}">
 							<items>
 								<ObjectListItem title="{Book}" number="{PSID}" intro="{GroupID}"></ObjectListItem>
