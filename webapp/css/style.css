@@ -210,10 +210,10 @@ html.sapUiMedia-Std-Desktop .sapUxAPObjectPageHeaderContent .sapUxAPObjectPageHe
     color: #999999;
 }*/
 
-.form {
+/*.form {
     margin-left: 40px;
     
-}
+}*/
 
 .sapUiFormTitle {
     border-bottom: none;
@@ -221,9 +221,12 @@ html.sapUiMedia-Std-Desktop .sapUxAPObjectPageHeaderContent .sapUxAPObjectPageHe
    
 }
 
+.sapUxAPBlockContainerTablet {
+    padding: 1rem 1rem 0rem 1rem;
+}
 
 
-.date {
+/*.date {
     margin-top: 25px;
     margin-left: 70px;
 }
@@ -234,7 +237,7 @@ html.sapUiMedia-Std-Desktop .sapUxAPObjectPageHeaderContent .sapUxAPObjectPageHe
 
 .status {
     margin-left: 70px;
-}
+}*/
 
 .img1 {
     border: 1px;
@@ -244,7 +247,7 @@ html.sapUiMedia-Std-Desktop .sapUxAPObjectPageHeaderContent .sapUxAPObjectPageHe
     margin-left: 30px;
 }
 
-.foreman {
+/*.foreman {
     margin-top: 22px;
     margin-left: 40px;
 }
@@ -268,7 +271,7 @@ html.sapUiMedia-Std-Desktop .sapUxAPObjectPageHeaderContent .sapUxAPObjectPageHe
 
 .id9 {
     margin-left: 0px;
-}
+}*/
 
 .sapMTB-Transparent-CTX.sapMTB.toolBar {
     padding-top: 3.75rem;

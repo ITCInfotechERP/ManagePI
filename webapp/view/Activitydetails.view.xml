@@ -17,9 +17,11 @@
 			</m:Bar>
 		</m:customHeader>
 		<m:content>
-			<ObjectPageLayout id="ObjectPageLayout" enableLazyLoading="false" showTitleInHeaderContent="true">
+			<ObjectPageLayout id="ObjectPageLayout" enableLazyLoading="false" showTitleInHeaderContent="false" showHeaderContent="true"
+				useIconTabBar="true">
 				<headerTitle>
-					<ObjectPageHeader objectImageURI="https://nulm.gov.in/images/user.png" objectImageShape="Circle">
+					<ObjectPageHeader objectImageURI="https://nulm.gov.in/images/user.png" objectImageShape="Circle" objectImageAlt="Book Number" id="ObjectPageLayoutHeaderTitle" isObjectIconAlwaysVisible="true" isObjectTitleAlwaysVisible="true"
+						showPlaceholder="true">
 						<actions>
 							<m:Button text="Edit" class="editButton"/>
 						</actions>
@@ -29,17 +31,17 @@
 					</ObjectPageHeader>
 				</headerTitle>
 				<headerContent>
-					<layout:VerticalLayout>
+					<layout:VerticalLayout width="300px">
 						<m:ObjectStatus class="name" title="Personnel Area" text="Area 1"/>
 						<m:ObjectStatus class="subarea" title="Personnel Sub-Area" text="Area 1A"/>
 						<m:ObjectStatus class="location" title="Location" text="Bangalore"/>
 					</layout:VerticalLayout>
-					<layout:VerticalLayout>
+					<layout:VerticalLayout width="250px">
 						<m:ObjectStatus class="date" title="Date" text="11/10/2018"/>
 						<m:ObjectStatus class="area" title="Area ID" text="A-ID3453"/>
 						<m:ObjectStatus class="status" title="Status" text="New"/>
 					</layout:VerticalLayout>
-					<layout:VerticalLayout>
+					<layout:VerticalLayout width="250px">
 						<m:ObjectStatus class="foreman" text="Area Foreman"/>
 						<layout:HorizontalLayout>
 							<m:Image class="img1" src="https://nulm.gov.in/images/user.png" densityAware="true"/>
@@ -49,7 +51,7 @@
 							</layout:VerticalLayout>
 						</layout:HorizontalLayout>
 					</layout:VerticalLayout>
-					<layout:VerticalLayout>
+					<layout:VerticalLayout width="200px">
 						<m:ObjectStatus class="engineer" text="Site Engineer"/>
 						<layout:HorizontalLayout>
 							<m:Image class="img1" src="https://nulm.gov.in/images/user.png" densityAware="true"/>
