@@ -81,6 +81,46 @@
 												<headerToolbar>
 													<Toolbar>
 														<ToolbarSpacer/>
+														<SearchField width="50%" search="onSearch"/>
+														<Button icon="sap-icon://add" press="navToActivitydetails"/>
+													</Toolbar>
+												</headerToolbar>
+												<columns>
+													<Column width="13em">
+														<Text text="Discipline ID"/>
+													</Column>
+													<Column minScreenWidth="Tablet" demandPopin="true">
+														<Text text="Group ID"/>
+													</Column>
+													<Column minScreenWidth="Desktop" demandPopin="true" hAlign="End">
+														<Text text="Code ID"/>
+													</Column>
+													<Column minScreenWidth="Desktop" demandPopin="true" hAlign="Center">
+														<Text text="Hours"/>
+													</Column>
+													<Column hAlign="End">
+														<Text text="Quantity"/>
+													</Column>
+												</columns>
+												<items>
+													<ColumnListItem>
+														<cells>
+															<ObjectIdentifier title="{EmployeeID}"/>
+															<Text text="{Name}"/>
+															<Text text="{Payroll Type}"/>
+															<ObjectNumber number="{Should be PI}"/>
+															<ObjectNumber number="{PI By CH}"/>
+														</cells>
+													</ColumnListItem>
+												</items>
+											</Table>
+											=======
+											<!--<f:SimpleForm id="SimpleFormDisplay" editable="false" layout="ResponsiveGridLayout" title="" labelSpanXL="3" labelSpanL="3" labelSpanM="3" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="4" emptySpanL="4" emptySpanM="4" emptySpanS="0" columnsXL="1" columnsL="1" columnsM="1" singleContainerFullSize="false"> <f:content>-->
+											<Table id="idProductsTable" alternateRowColors="true" mode="SingleSelectLeft" inset="false"
+												items="{ path: '/Employees', sorter: { path: 'Name' } }">
+												<headerToolbar>
+													<Toolbar>
+														<ToolbarSpacer/>
 														<SearchField width="50%"/>
 														<Button icon="sap-icon://add" press="navToActivitydetails"/>
 													</Toolbar>
@@ -114,6 +154,8 @@
 													</ColumnListItem>
 												</items>
 											</Table>
+											<!-- </f:content> </f:SimpleForm>-->
+											>>>>>>> 9be7d90 Anil: SearchBar Logic Applied
 										</content>
 									</IconTabFilter>
 								</items>
