@@ -20,7 +20,7 @@
 		<content>
 			<SplitContainer>
 				<masterPages>
-					<semantic:MasterPage class="activityMasterPageColor sapUiResponsiveContentPadding" title="Activity Book List">
+					<semantic:MasterPage width="auto" class="activityMasterPageColor sapUiResponsiveContentPadding" title="Activity Book List">
 						<SearchField width="auto" search="onFilterProducts" class="sapUiTinyMargin"/>
 						<List id="List1" mode="SingleSelectMaster" selectionChange="showDetails" items="{ path : '/Employees'}">
 							<items>
@@ -81,7 +81,7 @@
 												<headerToolbar>
 													<Toolbar>
 														<ToolbarSpacer/>
-														<SearchField width="50%"/>
+														<SearchField width="50%" search="onSearch"/>
 														<Button icon="sap-icon://add" press="navToActivitydetails"/>
 													</Toolbar>
 												</headerToolbar>
