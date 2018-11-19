@@ -43,7 +43,7 @@
 													<FlexItemData alignSelf="Center"/>
 												</layoutData>
 											</Button>
-											<Link text="About Al Turki" press="onATEPress" alignSelf="Center">
+											<Link text="About Al Turki" press="onATEPress">
 												<layoutData>
 													<FlexItemData alignSelf="Center"/>
 												</layoutData>
