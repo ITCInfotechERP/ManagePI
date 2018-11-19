@@ -38,16 +38,16 @@
 									<VBox>
 										<items>
 											<Text class="text" text=""/>
-											<Button class="firstButton" icon="sap-icon://message-information">
+											<Button icon="sap-icon://message-information" press="onATEPress">
 												<layoutData>
 													<FlexItemData alignSelf="Center"/>
 												</layoutData>
 											</Button>
-											<Text class="link" text="About Al Turki" alignSelf="Center">
+											<Link text="About Al Turki" press="onATEPress">
 												<layoutData>
 													<FlexItemData alignSelf="Center"/>
 												</layoutData>
-											</Text>
+											</Link>
 										</items>
 									</VBox>
 								</l:content>
