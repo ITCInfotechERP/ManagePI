@@ -1,5 +1,5 @@
 sap.ui.define([
-	"jQuery.sap.global",
+	"jquery.sap.global",
 	"com/itcActivitybook/controller/BaseController",
 	"sap/m/MessageToast",
 	"sap/ui/model/Filter"
@@ -33,6 +33,7 @@ sap.ui.define([
 			this.getView().getModel("DialogModel").setProperty("/ActivitySelected", oArray);
 		},
 		onFilterProducts: function (oEvent) {
+
 			var aFilters = [];
 			var sQuery = oEvent.getSource().getValue();
 			if (sQuery && sQuery.length > 0) {
@@ -43,6 +44,7 @@ sap.ui.define([
 			var binding = list.getBinding("items");
 			binding.filter(aFilters);
 		},
+
 		onSearch: function (oEvent) {
 			var aFilters = [];
 			var sQuery = oEvent.getSource().getValue();
