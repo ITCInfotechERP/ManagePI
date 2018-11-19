@@ -77,6 +77,7 @@ sap.ui.define([
    
 		// Navigate to Detail Page 3
 		
+		
 		ActivityBookDetailPage3: function() {
 			this.getSplitAppObj().to(this.createId("detail3"));
 			this.getSplitAppObj().toMaster(this.createId("master2"));
@@ -90,9 +91,33 @@ sap.ui.define([
 			this.getView().byId("saveButtonOne").setVisible(false);
 			this.getView().byId("cancelButtonTwo").setVisible(false);
 			this.getView().byId("cancelButtonOne").setVisible(false);
+			this.getView().byId("saveButtonThree").setVisible(false);
+		    this.getView().byId("cancelButtonFour").setVisible(false);
+		   	this.getView().byId("editButton").setVisible(false);
+		   	this.getView().byId("submitButtonTwo").setVisible(false);
+		},
+		
+		// Navigate to detail page three, click on edit button selected one row in the table
+		
+		ActivityBookDetailPage3Advance: function() {
+			this.getSplitAppObj().to(this.createId("detail3"));
+			this.getSplitAppObj().toMaster(this.createId("master2"));
 			
 			
+	    	this.getView().byId("submitButtonOne").setVisible(true);
+	     	this.getView().byId("saveButtonTwo").setVisible(true);
+		
 			
+			//Hide the Buttons which are not useful in this view
+			this.getView().byId("saveButtonOne").setVisible(false);
+			this.getView().byId("cancelButtonTwo").setVisible(false);
+			this.getView().byId("cancelButtonOne").setVisible(false);
+			this.getView().byId("saveButtonThree").setVisible(false);
+		    this.getView().byId("cancelButtonFour").setVisible(false);
+		   	this.getView().byId("editButton").setVisible(false);
+		   	this.getView().byId("submitButtonTwo").setVisible(false);
+		   	this.getView().byId("cancelButtonThree").setVisible(false);
+		   	this.getView().byId("cancelButtonFive").setVisible(false);
 			
 		},
 

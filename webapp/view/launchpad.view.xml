@@ -38,16 +38,16 @@
 									<VBox>
 										<items>
 											<Text class="text" text=""/>
-											<Button icon="sap-icon://message-information" press="onATEPress">
+											<Button class="firstButton" icon="sap-icon://message-information">
 												<layoutData>
 													<FlexItemData alignSelf="Center"/>
 												</layoutData>
 											</Button>
-											<Link text="About Al Turki" press="onATEPress">
+											<Text class="link" text="About Al Turki" alignSelf="Center">
 												<layoutData>
 													<FlexItemData alignSelf="Center"/>
 												</layoutData>
-											</Link>
+											</Text>
 										</items>
 									</VBox>
 								</l:content>
@@ -149,7 +149,8 @@
 											</Text>
 										</items>
 									</VBox>
-									<!--									</FlexBox>
+										
+<!--									</FlexBox>
 									<FlexBox width="70%" direction="Column" alignItems="Center">
 										
 									</FlexBox>

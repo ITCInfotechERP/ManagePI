@@ -154,7 +154,7 @@
 															<m:Toolbar height="3rem">
 																<m:Title text="View Activity"/>
 																<m:ToolbarSpacer/>
-																<m:Button visible="true" icon="sap-icon://create" type="Emphasized" tooltip="Press to Create a New Activity" press="ActivityBookDetailPage3"/>
+																<m:Button visible="true" icon="sap-icon://create" type="Emphasized" tooltip="Add Employee Incentives" press="ActivityBookDetailPage3"/>
 																<m:Button visible="true" icon="sap-icon://edit" press="backToAddActivityView"/>
 																<m:Button visible="true" icon="sap-icon://delete"/>
 															</m:Toolbar>
@@ -191,7 +191,7 @@
 												<!--</m:footer>-->
 											</m:Page>
 											<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  Incentives View (ID "detail3") ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-											<m:Page id="detail3" title="Incentives" class="sapUiStdPage">
+											<m:Page id="detail3" title="Employee Incentives" class="sapUiStdPage">
 												<m:content>
 													<m:Panel width="auto" class="sapUiResponsiveMargin" accessibleRole="Region">
 														<m:headerToolbar>
@@ -391,7 +391,7 @@
 													<m:Toolbar>
 														<m:ToolbarSpacer/>
 													<m:Button id="submitButtonTwo" visible="false" type="Emphasized" text="Submit" press="onEscapePreventDialog"/>
-													<m:Button id="editButton" visible="false" text="Edit" type="Emphasized" press="backToAddActivityView"/>
+													<m:Button id="editButton" visible="false" text="Edit" type="Emphasized" press="ActivityBookDetailPage3Advance"/>
 														<m:Button id="submitButtonOne" visible="false" text="Submit"/>
 														<m:Button id="saveButtonOne" visible="true" type="Emphasized" text="Save" press="navToActivityBookDetailPage2"/>
 														<m:Button id="saveButtonThree" visible="false" type="Emphasized" text="Save" press="activityBook6"/>
