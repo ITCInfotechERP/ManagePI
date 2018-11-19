@@ -20,8 +20,8 @@
 		<content>
 			<SplitContainer>
 				<masterPages>
-					<semantic:MasterPage width="auto" class="activityMasterPageColor sapUiResponsiveContentPadding" title="Activity Book List">
-						<SearchField width="auto" search="onFilterProducts" class="sapUiTinyMargin" />
+					<semantic:MasterPage class="activityMasterPageColor sapUiResponsiveContentPadding" title="Activity Book List">
+						<SearchField width="auto" search="onFilterProducts" class="sapUiTinyMargin"/>
 						<List id="List1" mode="SingleSelectMaster" selectionChange="showDetails" items="{ path : '/Employees'}">
 							<items>
 								<ObjectListItem title="{Book}" number="{PSID}" intro="{GroupID}"></ObjectListItem>
@@ -43,79 +43,77 @@
 							</ObjectHeader>
 							<IconTabBar id="iconTabBar" class="tabBar" select="handleIconTabBarSelect">
 								<items>
-									<IconTabFilter icon="sap-icon://group" text="Employee Data" key="Emp Data" tooltip="Employee Data">
+									<IconTabFilter icon="sap-icon://group" text="Project Datails" key="Emp Data" tooltip="Project Data">
 										<content>
 											<VBox class="sapUiSmallMargin">
-												<f:SimpleForm id="SimpleFormDisplay354" editable="false" layout="ResponsiveGridLayout" title="" labelSpanXL="3" labelSpanL="3"
-													labelSpanM="3" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="4" emptySpanL="4" emptySpanM="4" emptySpanS="0" columnsXL="1"
-													columnsL="1" columnsM="1" singleContainerFullSize="false">
+												<f:SimpleForm id="SimpleFormDisplay480_12120Dual" editable="false" layout="ResponsiveGridLayout" labelSpanXL="4" labelSpanL="4"
+													labelSpanM="12" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="0" emptySpanL="0" emptySpanM="0" emptySpanS="0" columnsXL="2"
+													columnsL="2" columnsM="2" singleContainerFullSize="false">
 													<f:content>
-														<Label text="Discipline" class="fname"/>
-														<Text id="nameText" text="{DialogModel>/ActivitySelected/0/Discipline ID}"/>
-														<Label text="Group" class="fname"/>
-														<Text text="{DialogModel>/ActivitySelected/0/GroupID}"/>
-														<Label text="Code" class="fname"/>
-														<Text text="{DialogModel>/ActivitySelected/0/CodeID}"/>
-														<Label text="Hours" class="fname"/>
-														<Text id="countryText" text="{DialogModel>/ActivitySelected/0/Hours}"/>
-														<Label text="Quantity" class="fname"/>
-														<Text id="countryText1" text="{DialogModel>/ActivitySelected/0/Quantity}"/>
+														<core:Title/>
+														<Label text="Activity Book No" class="fname"/>
+														<Text id="activityBookNumber" text="{DialogModel>/ActivitySelected/0/Discipline ID}"/>
+														<Label text="Activity Date" class="fname"/>
+														<Text id="activityDate" text="{DialogModel>/ActivitySelected/0/GroupID}"/>
+														<Label text="Personnel Area" class="fname"/>
+														<Text id="personnelArea" text="{DialogModel>/ActivitySelected/0/CodeID}"/>
+														<Label text="Personnel Sub Area" class="fname"/>
+														<Text id="personnelSubArea" text="{DialogModel>/ActivitySelected/0/Hours}"/>
+														<core:Title/>
+														<Label text="Area ID / Description" class="fname"/>
+														<Text id="areaId" text="{DialogModel>/ActivitySelected/0/Quantity}"/>
+														<Label text="Location / Building" class="fname"/>
+														<Text id="location" text="{DialogModel>/ActivitySelected/0/Quantity}"/>
+														<Label text="Area Foreman ID" class="fname"/>
+														<Text id="areaForemanId" text="{DialogModel>/ActivitySelected/0/Quantity}"/>
+														<Label text="Site Engineer ID" class="fname"/>
+														<Text id="siteEngineerId" text="{DialogModel>/ActivitySelected/0/Quantity}"/>
 													</f:content>
 												</f:SimpleForm>
 											</VBox>
 										</content>
 									</IconTabFilter>
 									<IconTabSeparator/>
-									<IconTabFilter icon="sap-icon://manager" count="" text="Project Details" key="Project Details" tooltip="Project Details">
+									<IconTabFilter icon="sap-icon://manager" count="" text="Activity Details" key="Activity Details" tooltip="Activity Details">
 										<content>
-											<!--<f:SimpleForm id="SimpleFormDisplay" editable="false" layout="ResponsiveGridLayout" title="" labelSpanXL="3" labelSpanL="3" labelSpanM="3"
-												labelSpanS="12" adjustLabelSpan="false" emptySpanXL="4" emptySpanL="4" emptySpanM="4" emptySpanS="0" columnsXL="1" columnsL="1" columnsM="1"
-												singleContainerFullSize="false">
-												<f:content>-->
-													<Table id="idProductsTable" alternateRowColors="true" mode="SingleSelectLeft" inset="false"
-														items="{ path: '/Employees', sorter: { path: 'Name' } }">
-														
-														<headerToolbar>
-														<Toolbar>
-															<ToolbarSpacer/>
-															<SearchField width= "50%" search = "onSearch"/>
-															<Button icon="sap-icon://add" press="navToActivitydetails" />
-														</Toolbar>	
-															
-															
-														</headerToolbar>
-														
-														<columns>
-															<Column width="13em">
-																<Text text="Discipline ID"/>
-															</Column>
-															<Column minScreenWidth="Tablet" demandPopin="true">
-																<Text text="Group ID"/>
-															</Column>
-															<Column minScreenWidth="Desktop" demandPopin="true" hAlign="End">
-																<Text text="Code ID"/>
-															</Column>
-															<Column minScreenWidth="Desktop" demandPopin="true" hAlign="Center">
-																<Text text="Hours"/>
-															</Column>
-															<Column hAlign="End">
-																<Text text="Quantity"/>
-															</Column>
-														</columns>
-														<items>
-															<ColumnListItem>
-																<cells>
-																	<ObjectIdentifier title="{EmployeeID}"/>
-																	<Text text="{Name}"/>
-																	<Text text="{Payroll Type}"/>
-																	<ObjectNumber number="{Should be PI}"/>
-																	<ObjectNumber number="{PI By CH}"/>
-																</cells>
-															</ColumnListItem>
-														</items>
-													</Table>
-<!--												</f:content>
-											</f:SimpleForm>-->
+											<Table id="idProductsTable" alternateRowColors="true" mode="SingleSelectLeft" inset="false"
+												items="{ path: '/Employees', sorter: { path: 'Name' } }">
+												<headerToolbar>
+													<Toolbar>
+														<ToolbarSpacer/>
+														<SearchField width="50%"/>
+														<Button icon="sap-icon://add" press="navToActivitydetails"/>
+													</Toolbar>
+												</headerToolbar>
+												<columns>
+													<Column width="13em">
+														<Text text="Discipline ID"/>
+													</Column>
+													<Column minScreenWidth="Tablet" demandPopin="true">
+														<Text text="Group ID"/>
+													</Column>
+													<Column minScreenWidth="Desktop" demandPopin="true" hAlign="End">
+														<Text text="Code ID"/>
+													</Column>
+													<Column minScreenWidth="Desktop" demandPopin="true" hAlign="Center">
+														<Text text="Hours"/>
+													</Column>
+													<Column hAlign="End">
+														<Text text="Quantity"/>
+													</Column>
+												</columns>
+												<items>
+													<ColumnListItem>
+														<cells>
+															<ObjectIdentifier title="{EmployeeID}"/>
+															<Text text="{Name}"/>
+															<Text text="{Payroll Type}"/>
+															<ObjectNumber number="{Should be PI}"/>
+															<ObjectNumber number="{PI By CH}"/>
+														</cells>
+													</ColumnListItem>
+												</items>
+											</Table>
 										</content>
 									</IconTabFilter>
 								</items>
