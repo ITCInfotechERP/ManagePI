@@ -78,7 +78,7 @@
 														<headerToolbar>
 														<Toolbar>
 															<ToolbarSpacer/>
-															<SearchField width= "50%"/>
+															<SearchField width= "50%" search = "onSearch"/>
 															<Button icon="sap-icon://add" press="navToActivitydetails" />
 														</Toolbar>	
 															
