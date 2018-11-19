@@ -6,10 +6,18 @@
 }
 
 .columns {
+     background-color: #fff;
+   /* margin: auto;*/
+	margin-top: 30px;
+    border-style: outset;
+    box-shadow: 5px 5px 8px #888888;
+}
+
+.gridColumn {
     height: 170px;
     background-color: #fff;
-    margin: auto;
-    margin-top: 60px;
+    /*margin: auto;
+	margin-top: 40px;*/
     border-style: outset;
     box-shadow: 5px 5px 8px #888888;
     
@@ -30,30 +38,19 @@
     color: #999999;
 }
 
-.text2 {
-    margin-left: 10px;
-    margin-top: 10px;
+.link {
     font-family: 'Segoe UI';
     font-weight: 400;
     font-style: normal;
     font-size: 16px;
-    text-align: left;
-    color: #999999;
-}
-
-.text3 {
-    font-family: 'Segoe UI';
-    font-weight: 400;
-    font-style: normal;
-    font-size: 16px;
-    text-align: left;
+    /*text-align: left;*/
     color: #4ABFD3;
-    margin-left: 415px;
+    /*margin-left: 415px;*/
 }
 
-.firstButton {
+/*.firstButton {
     margin-left: 450px;
-}
+}*/
 
 .secondButton {
     display: inline-block;
@@ -65,15 +62,15 @@
     margin-left: 0px;
 }
 
-.bt {
-    margin-top: 10px;
-    margin-left: 20px;
+.abboxstyle {
+    margin-top: 20px;
+    /*margin-left: 20px;*/
 }
 
-.tt {
+/*.tt {
     margin-top: 10px;
     margin-left: 20px;
-}
+}*/
 
 .bt1 {
     margin-top: 10px;
