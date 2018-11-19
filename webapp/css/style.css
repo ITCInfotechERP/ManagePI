@@ -62,15 +62,15 @@
     margin-left: 0px;
 }
 
-.abstyle {
-    margin-top: 10px;
-    margin-left: 20px;
+.abboxstyle {
+    margin-top: 20px;
+    /*margin-left: 20px;*/
 }
 
-.tt {
+/*.tt {
     margin-top: 10px;
     margin-left: 20px;
-}
+}*/
 
 .bt1 {
     margin-top: 10px;
