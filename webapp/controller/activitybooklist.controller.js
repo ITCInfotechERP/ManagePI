@@ -1,5 +1,5 @@
 sap.ui.define([
-	"jQuery.sap.global"
+	"jQuery.sap.global",
 	"com/itcActivitybook/controller/BaseController",
 	"sap/m/MessageToast",
 	"sap/ui/model/Filter"
