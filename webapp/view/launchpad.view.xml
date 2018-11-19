@@ -1,122 +1,168 @@
 <mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:html="http://www.w3.org/1999/xhtml"
 	xmlns:l="sap.ui.layout" controllerName="com.itcActivitybook.controller.launchpad">
-	<App>
-		<pages>
-			<Page class="sapUiContentPadding">
-				<customHeader>
-					<Bar class="headerToolBarBackground">
-						<contentLeft></contentLeft>
-						<contentMiddle>
-							<Title text="Launchpad" level="H3"/>
-						</contentMiddle>
-						<contentRight>
-							<Button icon="sap-icon://bell" tooltip="Notification"/>
-							<Text text="Parag"/>
-							<Button text="Logout"/>
-						</contentRight>
-					</Bar>
-					<!--<Toolbar>-->
-					<!--	<ToolbarSpacer/>-->
-					<!--	<Title text= "Launchpad" level="H3"/>-->
-					<!--	<ToolbarSpacer/>-->
-					<!--	<Button icon="sap-icon://bell" tooltip="Notification"/>-->
-					<!--		<Text text="Parag"/>-->
-					<!--		<Button text="Logout"/>-->
-					<!--</Toolbar>-->
-				</customHeader>
-				<content>
-					<FlexBox width="51%" class="columns" direction="Column">
-						<items class="item">
-							<Text class="text" text="Hi Parag!">
-								<layoutData>
-									<FlexItemData growFactor="0" order="0"/>
-								</layoutData>
-							</Text>
-						</items>
-						<items>
-							<Text class="text2" text="Welcome to Activity Book Application">
-								<layoutData>
-									<FlexItemData growFactor="0" order="1"/>
-								</layoutData>
-							</Text>
-							<Button class="firstButton" icon="sap-icon://message-information">
-								<layoutData>
-									<FlexItemData growFactor="0" order="1"/>
-								</layoutData>
-							</Button>
-							<Text class="text3" text="About Al Turki">
-								<layoutData>
-									<FlexItemData growFactor="0" order="1"/>
-								</layoutData>
-							</Text>
-						</items>
-					</FlexBox>
+	<Page class="sapUiResponsiveContentPadding">
+		<customHeader>
+			<Bar class="headerToolBarBackground">
+				<contentLeft></contentLeft>
+				<contentMiddle>
+					<Title text="Launchpad" level="H3"/>
+				</contentMiddle>
+				<contentRight>
+					<Button icon="sap-icon://bell" tooltip="Notification"/>
+					<Text text="Parag"/>
+					<Button text="Logout"/>
+				</contentRight>
+			</Bar>
+			<!--<Toolbar>-->
+			<!--	<ToolbarSpacer/>-->
+			<!--	<Title text= "Launchpad" level="H3"/>-->
+			<!--	<ToolbarSpacer/>-->
+			<!--	<Button icon="sap-icon://bell" tooltip="Notification"/>-->
+			<!--		<Text text="Parag"/>-->
+			<!--		<Button text="Logout"/>-->
+			<!--</Toolbar>-->
+		</customHeader>
+		<content>
+			<l:Grid defaultSpan="L10 M10 S10" defaultIndent="L3 M3 S3" width="100%" vSpacing="2" hSpacing="0">
+				<l:content>
+					<!--<Panel class="columns" accessibleRole="Region" width="60%" height="170px" backgroundDesign="Solid">
+						<content>-->
+					<Panel class="columns" accessibleRole="Region" width="60%" height="170px" backgroundDesign="Solid">
+						<content>
+							<l:Grid defaultSpan="L6 M12 S12" width="auto" vSpacing="0" hSpacing="0">
+								<l:content>
+									<VBox>
+										<Text class="text" text="Hi Parag!"/>
+										<Text class="text" text="Welcome to Activity Book Application"/>
+									</VBox>
+									<VBox>
+										<items>
+											<Text class="text" text=""/>
+											<Button class="firstButton" icon="sap-icon://message-information">
+												<layoutData>
+													<FlexItemData alignSelf="Center"/>
+												</layoutData>
+											</Button>
+											<Text class="link" text="About Al Turki" alignSelf="Center">
+												<layoutData>
+													<FlexItemData alignSelf="Center"/>
+												</layoutData>
+											</Text>
+										</items>
+									</VBox>
+								</l:content>
+							</l:Grid>
+							<!--							</HBox>-->
+							<!--							<FlexBox width="90%" class="panelcol" direction="Column">
+								<items class="item">
+											<Text class="text" text="Hi Parag!">							
+										<layoutData>
+											<FlexItemData growFactor="0" order="0"/>
+										</layoutData>
+									</Text>
+								</items>
+								<items>
+									<Text class="text2" text="Welcome to Activity Book Application">
+										<layoutData>
+											<FlexItemData growFactor="0" order="1"/>
+										</layoutData>
+									</Text>
+									<Button class="firstButton" icon="sap-icon://message-information">
+										<layoutData>
+											<FlexItemData growFactor="0" order="1"/>
+										</layoutData>
+									</Button>
+									<Text class="text3" text="About Al Turki">
+										<layoutData>
+											<FlexItemData growFactor="0" order="1"/>
+										</layoutData>
+									</Text>
+								</items>
+							</FlexBox>-->
+						</content>
+					</Panel>
 					<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~ Panel 1 With inside FlexBox ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-					<Panel class="columns" accessibleRole="Region" width="51%" height="200px" backgroundDesign="Solid">
+					<Panel class="columns sapUiResponsiveContentPadding" accessibleRole="Region" width="60%" height="220px" backgroundDesign="Solid">
 						<headerToolbar>
 							<Toolbar height="3rem">
 								<Title class="title" text="Activity Book"/>
 							</Toolbar>
 						</headerToolbar>
 						<content>
-							<l:HorizontalLayout>
-								<FlexBox class="panelcol" width="70%" direction="Column" alignItems="Center">
-									<items>
-										<Button class="bt" width="10%" icon="sap-icon://create" press="navToEditActivity" tooltip="Create Activity">
-											<layoutData>
-												<FlexItemData growFactor="0" order="1"/>
-											</layoutData>
-										</Button>
-										<Text class="tt" text="My Activity Book" textAlign="Center">
-											<layoutData>
-												<FlexItemData growFactor="0" order="1"/>
-											</layoutData>
-										</Text>
-									</items>
-								</FlexBox>
-								<FlexBox width="70%" direction="Column" alignItems="Center">
-									<items>
-										<Button class="bt" width="10%" icon="sap-icon://user-edit" press="navToDailyActivity" tooltip="Create Activity">
-											<layoutData>
-												<FlexItemData growFactor="0" order="1"/>
-											</layoutData>
-										</Button>
-										<Text class="tt" text="Create Activity Book" textAlign="Center">
-											<layoutData>
-												<FlexItemData growFactor="0" order="1"/>
-											</layoutData>
-										</Text>
-									</items>
-								</FlexBox>
-								<FlexBox width="70%" direction="Column" alignItems="Center">
-									<items>
-										<Button class="bt" width="10%" icon="sap-icon://delete">
-											<layoutData>
-												<FlexItemData growFactor="0" order="1"/>
-											</layoutData>
-										</Button>
-										<Text class="tt" text="Delete Activity Book" textAlign="Center">
-											<layoutData>
-												<FlexItemData growFactor="0" order="1"/>
-											</layoutData>
-										</Text>
-									</items>
-								</FlexBox>
-								<FlexBox width="100%" direction="Column" alignItems="Center">
-									<items>
-										<Button class="bt" press="navToReports" width="10%" icon="sap-icon://employee">
-											<layoutData>
-												<FlexItemData growFactor="0" order="1"/>
-											</layoutData>
-										</Button>
-										<Text class="tt" text="Reports" textAlign="Center">
-											<layoutData>
-												<FlexItemData growFactor="0" order="1"/>
-											</layoutData>
-										</Text>
-									</items>
-								</FlexBox>
-							</l:HorizontalLayout>
+							<!--<l:HorizontalLayout>-->
+							<l:Grid defaultSpan="L3 M6 S12" width="auto" vSpacing="0" hSpacing="0">
+								<l:content>
+									<!--<FlexBox class="panelcol" width="70%" direction="Column" alignItems="Center">-->
+									<VBox>
+										<items>
+											<Button class="abboxstyle" icon="sap-icon://create" press="navToEditActivity" tooltip="Create Activity">
+												<layoutData>
+													<FlexItemData alignSelf="Center"/>
+												</layoutData>
+											</Button>
+											<Text class="abboxstyle" text="My Activity Book" textAlign="Center">
+												<layoutData>
+													<FlexItemData alignSelf="Center"/>
+												</layoutData>
+											</Text>
+										</items>
+									</VBox>
+									<VBox>
+										<items>
+											<Button class="abboxstyle" icon="sap-icon://user-edit" press="navToDailyActivity" tooltip="Create Activity">
+												<layoutData>
+													<FlexItemData alignSelf="Center"/>
+												</layoutData>
+											</Button>
+											<Text class="abboxstyle" text="Create Activity Book" textAlign="Center">
+												<layoutData>
+													<FlexItemData alignSelf="Center"/>
+												</layoutData>
+											</Text>
+										</items>
+									</VBox>
+									<VBox>
+										<items>
+											<Button class="abboxstyle" icon="sap-icon://delete">
+												<layoutData>
+													<FlexItemData alignSelf="Center"/>
+												</layoutData>
+											</Button>
+											<Text class="abboxstyle" text="Delete Activity Book" textAlign="Center">
+												<layoutData>
+													<FlexItemData alignSelf="Center"/>
+												</layoutData>
+											</Text>
+										</items>
+									</VBox>
+									<VBox>
+										<items>
+											<Button class="abboxstyle" press="navToReports" icon="sap-icon://employee">
+												<layoutData>
+													<FlexItemData alignSelf="Center"/>
+												</layoutData>
+											</Button>
+											<Text class="abboxstyle" text="Reports" textAlign="Center">
+												<layoutData>
+													<FlexItemData alignSelf="Center"/>
+												</layoutData>
+											</Text>
+										</items>
+									</VBox>
+										
+<!--									</FlexBox>
+									<FlexBox width="70%" direction="Column" alignItems="Center">
+										
+									</FlexBox>
+									<FlexBox width="70%" direction="Column" alignItems="Center">
+										
+									</FlexBox>
+									<FlexBox width="100%" direction="Column" alignItems="Center">
+										
+									</FlexBox>-->
+								</l:content>
+							</l:Grid>
+							<!--								</l:HorizontalLayout>-->
 						</content>
 					</Panel>
 					<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~ Panel 2 With inside FlexBox ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
@@ -260,8 +306,8 @@
 			<ImageContent src="sap-icon://home-share" />
 		</TileContent>
     	</GenericTile>-->
-				</content>
-			</Page>
-		</pages>
-	</App>
+				</l:content>
+			</l:Grid>
+		</content>
+	</Page>
 </mvc:View>
