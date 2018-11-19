@@ -23,7 +23,7 @@
 					<ObjectPageHeader objectImageURI="https://nulm.gov.in/images/user.png" objectImageShape="Circle" objectImageAlt="Book Number"
 						id="ObjectPageLayoutHeaderTitle" isObjectIconAlwaysVisible="true" isObjectTitleAlwaysVisible="true" showPlaceholder="true">
 						<actions>
-							<m:Button text="Edit" class="editButton"/>
+							<m:Button text="Edit" press="navToDailyActivity" class="editButton"/>
 						</actions>
 						<breadCrumbsLinks>
 							<m:Link class="link" text="Book Number"/>
@@ -101,9 +101,9 @@
 										<!--		</m:footer>-->
 										<!--	</m:Page>-->
 										<!--</m:detailPages>-->
-										<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Add Activity View  (ID - "detailDetail") ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+										<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Add Activity View  (ID - "ActivityBookDetailPage1") ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 										<m:detailPages>
-											<m:Page id="detailDetail" title="Add Activity" class="sapUiStdPage sapUiContentPadding">
+											<m:Page id="ActivityBookDetailPage1" title="Create Activity" class="sapUiStdPage sapUiContentPadding">
 												<m:content>
 													<!--<m:VBox>-->
 													<f:SimpleForm class="form"  id="SimpleFormDisplay480_12120" columnsM="2" columnsL="2" emptySpanM="0" emptySpanL="0"
@@ -132,19 +132,21 @@
 													</f:SimpleForm>
 													<!--</m:VBox>-->
 												</m:content>
-												<m:footer>
-													<m:Toolbar>
-														<m:ToolbarSpacer/>
-														<m:Button id="saveButton1" visible="true" type="Emphasized" text="Save" press="navToNextPage"/>
-														<m:Button id="cancelTwo1" visible="false" text="Cancel" press="onPressDetailBack"/>
-														<m:Button id="cancelOne1" visible="true" text="Cancel" press="onNavBack"/>
-													</m:Toolbar>
-												</m:footer>
+												<!--<m:footer>-->
+												<!--	<m:Toolbar>-->
+												<!--		<m:ToolbarSpacer/>-->
+												<!--		<m:Button id="saveButtonOne1" visible="true" type="Emphasized" text="Save" press="navToActivityBookDetailPage2"/>-->
+												<!--		<m:Button id="saveButtonTwo1" visible="false"  text="Save" press="navToNextPage"/>-->
+												<!--		<m:Button id="cancelButtonOne1" visible="false" text="Cancel" press="onPressDetailBack"/>-->
+												<!--		<m:Button id="cancelButtonTwo1" visible="true" text="Cancel" press="onNavBack"/>-->
+												<!--	</m:Toolbar>-->
+												<!--    </m:footer>-->
+											
 											</m:Page>
 										</m:detailPages>
-										<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~  Activity Detail View (ID  "detail2") ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+										<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~  Activity Detail View (ID  "ActivityBookDetailPage2") ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 										<m:detailPages>
-											<m:Page id="detail2" title="Activity Detail" class="sapUiStdPage" showNavButton="true" navButtonText="Back"
+											<m:Page id="ActivityBookDetailPage2" title="Activity Detail" class="sapUiStdPage" showNavButton="true" navButtonText="Back"
 												navButtonPress="onPressDetailBack">
 												<m:content>
 													<m:Panel width="auto" class="sapUiResponsiveMargin" accessibleRole="Region">
@@ -152,7 +154,7 @@
 															<m:Toolbar height="3rem">
 																<m:Title text="View Activity"/>
 																<m:ToolbarSpacer/>
-																<m:Button visible="true" icon="sap-icon://create" type="Emphasized" tooltip="Press to Create a New Activity" press="incentivesView"/>
+																<m:Button visible="true" icon="sap-icon://create" type="Emphasized" tooltip="Press to Create a New Activity" press="ActivityBookDetailPage3"/>
 																<m:Button visible="true" icon="sap-icon://edit" press="backToAddActivityView"/>
 																<m:Button visible="true" icon="sap-icon://delete"/>
 															</m:Toolbar>
@@ -179,14 +181,14 @@
 														</m:content>
 													</m:Panel>
 												</m:content>
-												<m:footer>
-													<m:Toolbar>
-														<m:ToolbarSpacer/>
-														<m:Button visible="true" text="Submit"/>
-														<m:Button visible="true" text="Save"/>
-														<m:Button visible="true" text="Cancel" press="onPressDetailBack"/>
-													</m:Toolbar>
-												</m:footer>
+												<!--<m:footer>-->
+												<!--	<m:Toolbar>-->
+												<!--		<m:ToolbarSpacer/>-->
+												<!--		<m:Button visible="true" text="Submit"/>-->
+												<!--		<m:Button visible="true" text="Save"/>-->
+												<!--		<m:Button visible="true" text="Cancel" press="onPressDetailBack"/>-->
+												<!--	</m:Toolbar>-->
+												<!--</m:footer>-->
 											</m:Page>
 											<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  Incentives View (ID "detail3") ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 											<m:Page id="detail3" title="Incentives" class="sapUiStdPage">
@@ -196,7 +198,7 @@
 															<m:Toolbar>
 																<m:Title text="Employee Details"/>
 																<m:ToolbarSpacer/>
-																<m:Button visible="true" type="Emphasized" icon="sap-icon://employee-approvals" press="activityBook5"/>
+																<m:Button visible="true" tooltip="Confirm" type="Emphasized" icon="sap-icon://employee-approvals" press="activityBook5"/>
 															</m:Toolbar>
 														</m:headerToolbar>
 													</m:Panel>
@@ -219,14 +221,14 @@
 														</f:SimpleForm>
 													</m:VBox>
 												</m:content>
-												<m:footer>
-													<m:Toolbar>
-														<m:ToolbarSpacer/>
-														<m:Button visible="true" text="Submit"/>
-														<m:Button visible="true" text="Save"/>
-														<m:Button visible="true" text="Cancel" press="backToActivityDetail"/>
-													</m:Toolbar>
-												</m:footer>
+												<!--<m:footer>-->
+												<!--	<m:Toolbar>-->
+												<!--		<m:ToolbarSpacer/>-->
+												<!--		<m:Button visible="true" text="Submit"/>-->
+												<!--		<m:Button visible="true" text="Save"/>-->
+												<!--		<m:Button visible="true" text="Cancel" press="backToActivityDetail"/>-->
+												<!--	</m:Toolbar>-->
+												<!--</m:footer>-->
 											</m:Page>
 											<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  Incentives View (ID "detail4") ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 											<m:Page id="detail4" title="Incentives" class="sapUiStdPage">
@@ -259,22 +261,22 @@
 														</f:SimpleForm>
 													</m:VBox>
 												</m:content>
-												<m:footer>
-													<m:Toolbar>
-														<m:ToolbarSpacer/>
-														<m:Button visible="true" text="Submit"/>
-														<m:Button visible="true" text="Save" type="Emphasized" press="activityBook6"/>
-														<m:Button visible="true" text="Cancel" press="backToActivityDetail"/>
-													</m:Toolbar>
-												</m:footer>
+												<!--<m:footer>-->
+												<!--	<m:Toolbar>-->
+												<!--		<m:ToolbarSpacer/>-->
+												<!--		<m:Button visible="true" text="Submit"/>-->
+												<!--		<m:Button visible="true" text="Save" type="Emphasized" press="activityBook6"/>-->
+												<!--		<m:Button visible="true" text="Cancel" press="backToActivityDetail"/>-->
+												<!--	</m:Toolbar>-->
+												<!--</m:footer>-->
 											</m:Page>
 											<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  Incentives View (ID "detail5") ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 											<m:Page id="detail5" title="Incentives" class="sapUiStdPage">
 												<m:content>
 													<m:Table id="idProductsTable" alternateRowColors="true" mode="SingleSelectLeft" inset="false"
-														items="{ path: '/Employees', sorter: { path: 'Name' } }">
+													items="{ path: '/Employees', sorter: { path: 'Name' } }">
 														<m:columns>
-															<m:Column width="12em">
+										 					<m:Column width="12em">
 																<m:Text text="Employee ID"/>
 															</m:Column>
 															<m:Column minScreenWidth="Tablet" demandPopin="true">
@@ -303,15 +305,15 @@
 														</m:items>
 													</m:Table>
 												</m:content>
-												<m:footer>
-													<m:Toolbar>
-														<m:ToolbarSpacer/>
-														<m:Button visible="true" type="Emphasized" text="Submit" press="onEscapePreventDialog"/>
-														<m:Button visible="true" text="Edit" type="Emphasized" press="backToAddActivityView"/>
-														<m:Button visible="true" text="Save"/>
-														<m:Button visible="true" text="Cancel" press="backToActivityDetail"/>
-													</m:Toolbar>
-												</m:footer>
+												<!--<m:footer>-->
+												<!--	<m:Toolbar>-->
+												<!--		<m:ToolbarSpacer/>-->
+												<!--		<m:Button visible="true" type="Emphasized" text="Submit" press="onEscapePreventDialog"/>-->
+												<!--		<m:Button visible="true" text="Edit" type="Emphasized" press="backToAddActivityView"/>-->
+												<!--		<m:Button visible="true" text="Save"/>-->
+												<!--		<m:Button visible="true" text="Cancel" press="backToActivityDetail"/>-->
+												<!--	</m:Toolbar>-->
+												<!--</m:footer>-->
 											</m:Page>
 										</m:detailPages>
 										<m:masterPages>
@@ -336,14 +338,14 @@
 														<m:items/>
 													</m:List>
 												</m:content>
-												<m:footer>
-													<m:Toolbar>
-														<m:ToolbarSpacer/>
-														<m:Button id="saveButton2" visible="false" type="Emphasized" text="Save" press="navToActivitydetails"/>
-														<m:Button id="cancelTwo2" visible="false" text="Cancel" press="onPressDetailBack"/>
-														<m:Button id="cancelOne2" visible="false" text="Cancel" press="onNavBack"/>
-													</m:Toolbar>
-												</m:footer>
+												<!--<m:footer>-->
+												<!--	<m:Toolbar>-->
+												<!--		<m:ToolbarSpacer/>-->
+												<!--		<m:Button id="saveButton0" visible="false" type="Emphasized" text="Save" press="navToActivitydetails"/>-->
+												<!--		<m:Button id="cancelTwo2" visible="false" text="Cancel" press="onPressDetailBack"/>-->
+												<!--		<m:Button id="cancelOne2" visible="false" text="Cancel" press="onNavBack"/>-->
+												<!--	</m:Toolbar>-->
+												<!--</m:footer>-->
 											</m:Page>
 										</m:masterPages>
 										<m:masterPages>
@@ -355,7 +357,7 @@
 															<m:Title text="Activity List" level="H3"/>
 														</m:contentMiddle>
 														<m:contentRight>
-															<m:Button icon="sap-icon://add" tooltip="Add Activity" press="onPressNavToDetail"/>
+															<m:Button icon="sap-icon://add" tooltip="Add Activity" press="onPressNavToDetailPageOne"/>
 															
 														</m:contentRight>
 													</m:Bar>
@@ -363,18 +365,18 @@
 												<m:content>
 													<m:List id="List1" mode="SingleSelectMaster" selectionChange="showDetails" items="{ path : '/Employees'}">
 														<m:items>
-															<m:ObjectListItem title="{Activity}" number="{PSID}" type="Navigation" intro="{GroupID}"/>
+															<m:ObjectListItem title="{Activity}" number="{PSID}"  intro="{GroupID}"/>
 														</m:items>
 													</m:List>
 												</m:content>
-												<m:footer>
-													<m:Toolbar>
-														<m:ToolbarSpacer/>
-														<m:Button visible="false" type="Emphasized" text="Save" press="navToActivitydetails"/>
-														<m:Button visible="false" text="Cancel" press="onPressDetailBack"/>
-														<m:Button visible="true" icon="sap-icon://add" press="backToAddActivityView"/>
-													</m:Toolbar>
-												</m:footer>
+												<!--<m:footer>-->
+												<!--	<m:Toolbar>-->
+												<!--		<m:ToolbarSpacer/>-->
+												<!--		<m:Button visible="false" type="Emphasized" text="Save" press="navToActivitydetails"/>-->
+												<!--		<m:Button visible="false" text="Cancel" press="onPressDetailBack"/>-->
+												<!--		<m:Button visible="true" icon="sap-icon://add" press="backToAddActivityView"/>-->
+												<!--	</m:Toolbar>-->
+												<!--</m:footer>-->
 											</m:Page>
 										</m:masterPages>
 									</m:SplitApp>
@@ -385,5 +387,22 @@
 				</sections>
 			</ObjectPageLayout>
 		</m:content>
+	                                              	<m:footer>
+													<m:Toolbar>
+														<m:ToolbarSpacer/>
+													<m:Button id="submitButtonTwo" visible="false" type="Emphasized" text="Submit" press="onEscapePreventDialog"/>
+													<m:Button id="editButton" visible="false" text="Edit" type="Emphasized" press="backToAddActivityView"/>
+														<m:Button id="submitButtonOne" visible="false" text="Submit"/>
+														<m:Button id="saveButtonOne" visible="true" type="Emphasized" text="Save" press="navToActivityBookDetailPage2"/>
+														<m:Button id="saveButtonThree" visible="false" type="Emphasized" text="Save" press="activityBook6"/>
+														<m:Button id="saveButtonTwo" visible="false"  text="Save" press="yetTowrite"/>
+														<m:Button id="cancelButtonOne" visible="false" type="Emphasized" text="Cancel" press="onPressDetailBack"/>
+														<m:Button id="cancelButtonTwo" visible="true"  type="Emphasized" text="Cancel" press="onNavBack"/>
+														<m:Button id="cancelButtonThree" visible="false" type="Emphasized" text="Cancel" press="backToActivityDetail"/>
+														<m:Button id="cancelButtonFour" visible="false" type="Emphasized" text="Cancel" press="backToActivityDetailOne"/>
+														<m:Button id="cancelButtonFive" visible="false" type="Emphasized" text="Cancel" press="backToActivityDetailTwo"/>
+														<m:Button id="emailButton" visible="true" tooltip="Send Email" icon="sap-icon://email" press="onShareEmailPress"/>
+													</m:Toolbar>
+												    </m:footer>
 	</m:Page>
 </mvc:View>
