@@ -2,7 +2,7 @@
 	"Employees": [{
 		"Activity": "Activity 1",
 		"PSID": "123910234",
-		"Discipline ID": "D-601",
+		"DisciplineID": "D-601",
 		"GroupID": "G-601",
 		"CodeID": "C-601",
 		"Hours": "2",
@@ -17,7 +17,7 @@
 	}, {
 		"Activity": "Activity 2",
 		"PSID": "870394932",
-		"Discipline ID": "D-602",
+		"DisciplineID": "D-602",
 		"GroupID": "G-602",
 		"CodeID": "C-602",
 		"Hours": "4",
@@ -31,7 +31,7 @@
 	}, {
 		"Activity": "Activity 3",
 		"PSID": "870334343",
-		"Discipline ID": "D-603",
+		"DisciplineID": "D-603",
 		"GroupID": "G-603",
 		"CodeID": "C-603",
 		"Hours": "6",
@@ -45,7 +45,7 @@
 	}, {
 		"Activity": "Activity 4",
 		"PSID": "234434525",
-		"Discipline ID": "D-601",
+		"DisciplineID": "D-601",
 		"GroupID": "G-604",
 		"CodeID": "C-604",
 		"Hours": "3",

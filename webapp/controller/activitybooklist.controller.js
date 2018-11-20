@@ -32,7 +32,10 @@ sap.ui.define([
 			this.getView().setModel(dialogModel, "DialogModel");
 			this.getView().getModel("DialogModel").setProperty("/ActivitySelected", oArray);
 		},
-		onFilterProducts: function (oEvent) {
+		
+		
+			// <! ~~~~~~~~~~~~~~~~~~~~~ Search Bar filter for list items  ~~~~~~~~~~~~~~~~>
+		onSearchListItems: function (oEvent) {
 			var aFilters = [];
 			var sQuery = oEvent.getSource().getValue();
 			if (sQuery && sQuery.length > 0) {
@@ -43,11 +46,13 @@ sap.ui.define([
 			var binding = list.getBinding("items");
 			binding.filter(aFilters);
 		},
-		onSearch: function (oEvent) {
+		
+			// <! ~~~~~~~~~~~~~~~~~~~~~ Search Bar filter for Table items  ~~~~~~~~~~~~~~~~>
+		onSearchTableItems: function (oEvent) {
 			var aFilters = [];
 			var sQuery = oEvent.getSource().getValue();
 			if (sQuery && sQuery.length > 0) {
-				var filter = new Filter("EmployeeID", sap.ui.model.FilterOperator.Contains, sQuery);
+				var filter = new Filter("DisciplineID", sap.ui.model.FilterOperator.Contains, sQuery);
 				aFilters.push(filter);
 			}
 			var list = this.getView().byId("idProductsTable");

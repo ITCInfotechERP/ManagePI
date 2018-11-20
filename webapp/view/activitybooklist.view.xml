@@ -1,6 +1,6 @@
 <mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:semantic="sap.m.semantic"
 	controllerName="com.itcActivitybook.controller.activitybooklist" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:layout="sap.ui.layout"
-	xmlns:f="sap.ui.layout.form">
+	xmlns:f="sap.ui.layout.form" xmlns:l="sap.ui.layout">
 	<Page>
 		<customHeader>
 			<Bar class="headerToolBarBackground">
@@ -20,8 +20,8 @@
 		<content>
 			<SplitContainer>
 				<masterPages>
-					<semantic:MasterPage width="auto" class="activityMasterPageColor sapUiResponsiveContentPadding" title="Activity Book List">
-						<SearchField width="auto" search="onFilterProducts" class="sapUiTinyMargin"/>
+					<semantic:MasterPage class="activityMasterPageColor sapUiResponsiveContentPadding" title="Activity Book List">
+						<SearchField width="auto" search="onSearchListItems" class="sapUiTinyMargin"/>
 						<List id="List1" mode="SingleSelectMaster" selectionChange="showDetails" items="{ path : '/Employees'}">
 							<items>
 								<ObjectListItem title="{Book}" number="{PSID}" intro="{GroupID}"></ObjectListItem>
@@ -46,11 +46,8 @@
 									<IconTabFilter icon="sap-icon://group" text="Project Datails" key="Emp Data" tooltip="Project Data">
 										<content>
 											<VBox class="sapUiSmallMargin">
-												<f:SimpleForm id="SimpleFormDisplay480_12120Dual" editable="false" layout="ResponsiveGridLayout" labelSpanXL="4" labelSpanL="4"
-													labelSpanM="12" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="0" emptySpanL="0" emptySpanM="0" emptySpanS="0" columnsXL="2"
-													columnsL="2" columnsM="2" singleContainerFullSize="false">
+												<f:SimpleForm id="SimpleFormDisplayColumn_oneGroup234" editable="false" layout="ColumnLayout" columnsM="2" columnsL="3" columnsXL="4">
 													<f:content>
-														<core:Title/>
 														<Label text="Activity Book No" class="fname"/>
 														<Text id="activityBookNumber" text="{DialogModel>/ActivitySelected/0/Discipline ID}"/>
 														<Label text="Activity Date" class="fname"/>
@@ -59,7 +56,6 @@
 														<Text id="personnelArea" text="{DialogModel>/ActivitySelected/0/CodeID}"/>
 														<Label text="Personnel Sub Area" class="fname"/>
 														<Text id="personnelSubArea" text="{DialogModel>/ActivitySelected/0/Hours}"/>
-														<core:Title/>
 														<Label text="Area ID / Description" class="fname"/>
 														<Text id="areaId" text="{DialogModel>/ActivitySelected/0/Quantity}"/>
 														<Label text="Location / Building" class="fname"/>
@@ -81,7 +77,7 @@
 												<headerToolbar>
 													<Toolbar>
 														<ToolbarSpacer/>
-														<SearchField width="50%" search="onSearch"/>
+														<SearchField liveChange="onSearch" width="50%" search="onSearchTableItems"/>
 														<Button icon="sap-icon://add" press="navToActivitydetails"/>
 													</Toolbar>
 												</headerToolbar>
@@ -103,13 +99,13 @@
 													</Column>
 												</columns>
 												<items>
-													<ColumnListItem>
+													<ColumnListItem class="sapUiSizeCompact">
 														<cells>
-															<ObjectIdentifier title="{EmployeeID}"/>
-															<Text text="{Name}"/>
-															<Text text="{Payroll Type}"/>
-															<ObjectNumber number="{Should be PI}"/>
-															<ObjectNumber number="{PI By CH}"/>
+															<ObjectIdentifier title="{DisciplineID}"/>
+															<Text text="{GroupID}"/>
+															<Text text="{CodeID}"/>
+															<ObjectNumber number="{Hours}"/>
+															<ObjectNumber number="{Quantity}"/>
 														</cells>
 													</ColumnListItem>
 												</items>
