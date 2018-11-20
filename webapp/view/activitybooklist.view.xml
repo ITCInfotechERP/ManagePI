@@ -77,6 +77,7 @@
 												<headerToolbar>
 													<Toolbar>
 														<ToolbarSpacer/>
+														<Button tooltip="View Settings" icon="sap-icon://sort" press="openDialog"/>
 														<SearchField width="50%" search="onSearchTableItems"/>
 														<Button icon="sap-icon://add" press="navToActivitydetails"/>
 													</Toolbar>
