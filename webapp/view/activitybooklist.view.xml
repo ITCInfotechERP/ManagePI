@@ -33,7 +33,7 @@
 					</semantic:MasterPage>
 				</masterPages>
 				<detailPages>
-					<semantic:DetailPage title="{i18n>appActivityBookDtl }" class="activityMasterPageColor">
+					<semantic:DetailPage title="{i18n>appActivityBookDtl}" class="activityMasterPageColor">
 						<semantic:content>
 							<ObjectHeader id="objectHeader" title="{DialogModel>/ActivitySelected/0/Book}" titleActive="false" titlePress="onShowDetailPopover"
 								responsive="true" number="{DialogModel>/ActivitySelected/0/CodeID}">
@@ -73,10 +73,11 @@
 									<IconTabFilter icon="sap-icon://manager" count="" text="{i18n>actDetails}" key="Activity Details" tooltip="Activity Details">
 										<content>
 											<Table id="idProductsTable" alternateRowColors="true" mode="SingleSelectLeft" inset="false"
-												items="{ path: '/Employees', sorter: { path: 'Name' } }">
+												items="{ path: '/Employees', sorter: { path: 'DisciplineID' } }">
 												<headerToolbar>
-													<Toolbar>
+													<Toolbar id="vsdFilterBar">
 														<ToolbarSpacer/>
+														<Button id="filterButton" tooltip="View Settings" icon="sap-icon://sort" press="openDialog"/>
 														<SearchField width="50%" search="onSearchTableItems"/>
 														<Button icon="sap-icon://add" press="navToActivitydetails"/>
 													</Toolbar>

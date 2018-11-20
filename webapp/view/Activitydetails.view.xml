@@ -166,7 +166,7 @@
 																	emptySpanS="0" columnsXL="1" columnsL="1" columnsM="1" singleContainerFullSize="false">
 																	<f:content>
 																		<m:Label text="{i18n>actDesc}" class="fname"/>
-																		<m:Text id="nameText" text="{DialogModel>/ActivitySelected/0/Discipline ID}"/>
+																		<m:Text id="nameText" text="{DialogModel>/ActivitySelected/0/DisciplineID}"/>
 																		<m:Label text="{i18n>Actgrp}" class="fname"/>
 																		<m:Text text="{DialogModel>/ActivitySelected/0/GroupID}"/>
 																		<m:Label text="{i18n>ActCode }" class="fname"/>
@@ -271,7 +271,7 @@
 												<!--</m:footer>-->
 											</m:Page>
 											<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  Incentives View (ID "detail5") ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-											<m:Page id="detail5" title="{i18n>titleIncentive}" class="sapUiStdPage">
+											<m:Page id="detail5" title="{i18n>titleIncentive}" class="sapUiStdPage sapUiResponsiveContentPadding">
 												<m:content>
 													<m:Table id="idProductsTable" alternateRowColors="true" mode="SingleSelectLeft" inset="false"
 													items="{ path: '/Employees', sorter: { path: 'Name' } }">
@@ -316,8 +316,8 @@
 												<!--</m:footer>-->
 											</m:Page>
 										</m:detailPages>
-										<m:masterPages>
-											<m:Page  id="master">
+										<!--<m:masterPages>-->
+										<!--	<m:Page  id="master">
 												
 												<m:customHeader>
 													<m:Bar>
@@ -337,7 +337,7 @@
 													<m:List>
 														<m:items/>
 													</m:List>
-												</m:content>
+												</m:content>-->
 												<!--<m:footer>-->
 												<!--	<m:Toolbar>-->
 												<!--		<m:ToolbarSpacer/>-->
@@ -346,8 +346,8 @@
 												<!--		<m:Button id="cancelOne2" visible="false" text="Cancel" press="onNavBack"/>-->
 												<!--	</m:Toolbar>-->
 												<!--</m:footer>-->
-											</m:Page>
-										</m:masterPages>
+											<!--</m:Page>-->
+										<!--</m:masterPages>-->
 										<m:masterPages>
 											<m:Page id="master2">
 												<m:customHeader>
