@@ -43,13 +43,17 @@ sap.ui.define([
 			this.getView().byId("saveButtonOne").setVisible(true);
 			this.getView().byId("cancelButtonTwo").setVisible(true);
 			
-			// Hide all the buttons which are not useful here
-			this.getView().byId("cancelButtonOne").setVisible(false);
+			//Hide the Buttons which are not useful in this view
+			
+			
 			this.getView().byId("cancelButtonOne").setVisible(false);
 			this.getView().byId("saveButtonThree").setVisible(false);
-			this.getView().byId("saveButtonTwo").setVisible(false);
 		    this.getView().byId("cancelButtonFour").setVisible(false);
-		   	this.getView().byId("submitButtonOne").setVisible(false);
+		   	this.getView().byId("editButton").setVisible(false);
+		   	this.getView().byId("submitButtonTwo").setVisible(false);
+		   	this.getView().byId("cancelButtonThree").setVisible(false);
+		   	this.getView().byId("cancelButtonFive").setVisible(false);
+		   		this.getView().byId("saveButtonTwo").setVisible(false);
 		
 			
 			
@@ -263,6 +267,9 @@ sap.ui.define([
 			var dialogModel = new sap.ui.model.json.JSONModel();
 			this.getView().setModel(dialogModel, "DialogModel");
 			this.getView().getModel("DialogModel").setProperty("/ActivitySelected", oArray);
+			
+			
+			
 		},
 
 		/* <!--~~~~~~~~~~~~~~~~~~ Confirm Dialog Yes Or No ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~>*/

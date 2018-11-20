@@ -123,10 +123,10 @@ sap.ui.define([
 		
 		
 			handleConfirm: function(oEvent) {
-
+           
 			var oView = this.getView();
 			var oList = oView.byId("idProductsTable");
-
+            var oDialog = this.getView().getModel().getProperty("/oDialog");
 			var mParams = oEvent.getParameters();
 			var oBinding = oList.getBinding("items");
 
@@ -160,7 +160,16 @@ sap.ui.define([
 			});
 			oBinding.filter(aFilters);
 
-
+        // update filter bar
+        if(aFilters.length > 0 || aSorters.length > 0){
+        		
+        			this.getView().byId("filterButton").setType("Emphasized");
+        		
+        }
+        var s = oDialog.getSelectedFilterString();
+        	oView.byId("filterButton").setText(s);
+     // oView.byId("vsdFilterLabel").setVisible(aFilters.length > 0);
+     
 
 		
 		}
