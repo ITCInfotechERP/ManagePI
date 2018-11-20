@@ -5,12 +5,12 @@
 			<Bar class="headerToolBarBackground">
 				<contentLeft></contentLeft>
 				<contentMiddle>
-					<Title text="Launchpad" level="H3"/>
+					<Title text="{i18n>applaunchpad}" level="H3"/>
 				</contentMiddle>
 				<contentRight>
 					<Button icon="sap-icon://bell" tooltip="Notification"/>
-					<Text text="Parag"/>
-					<Button text="Logout"/>
+					<Text text="{i18n>appUser}"/>
+					<Button text="{i18n>appLogout}"/>
 				</contentRight>
 			</Bar>
 			<!--<Toolbar>-->
@@ -32,22 +32,22 @@
 							<l:Grid defaultSpan="L6 M12 S12" width="auto" vSpacing="0" hSpacing="0">
 								<l:content>
 									<VBox>
-										<Text class="text" text="Hi Parag!"/>
-										<Text class="text" text="Welcome to Activity Book Application"/>
+										<Text class="text" text="{i18n>appusernameWish}"/>
+										<Text class="text" text="{i18n>actAppWelcome}"/>
 									</VBox>
 									<VBox>
 										<items>
 											<Text class="text" text=""/>
-											<Button class="firstButton" icon="sap-icon://message-information">
+											<Button icon="sap-icon://message-information" press="onATEPress">
 												<layoutData>
 													<FlexItemData alignSelf="Center"/>
 												</layoutData>
 											</Button>
-											<Text class="link" text="About Al Turki" alignSelf="Center">
+											<Link text="{i18n>aboutAltyurki}" press="onATEPress">
 												<layoutData>
 													<FlexItemData alignSelf="Center"/>
 												</layoutData>
-											</Text>
+											</Link>
 										</items>
 									</VBox>
 								</l:content>
@@ -85,7 +85,7 @@
 					<Panel class="columns sapUiResponsiveContentPadding" accessibleRole="Region" width="60%" height="220px" backgroundDesign="Solid">
 						<headerToolbar>
 							<Toolbar height="3rem">
-								<Title class="title" text="Activity Book"/>
+								<Title class="title" text="{i18n>actBook}"/>
 							</Toolbar>
 						</headerToolbar>
 						<content>
@@ -95,12 +95,12 @@
 									<!--<FlexBox class="panelcol" width="70%" direction="Column" alignItems="Center">-->
 									<VBox>
 										<items>
-											<Button class="abboxstyle" icon="sap-icon://create" press="navToEditActivity" tooltip="Create Activity">
+											<Button class="abboxstyle" icon="sap-icon://create" press="navToEditActivity" tooltip="{i18n>buttoncreateActTooltip}">
 												<layoutData>
 													<FlexItemData alignSelf="Center"/>
 												</layoutData>
 											</Button>
-											<Text class="abboxstyle" text="My Activity Book" textAlign="Center">
+											<Text class="abboxstyle" text="{i18n>myActBook}" textAlign="Center">
 												<layoutData>
 													<FlexItemData alignSelf="Center"/>
 												</layoutData>
@@ -109,12 +109,12 @@
 									</VBox>
 									<VBox>
 										<items>
-											<Button class="abboxstyle" icon="sap-icon://user-edit" press="navToDailyActivity" tooltip="Create Activity">
+											<Button class="abboxstyle" icon="sap-icon://user-edit" press="navToDailyActivity" tooltip="{i18n>buttoncreateActTooltip}">
 												<layoutData>
 													<FlexItemData alignSelf="Center"/>
 												</layoutData>
 											</Button>
-											<Text class="abboxstyle" text="Create Activity Book" textAlign="Center">
+											<Text class="abboxstyle" text="{i18n>createActbk}" textAlign="Center">
 												<layoutData>
 													<FlexItemData alignSelf="Center"/>
 												</layoutData>
@@ -128,7 +128,7 @@
 													<FlexItemData alignSelf="Center"/>
 												</layoutData>
 											</Button>
-											<Text class="abboxstyle" text="Delete Activity Book" textAlign="Center">
+											<Text class="abboxstyle" text="{i18n>dlteActBook}" textAlign="Center">
 												<layoutData>
 													<FlexItemData alignSelf="Center"/>
 												</layoutData>
@@ -142,7 +142,7 @@
 													<FlexItemData alignSelf="Center"/>
 												</layoutData>
 											</Button>
-											<Text class="abboxstyle" text="Reports" textAlign="Center">
+											<Text class="abboxstyle" text="{i18n>reports}" textAlign="Center">
 												<layoutData>
 													<FlexItemData alignSelf="Center"/>
 												</layoutData>

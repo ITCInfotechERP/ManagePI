@@ -16,6 +16,10 @@ sap.ui.define([
 		
 		navToEditActivity: function(oEvent){
 			this.getRouter().navTo("booklist");
+		},
+		
+		onATEPress: function(){
+			sap.m.URLHelper.redirect("http://alturki.com/Main.aspx", true);
 		}
 	});
 });

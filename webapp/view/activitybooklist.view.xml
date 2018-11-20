@@ -5,22 +5,22 @@
 		<customHeader>
 			<Bar class="headerToolBarBackground">
 				<contentLeft>
-					<Button icon="sap-icon://home" tooltip="Home" press="homeButton"/>
+					<Button icon="sap-icon://home" tooltip="{i18n>appHome}" press="homeButton"/>
 				</contentLeft>
 				<contentMiddle>
-					<Title text="Activity Book" level="H3"/>
+					<Title text="{i18n>actBook}" level="H3"/>
 				</contentMiddle>
 				<contentRight>
-					<Button icon="sap-icon://bell" tooltip="Notification"/>
-					<Text text="Parag"/>
-					<Button text="Logout"/>
+					<Button icon="sap-icon://bell" tooltip="{i18n>appNotifications}"/>
+					<Text text="{i18n>appUser}"/>
+					<Button text="{i18n>appLogout}"/>
 				</contentRight>
 			</Bar>
 		</customHeader>
 		<content>
 			<SplitContainer>
 				<masterPages>
-					<semantic:MasterPage class="activityMasterPageColor sapUiResponsiveContentPadding" title="Activity Book List">
+					<semantic:MasterPage width="auto" class="activityMasterPageColor sapUiResponsiveContentPadding" title="{i18n>AppActivityBooklst}">
 						<SearchField width="auto" search="onFilterProducts" class="sapUiTinyMargin"/>
 						<List id="List1" mode="SingleSelectMaster" selectionChange="showDetails" items="{ path : '/Employees'}">
 							<items>
@@ -33,7 +33,7 @@
 					</semantic:MasterPage>
 				</masterPages>
 				<detailPages>
-					<semantic:DetailPage title="Activity Book Detail" class="activityMasterPageColor">
+					<semantic:DetailPage title="{i18n>appActivityBookDtl }" class="activityMasterPageColor">
 						<semantic:content>
 							<ObjectHeader id="objectHeader" title="{DialogModel>/ActivitySelected/0/Book}" titleActive="false" titlePress="onShowDetailPopover"
 								responsive="true" number="{DialogModel>/ActivitySelected/0/CodeID}">
@@ -43,7 +43,7 @@
 							</ObjectHeader>
 							<IconTabBar id="iconTabBar" class="tabBar" select="handleIconTabBarSelect">
 								<items>
-									<IconTabFilter icon="sap-icon://group" text="Project Datails" key="Emp Data" tooltip="Project Data">
+									<IconTabFilter icon="sap-icon://group" text="{i18n>appProjDetails}" key="Emp Data" tooltip="{i18n>appProjectData}">
 										<content>
 											<VBox class="sapUiSmallMargin">
 												<f:SimpleForm id="SimpleFormDisplay480_12120Dual" editable="false" layout="ResponsiveGridLayout" labelSpanXL="4" labelSpanL="4"
@@ -51,22 +51,22 @@
 													columnsL="2" columnsM="2" singleContainerFullSize="false">
 													<f:content>
 														<core:Title/>
-														<Label text="Activity Book No" class="fname"/>
+														<Label text="{i18n>actBookNo}" class="fname"/>
 														<Text id="activityBookNumber" text="{DialogModel>/ActivitySelected/0/Discipline ID}"/>
-														<Label text="Activity Date" class="fname"/>
+														<Label text="{i18n>actDate}" class="fname"/>
 														<Text id="activityDate" text="{DialogModel>/ActivitySelected/0/GroupID}"/>
-														<Label text="Personnel Area" class="fname"/>
+														<Label text="{i18n>personArea}" class="fname"/>
 														<Text id="personnelArea" text="{DialogModel>/ActivitySelected/0/CodeID}"/>
-														<Label text="Personnel Sub Area" class="fname"/>
+														<Label text="{i18n>personsubArea}" class="fname"/>
 														<Text id="personnelSubArea" text="{DialogModel>/ActivitySelected/0/Hours}"/>
 														<core:Title/>
-														<Label text="Area ID / Description" class="fname"/>
+														<Label text="{i18n>areaIDDes}" class="fname"/>
 														<Text id="areaId" text="{DialogModel>/ActivitySelected/0/Quantity}"/>
-														<Label text="Location / Building" class="fname"/>
+														<Label text="{i18n>locbuild}" class="fname"/>
 														<Text id="location" text="{DialogModel>/ActivitySelected/0/Quantity}"/>
-														<Label text="Area Foreman ID" class="fname"/>
+														<Label text="{i18n>areaFormanID}" class="fname"/>
 														<Text id="areaForemanId" text="{DialogModel>/ActivitySelected/0/Quantity}"/>
-														<Label text="Site Engineer ID" class="fname"/>
+														<Label text="{i18n>siteEngID}" class="fname"/>
 														<Text id="siteEngineerId" text="{DialogModel>/ActivitySelected/0/Quantity}"/>
 													</f:content>
 												</f:SimpleForm>
@@ -74,32 +74,32 @@
 										</content>
 									</IconTabFilter>
 									<IconTabSeparator/>
-									<IconTabFilter icon="sap-icon://manager" count="" text="Activity Details" key="Activity Details" tooltip="Activity Details">
+									<IconTabFilter icon="sap-icon://manager" count="" text="{i18n>actDetails}" key="Activity Details" tooltip="Activity Details">
 										<content>
 											<Table id="idProductsTable" alternateRowColors="true" mode="SingleSelectLeft" inset="false"
 												items="{ path: '/Employees', sorter: { path: 'Name' } }">
 												<headerToolbar>
 													<Toolbar>
 														<ToolbarSpacer/>
-														<SearchField width="50%"/>
+														<SearchField width="50%" search="onSearch"/>
 														<Button icon="sap-icon://add" press="navToActivitydetails"/>
 													</Toolbar>
 												</headerToolbar>
 												<columns>
 													<Column width="13em">
-														<Text text="Discipline ID"/>
+														<Text text="{i18n>ActDescID}"/>
 													</Column>
 													<Column minScreenWidth="Tablet" demandPopin="true">
-														<Text text="Group ID"/>
+														<Text text="{i18n>ActgrpID}"/>
 													</Column>
 													<Column minScreenWidth="Desktop" demandPopin="true" hAlign="End">
-														<Text text="Code ID"/>
+														<Text text="{i18n>ActCodeID}"/>
 													</Column>
 													<Column minScreenWidth="Desktop" demandPopin="true" hAlign="Center">
-														<Text text="Hours"/>
+														<Text text="{i18n>ActHours}"/>
 													</Column>
 													<Column hAlign="End">
-														<Text text="Quantity"/>
+														<Text text="{i18n>ActQuantity}"/>
 													</Column>
 												</columns>
 												<items>
@@ -120,10 +120,10 @@
 							</IconTabBar>
 						</semantic:content>
 						<semantic:customFooterContent>
-							<Button text="Submit" press="onPress"/>
-							<Button text="Save" press="onPress"/>
-							<Button text="Cancel" press="onNavBack"/>
-							<Button icon="sap-icon://email" tooltip="Send Email" press="onShareEmailPress"/>
+							<Button text="{i18n>buttonSubmit}" press="onPress"/>
+							<Button text="{i18n>buttonSave}" press="onPress"/>
+							<Button text="{i18n>buttonCancel}" press="onNavBack"/>
+							<Button icon="sap-icon://email" tooltip="{i18n>emailTooltip}" press="onShareEmailPress"/>
 						</semantic:customFooterContent>
 					</semantic:DetailPage>
 				</detailPages>

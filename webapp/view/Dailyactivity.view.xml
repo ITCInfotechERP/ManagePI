@@ -4,15 +4,15 @@
 		<m:customHeader>
 			<m:Bar class="headerToolBarBackground">
 				<m:contentLeft>
-					<m:Button icon="sap-icon://home" tooltip="Home" press="homeButton"></m:Button>
+					<m:Button icon="sap-icon://home" tooltip="{i18n>appHome}" press="homeButton"></m:Button>
 				</m:contentLeft>
 				<m:contentMiddle>
-					<m:Title text="Create Activity Book (Coastal)" level="H3"/>
+					<m:Title text="{i18n>actBookCreate}" level="H3"/>
 				</m:contentMiddle>
 				<m:contentRight>
-					<m:Button icon="sap-icon://bell" tooltip="Notification"/>
-					<m:Text text="Parag"/>
-					<m:Button text="Logout"/>
+					<m:Button icon="sap-icon://bell" tooltip="{i18n>appNotifications}"/>
+					<m:Text text="{i18n>appUser}"/>
+					<m:Button text="{i18n>appLogout}"/>
 				</m:contentRight>
 			</m:Bar>
 		</m:customHeader>
@@ -20,7 +20,7 @@
 			<ObjectPageLayout id="ObjectPageLayout" enableLazyLoading="false" showTitleInHeaderContent="false" showHeaderContent="true"
 				useIconTabBar="true">
 				<headerTitle>
-					<ObjectPageHeader objectImageURI="https://nulm.gov.in/images/user.png" objectImageShape="Circle" objectTitle="Parag"
+					<ObjectPageHeader objectImageURI="https://nulm.gov.in/images/user.png" objectImageShape="Circle" objectTitle="{i18n>appUser}"
 						objectImageAlt="Senior UI Developer" id="ObjectPageLayoutHeaderTitle" isObjectIconAlwaysVisible="true" isObjectTitleAlwaysVisible="true"
 						showPlaceholder="true">
 						<!--	<actions>
@@ -35,8 +35,8 @@
 							<layout:VerticalLayout width="300px">
 								<!--<m:ObjectStatus class="nameText" text="Parag" active="true"/>
 	-->
-								<m:ObjectStatus class="objectText" title="Role Classification" text="Charge Hand"/>
-								<m:ObjectStatus class="objectText" title="Status" text="Active"/>
+								<m:ObjectStatus class="objectText" title="{i18n>roleClass}" text="{i18n>chargeHand}"/>
+								<m:ObjectStatus class="objectText" title="{i18n>status}" text="Active"/>
 								<!--<m:ObjectStatus title="Phone Number" text="1-844-726-7733"/>-->
 							</layout:VerticalLayout>
 							<layout:VerticalLayout width="300px">
@@ -44,14 +44,14 @@
 								<!--	<ObjectPageHeaderLayoutData visibleS="false"/>-->
 								<!--</layout:layoutData>-->
 								<!--<m:ObjectStatus title="Language" text="English"/>-->
-								<m:ObjectStatus class="objectText" title="Industry" text="Manufacturing"/>
-								<m:ObjectStatus class="objectText" text="Bangalore City, IN"/>
+								<m:ObjectStatus class="objectText" title="{i18n>industry}" text="Manufacturing"/>
+								<m:ObjectStatus class="objectText" text="{i18n>personLocationDetails}"/>
 								<!--<m:Token text="Visible on M and L size"/>-->
 							</layout:VerticalLayout>
 							<layout:VerticalLayout width="300px">
 								<!--<m:RatingIndicator maxValue="6" class="sapUiSmallMarginBottom" value="5" tooltip="Rating Tooltip"/>-->
 								<!--<m:Token text="Visible on L size"/>-->
-								<m:ObjectStatus class="objectText" text="http://www.alturki.com" active="true"/>
+								<m:ObjectStatus class="objectText" text="{i18n>aboutCompany}" active="true"/>
 							</layout:VerticalLayout>
 						</layout:content>
 					</layout:Grid>
@@ -61,30 +61,30 @@
 						<subSections>
 							<ObjectPageSubSection>
 								<m:VBox class="vbox">
-									<f:SimpleForm title="Book Header" id="SimpleFormDisplay480_12120" columnsM="2" columnsL="2" emptySpanM="0" emptySpanL="0"
+									<f:SimpleForm title="{i18n>bookHeader}" id="SimpleFormDisplay480_12120" columnsM="2" columnsL="2" emptySpanM="0" emptySpanL="0"
 										adjustLabelSpan="false" labelSpanM="12" labelSpanL="4" layout="ResponsiveGridLayout" editable="false">
 										<f:content>
 											<core:Title/>
-											<m:Label text="Activity Book No"/>
-											<m:Input value="Auto generated field once Book is 'saved'."/>
-											<m:Label text="Activity Date"/>
-											<m:Input value="11/10/2018"/>
-											<m:Label text="Personnel Area"/>
-											<m:Input value="Area 1"/>
-											<m:Input value="Maintown"/>
-											<m:Label text="Personnel Sub Area"/>
-											<m:Input value="Area 1A"/>
-											<m:Input value="Maintown"/>
+											<m:Label text="{i18n>actBookNo}"/>
+											<m:Input value="{i18n>numberValue}"/>
+											<m:Label text="{i18n>actDate}"/>
+											<m:Input value="{i18n>dateValue}"/>
+											<m:Label text="{i18n>personArea}"/>
+											<m:Input value="{i18n>personArea1}"/>
+											<m:Input value="{i18n>mainTown}"/>
+											<m:Label text="{i18n>personsubArea}"/>
+											<m:Input value="{i18n>personsubArea1 }"/>
+											<m:Input value="{i18n>mainTown}"/>
 											<core:Title/>
-											<m:Label text="Area ID / Description"/>
-											<m:Input value="A-ID3453"/>
-											<m:Input value="Maintown Area"/>
-											<m:Label text="Location / Building"/>
-											<m:Input value="Bangalore"/>
-											<m:Label text="Area Foreman ID"/>
-											<m:Input value="ID234567"/>
-											<m:Label text="Site Engineer ID"/>
-											<m:Input value="ID95637"/>
+											<m:Label text="{i18n>areaIDDes}"/>
+											<m:Input value="{i18n>areaIDValue}"/>
+											<m:Input value="{i18n>maintownArea}"/>
+											<m:Label text="{i18n>locbuild}"/>
+											<m:Input value="{i18n>personLocationDetail}"/>
+											<m:Label text="{i18n>areaFormanID}"/>
+											<m:Input value="{i18n>idValue}"/>
+											<m:Label text="{i18n>siteEngID}"/>
+											<m:Input value="{i18n>siteEngidVal}"/>
 										</f:content>
 									</f:SimpleForm>
 								</m:VBox>
@@ -97,8 +97,8 @@
 		<m:footer>
 			<m:Toolbar>
 				<m:ToolbarSpacer/>
-				<m:Button type="Emphasized" text="Add Activity Details" press="navToActivitydetails"/>
-				<m:Button text="Cancel" press="onNavBack"/>
+				<m:Button type="Emphasized" text="{i18n>addActDetail}" press="navToActivitydetails"/>
+				<m:Button text="{i18n>buttonCancel}" press="onNavBack"/>
 			</m:Toolbar>
 		</m:footer>
 	</m:Page>
