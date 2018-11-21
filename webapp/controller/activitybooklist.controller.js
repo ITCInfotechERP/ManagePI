@@ -17,6 +17,20 @@ sap.ui.define([
 			this.getView().setModel(this.getOwnerComponent().getModel("jsonData"));
 			//	this.getView().setModel(this.getOwnerComponent().getModel("json"));
 
+        var data = this.getOwnerComponent().getModel("jsonData").getData().Employees;
+		var array1 = [];
+		array1.push(data);
+		var dialogModel = new sap.ui.model.json.JSONModel();
+			this.getView().setModel(dialogModel, "DialogModel");
+			this.getView().getModel("DialogModel").setProperty("/ActivitySelected", array1[0]);
+		 
+ 
+
+
+
+
+
+
        	this.mGroupFunctions = {
 				GroupID: function(oContext) {
 					var name = oContext.getProperty("GroupID");
@@ -164,7 +178,7 @@ sap.ui.define([
         // update filter bar
         if(aFilters.length > 0 || aSorters.length > 0){
         		
-        			this.getView().byId("filterButton").setType("Emphasized");
+        	this.getView().byId("filterButton").setType("Emphasized");
         		
         }
        // var s = oDialog.getSelectedFilterString();

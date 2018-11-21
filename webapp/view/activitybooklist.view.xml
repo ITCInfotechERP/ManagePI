@@ -20,7 +20,7 @@
 		<content>
 			<SplitContainer>
 				<masterPages>
-					<semantic:MasterPage width="auto" class="activityMasterPageColor sapUiResponsiveContentPadding" title="{i18n>AppActivityBooklst}">
+					<semantic:MasterPage  class="activityMasterPageColor sapUiResponsiveContentPadding" title="{i18n>AppActivityBooklst}">
 						<SearchField width="auto" search="onSearchListItems" class="sapUiTinyMargin"/>
 						<List id="List1" mode="SingleSelectMaster" selectionChange="showDetails" items="{ path : '/Employees'}">
 							<items>

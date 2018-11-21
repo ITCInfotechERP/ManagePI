@@ -92,6 +92,9 @@ sap.ui.define([
 			this.getView().byId("cancelButtonThree").setVisible(false);
 			this.getView().byId("cancelButtonFive").setVisible(false);
 			this.getView().byId("saveButtonTwo").setVisible(false);
+			this.getView().byId("submitButtonOne").setVisible(false);
+
+		
 
 		},
 
@@ -108,6 +111,10 @@ sap.ui.define([
 			//Hide the Buttons which are not useful in this view
 			this.getView().byId("saveButtonOne").setVisible(false);
 			this.getView().byId("cancelButtonTwo").setVisible(false);
+			this.getView().byId("cancelButtonThree").setVisible(false);
+			
+			this.getView().byId("saveButtonThree").setVisible(false);
+			this.getView().byId("cancelButtonFour").setVisible(false);
 
 		},
 
@@ -189,24 +196,24 @@ sap.ui.define([
 
 		},
 
-		activityBook6: function() {
-			this.getSplitAppObj().to(this.createId("detail5"));
-			this.getSplitAppObj().toMaster(this.createId("master2"));
+		// activityBook6: function() {
+		// 	this.getSplitAppObj().to(this.createId("detail5"));
+		// 	this.getSplitAppObj().toMaster(this.createId("master2"));
 
-			this.getView().byId("submitButtonTwo").setVisible(true);
-			this.getView().byId("editButton").setVisible(true);
-			this.getView().byId("saveButtonTwo").setVisible(true);
-			this.getView().byId("cancelButtonFive").setVisible(true);
+		// 	this.getView().byId("submitButtonTwo").setVisible(true);
+		// 	this.getView().byId("editButton").setVisible(true);
+		// 	this.getView().byId("saveButtonTwo").setVisible(true);
+		// 	this.getView().byId("cancelButtonFive").setVisible(true);
 
-			//Hide the Buttons which are not useful in this view
-			this.getView().byId("saveButtonOne").setVisible(false);
-			this.getView().byId("cancelButtonTwo").setVisible(false);
-			this.getView().byId("cancelButtonOne").setVisible(false);
-			this.getView().byId("saveButtonThree").setVisible(false);
-			this.getView().byId("cancelButtonFour").setVisible(false);
-			this.getView().byId("submitButtonOne").setVisible(false);
+		// 	//Hide the Buttons which are not useful in this view
+		// 	this.getView().byId("saveButtonOne").setVisible(false);
+		// 	this.getView().byId("cancelButtonTwo").setVisible(false);
+		// 	this.getView().byId("cancelButtonOne").setVisible(false);
+		// 	this.getView().byId("saveButtonThree").setVisible(false);
+		// 	this.getView().byId("cancelButtonFour").setVisible(false);
+		// 	this.getView().byId("submitButtonOne").setVisible(false);
 
-		},
+		// },
 
 		//Get back to the Activity Page One By Clicking On Cancel Button on Activity Page 2
 		onPressDetailBack: function() {
@@ -221,7 +228,9 @@ sap.ui.define([
 
 			// On back navigation make save and cancel buttons visible 
 			this.getView().byId("saveButtonOne").setVisible(true);
-			this.getView().byId("cancelButtonTwo").setVisible(true);
+			this.getView().byId("cancelButtonTwo").setVisible(false);
+			
+			this.getView().byId("cancelButtonFour").setVisible(true);
 
 		},
 
@@ -240,6 +249,15 @@ sap.ui.define([
 
 			this.getView().byId("cancelButtonFour").setVisible(false);
 			this.getView().byId("saveButtonThree").setVisible(false);
+			
+					//Hide the Buttons which are not useful in this view
+			this.getView().byId("saveButtonOne").setVisible(false);
+			this.getView().byId("cancelButtonTwo").setVisible(false);
+			this.getView().byId("cancelButtonOne").setVisible(false);
+			this.getView().byId("saveButtonThree").setVisible(false);
+			this.getView().byId("cancelButtonFour").setVisible(false);
+			this.getView().byId("submitButtonOne").setVisible(false);
+
 			// On back navigation make save and cancel buttons visible 
 			this.getView().byId("submitButtonOne").setVisible(true);
 			this.getView().byId("saveButtonTwo").setVisible(true);
@@ -314,12 +332,14 @@ sap.ui.define([
 		},
 
 		onSelectionChange: function(oEvent) {
+			
+			this.getView().byId("tableRowEditButton").setType("Emphasized");
 			var oSelectedItem = oEvent.getParameter("listItem");
 			this.oModel = oSelectedItem.getBindingContext().getObject();
 			var array = [];
 
 			array.push(this.oModel);
-			MessageToast.show(JSON.stringify(this.oModel));
+		
 		},
 
 		openDialog: function(oEvent) {
