@@ -84,6 +84,7 @@ sap.ui.define([
 		},
 		
 		
+		
 			// <! ~~~~~~~~~~~~~~~~~~~~~ Search Bar filter for list items  ~~~~~~~~~~~~~~~~>
 		onSearchListItems: function (oEvent) {
 			var aFilters = [];
