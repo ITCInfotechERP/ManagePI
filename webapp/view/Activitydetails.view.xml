@@ -302,9 +302,9 @@
 																<m:Label text="{i18n>payroll}"/>
 																<m:Input id="payrollInputValue" value="{ActModel>/editActModel/0/PayrollType}"/>
 																<m:Label text="{i18n>shouldPI}"/>
-																<m:Input id="shouldBePiInputValue" value="{ActModel>/editActModel/0/Should be PI}"/>
+																<m:Input id="shouldBePiInputValue" description="Hrs" value="{ActModel>/editActModel/0/Should be PI}"/>
 																<m:Label text="{i18n>pibyCHl}"/>
-																<m:Input id="piByChInputValue" value="{ActModel>/editActModel/0/PIByCH}"/>
+																<m:Input id="piByChInputValue" description="Hrs" value="{ActModel>/editActModel/0/PIByCH}"/>
 															</f:content>
 														</f:SimpleForm>
 													</m:VBox>
@@ -342,9 +342,9 @@
 																<m:Label text="{i18n>payroll}"/>
 																<m:Input id="payrollInputValueEnabled" enabled="false"/>
 																<m:Label text="{i18n>shouldPI}"/>
-																<m:Input id="shouldBePiInputValueEnabled" enabled="false"/>
+																<m:Input id="shouldBePiInputValueEnabled" description="Hrs" enabled="false"/>
 																<m:Label text="{i18n>pibyCHl}"/>
-																<m:Input id="piByChInputValueEnabled" enabled="false"/>
+																<m:Input id="piByChInputValueEnabled"  description="Hrs" enabled="false"/>
 															</f:content>
 														</f:SimpleForm>
 													</m:VBox>

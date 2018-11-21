@@ -105,7 +105,7 @@ sap.ui.define([
 			this.getSplitAppObj().toMaster(this.createId("master2"));
 
 			this.getView().byId("submitButtonOne").setVisible(true);
-			this.getView().byId("cancelButtonOne").setVisible(true);
+	    	this.getView().byId("cancelButtonFive").setVisible(true);
 			this.getView().byId("saveButtonTwo").setVisible(true);
 
 			//Hide the Buttons which are not useful in this view
@@ -123,7 +123,11 @@ sap.ui.define([
 		ActivityBookDetailPage3: function() {
 			this.getSplitAppObj().to(this.createId("detail3"));
 			this.getSplitAppObj().toMaster(this.createId("master2"));
-
+           
+             
+           
+              
+            
 			this.getView().byId("submitButtonOne").setVisible(true);
 			this.getView().byId("saveButtonTwo").setVisible(true);
 			this.getView().byId("cancelButtonThree").setVisible(true);
@@ -134,6 +138,7 @@ sap.ui.define([
 			this.getView().byId("cancelButtonOne").setVisible(false);
 			this.getView().byId("saveButtonThree").setVisible(false);
 			this.getView().byId("cancelButtonFour").setVisible(false);
+			this.getView().byId("cancelButtonFive").setVisible(false);
 			this.getView().byId("editButton").setVisible(false);
 			this.getView().byId("submitButtonTwo").setVisible(false);
 		},
@@ -265,7 +270,8 @@ sap.ui.define([
 		},
 
 		backToActivityDetailTwo: function() {
-			this.getSplitAppObj().backDetail();
+			this.getSplitAppObj().to(this.createId("ActivityBookDetailPage1"));
+			this.getSplitAppObj().toMaster(this.createId("master2"));
 
 			this.getView().byId("submitButtonTwo").setVisible(false);
 			this.getView().byId("editButton").setVisible(false);
@@ -273,9 +279,9 @@ sap.ui.define([
 			this.getView().byId("cancelButtonFive").setVisible(false);
 
 			// On back navigation make save and cancel buttons visible 
-			this.getView().byId("submitButtonOne").setVisible(true);
-			this.getView().byId("saveButtonThree").setVisible(true);
-			this.getView().byId("cancelButtonFour").setVisible(true);
+			this.getView().byId("submitButtonOne").setVisible(false);
+			this.getView().byId("saveButtonOne").setVisible(true);
+			this.getView().byId("cancelButtonTwo").setVisible(true);
 		},
 
 		/* <!------------------Click List Footer Button --> Master Page 1, Detail Page 1 --------------------------------------> */
