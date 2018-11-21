@@ -275,6 +275,14 @@
 												<m:content>
 													<m:Table id="idProductsTable" alternateRowColors="true" mode="SingleSelectLeft" inset="false"
 													items="{ path: '/Employees', sorter: { path: 'Name' } }">
+														<m:headerToolbar>
+													<m:Toolbar>
+														<m:ToolbarSpacer/>
+														<m:Button id="filterButton" tooltip="View Settings" icon="sap-icon://sort" press="openDialog"/>
+														<m:SearchField width="50%" search="onSearchTableItems"/>
+													
+													</m:Toolbar>
+												</m:headerToolbar>
 														<m:columns>
 										 					<m:Column width="12em">
 																<m:Text text="{i18n>empID}"/>
@@ -297,9 +305,9 @@
 																<m:cells>
 																	<m:ObjectIdentifier title="{EmployeeID}"/>
 																	<m:Text text="{Name}"/>
-																	<m:Text text="{Payroll Type}"/>
+																	<m:Text text="{PayrollType}"/>
 																	<m:ObjectNumber number="{Should be PI}"/>
-																	<m:ObjectNumber number="{PI By CH}"/>
+																	<m:ObjectNumber number="{PIByCH}"/>
 																</m:cells>
 															</m:ColumnListItem>
 														</m:items>
