@@ -208,15 +208,15 @@
 															singleContainerFullSize="false">
 															<f:content>
 																<m:Label text="{i18n>empID}"/>
-																<m:Input value="{i18n>empValue}"/>
+																<m:Input id ="employeeInputValue"  value="{ActModel>/editActModel/0/EmployeeID}"/>
 																<m:Label text="{i18n>empName}"/>
-																<m:Input value="{i18n>empNameValue}" enabled="false"/>
+																<m:Input id="employeeNameInputValue" value="{ActModel>/editActModel/0/Name}" enabled="false"/>
 																<m:Label text="{i18n>payroll}"/>
-																<m:Input value="{i18n>payroll}"/>
+																<m:Input id="payrollInputValue" value="{ActModel>/editActModel/0/PayrollType}"/>
 																<m:Label text="{i18n>shouldPI}"/>
-																<m:Input value="{i18n>val}"/>
+																<m:Input id="shouldBePiInputValue"  value="{ActModel>/editActModel/0/Should be PI}"/>
 																<m:Label text="{i18n>pibyCHl}"/>
-																<m:Input value="{i18n>pibyChVal}"/>
+																<m:Input id="piByChInputValue" value="{ActModel>/editActModel/0/PIByCH}"/>
 															</f:content>
 														</f:SimpleForm>
 													</m:VBox>
@@ -248,15 +248,15 @@
 															singleContainerFullSize="false">
 															<f:content>
 																<m:Label text="{i18n>empID}"/>
-																<m:Input value="{i18n>empValue}" enabled="false"/>
+																<m:Input id = "employeeInputValueEnabled" enabled="false"/>
 																<m:Label text="{i18n>empName}"/>
-																<m:Input value="{i18n>empNameValue}" enabled="false"/>
+																<m:Input id="employeeNameInputValueEnabled" enabled="false"/>
 																<m:Label text="{i18n>payroll}"/>
-																<m:Input value="{i18n>payroll}" enabled="false"/>
+																<m:Input id="payrollInputValueEnabled" enabled="false"/>
 																<m:Label text="{i18n>shouldPI}"/>
-																<m:Input value="{i18n>val}" enabled="false"/>
+																<m:Input id="shouldBePiInputValueEnabled" enabled="false"/>
 																<m:Label text="{i18n>pibyCHl}"/>
-																<m:Input value="{i18n>pibyChVal}" enabled="false"/>
+																<m:Input id="piByChInputValueEnabled" enabled="false"/>
 															</f:content>
 														</f:SimpleForm>
 													</m:VBox>
@@ -273,8 +273,16 @@
 											<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  Incentives View (ID "detail5") ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 											<m:Page id="detail5" title="{i18n>titleIncentive}" class="sapUiStdPage sapUiResponsiveContentPadding">
 												<m:content>
-													<m:Table id="idProductsTable" alternateRowColors="true" mode="SingleSelectLeft" inset="false"
+													<m:Table id="idProductsTable" alternateRowColors="true" mode="SingleSelectLeft"  selectionChange="onSelectionChange" inset="false"
 													items="{ path: '/Employees', sorter: { path: 'Name' } }">
+														<m:headerToolbar>
+													<m:Toolbar>
+														<m:ToolbarSpacer/>
+														<m:Button id="filterButton" tooltip="View Settings" icon="sap-icon://sort" press="openDialog"/>
+														<m:SearchField width="50%" search="onSearchTableItems"/>
+													
+													</m:Toolbar>
+												</m:headerToolbar>
 														<m:columns>
 										 					<m:Column width="12em">
 																<m:Text text="{i18n>empID}"/>
@@ -297,9 +305,9 @@
 																<m:cells>
 																	<m:ObjectIdentifier title="{EmployeeID}"/>
 																	<m:Text text="{Name}"/>
-																	<m:Text text="{Payroll Type}"/>
+																	<m:Text text="{PayrollType}"/>
 																	<m:ObjectNumber number="{Should be PI}"/>
-																	<m:ObjectNumber number="{PI By CH}"/>
+																	<m:ObjectNumber number="{PIByCH}"/>
 																</m:cells>
 															</m:ColumnListItem>
 														</m:items>

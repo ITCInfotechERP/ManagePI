@@ -75,7 +75,7 @@
 											<Table id="idProductsTable" alternateRowColors="true" mode="SingleSelectLeft" inset="false"
 												items="{ path: '/Employees', sorter: { path: 'DisciplineID' } }">
 												<headerToolbar>
-													<Toolbar id="vsdFilterBar">
+													<Toolbar>
 														<ToolbarSpacer/>
 														<Button id="filterButton" tooltip="View Settings" icon="sap-icon://sort" press="openDialog"/>
 														<SearchField width="50%" search="onSearchTableItems"/>
