@@ -360,3 +360,10 @@ html.sapUiMedia-Std-Desktop .sapUxAPObjectPageHeaderContent .sapUxAPObjectPageHe
 .headerToolBarBackground{
     background-color: rgb(171, 199, 222)!important; 
 }
+
+
+/*ObjectPageSubSection title in upperCase*/
+
+.sapUxAPAnchorBarUpperCase .sapUxAPAnchorBarButton {
+    text-transform: none;
+} 
