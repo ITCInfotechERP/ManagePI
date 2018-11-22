@@ -3,43 +3,43 @@
 	xmlns:viz.feeds="sap.viz.ui5.controls.common.feeds">
 	<App>
 		<pages>
-			<Page class="sapUiContentPadding">
+			<Page>
 				<customHeader>
 					<Bar class="headerToolBarBackground">
 						<contentLeft>
-							<Button icon="sap-icon://home" tooltip="{i18n>appHome}" press="homeButton"></Button>
+							<Button icon="sap-icon://home" tooltip="Home" press="homeButton"></Button>
 						</contentLeft>
 						<contentMiddle>
-							<Title text="{i18n>titleCharts}" level="H3"/>
+							<Title text="Chart Table" level="H3"/>
 						</contentMiddle>
 						<contentRight>
-							<Button icon="sap-icon://bell" tooltip="{i18n>appNotifications}"/>
-							<Text text="{i18n>appUser}"/>
-							<Button text="{i18n>appLogout}"/>
+							<Button icon="sap-icon://bell" tooltip="Notification"/>
+							<Text text="Parag"/>
+							<Button text="Logout"/>
 						</contentRight>
 					</Bar>
 				</customHeader>
 				<content>
 					<FlexBox height="100px" alignItems="Start" justifyContent="End">
 						<items>
-							<Button icon="sap-icon://bar-chart" press="onpressbar" class="sapUiSmallMarginEnd" tooltip="{i18n>chartBar}"/>
-							<Button icon="sap-icon://pie-chart" press="onpresspie" class="sapUiSmallMarginEnd" tooltip="{i18n>chartPie}"/>
-							<Button icon="sap-icon://table-view" press="onpressTable" class="sapUiSmallMarginEnd" tooltip="{i18n>chartTable}"/>
+							<Button icon="sap-icon://bar-chart" press="onpressbar" class="sapUiSmallMarginEnd" tooltip="Bar Chart"/>
+							<Button icon="sap-icon://pie-chart" press="onpresspie" class="sapUiSmallMarginEnd" tooltip="Pie Chart"/>
+							<Button icon="sap-icon://table-view" press="onpressTable" class="sapUiSmallMarginEnd" tooltip="Table"/>
 						</items>
 					</FlexBox>
 					<Table id="idProductsTable" visible="false" inset="false" items="{/items}">
 						<columns>
 							<Column>
-								<Text text="{i18n>value}"/>
+								<Text text="Year"/>
 							</Column>
 							<Column>
-								<Text text="{i18n>value1}"/>
+								<Text text="Milk"/>
 							</Column>
 							<Column>
-								<Text text="{i18n>value2}"/>
+								<Text text="Sugar"/>
 							</Column>
 							<Column>
-								<Text text="{i18n>value3}"/>
+								<Text text="Tea"/>
 							</Column>
 						</columns>
 						<items>
@@ -59,12 +59,12 @@
 						<viz:dataset>
 							<viz.data:FlattenedDataset data="{/items}">
 								<viz.data:dimensions>
-									<viz.data:DimensionDefinition name="{i18n>value}" value="{Year}"/>
+									<viz.data:DimensionDefinition name="Year" value="{Year}"/>
 								</viz.data:dimensions>
 								<viz.data:measures>
-									<viz.data:MeasureDefinition name="{i18n>value1}" value="{Milk}"/>
-									<viz.data:MeasureDefinition name="{i18n>value2}" value="{Sugar}"/>
-									<viz.data:MeasureDefinition name="{i18n>value3}" value="{Tea}"/>
+									<viz.data:MeasureDefinition name="Milk" value="{Milk}"/>
+									<viz.data:MeasureDefinition name="Sugar" value="{Sugar}"/>
+									<viz.data:MeasureDefinition name="Tea" value="{Tea}"/>
 								</viz.data:measures>
 							</viz.data:FlattenedDataset>
 						</viz:dataset>

@@ -238,7 +238,7 @@
 																<m:Text text="{i18n>payroll}"/>
 															</m:Column>
 															<m:Column minScreenWidth="Desktop" demandPopin="true" hAlign="Center">
-																<m:Text text="{i18n>shouldPI }"/>
+																<m:Text text="{i18n>shouldPI}"/>
 															</m:Column>
 															<m:Column hAlign="End">
 																<m:Text text="{i18n>pibyCHl}"/>
@@ -250,7 +250,7 @@
 																	<m:ObjectIdentifier title="{EmployeeID}"/>
 																	<m:Text text="{Name}"/>
 																	<m:Text text="{PayrollType}"/>
-																	<m:ObjectNumber number="{Should be PI}"/>
+																	<m:ObjectNumber number="{shouldbePI}"/>
 																	<m:ObjectNumber number="{PIByCH}"/>
 																</m:cells>
 															</m:ColumnListItem>
@@ -302,7 +302,7 @@
 																<m:Label text="{i18n>payroll}"/>
 																<m:Input id="payrollInputValue" value="{ActModel>/editActModel/0/PayrollType}"/>
 																<m:Label text="{i18n>shouldPI}"/>
-																<m:Input id="shouldBePiInputValue" description="Hrs" value="{ActModel>/editActModel/0/Should be PI}"/>
+																<m:Input id="shouldBePiInputValue" description="Hrs" value="{ActModel>/editActModel/0/ShouldbePI}"/>
 																<m:Label text="{i18n>pibyCHl}"/>
 																<m:Input id="piByChInputValue" description="Hrs" value="{ActModel>/editActModel/0/PIByCH}"/>
 															</f:content>
@@ -393,7 +393,7 @@
 																	<m:ObjectIdentifier title="{EmployeeID}"/>
 																	<m:Text text="{Name}"/>
 																	<m:Text text="{PayrollType}"/>
-																	<m:ObjectNumber number="{Should be PI}"/>
+																	<m:ObjectNumber number="{shouldbePI}"/>
 																	<m:ObjectNumber number="{PIByCH}"/>
 																</m:cells>
 															</m:ColumnListItem>
