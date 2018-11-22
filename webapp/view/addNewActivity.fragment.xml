@@ -1,0 +1,39 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:f="sap.ui.layout.form" xmlns:l="sap.ui.layout">
+
+<Dialog title="Create Activity">
+
+<content> 
+	<f:SimpleForm class="form" id="SimpleFormDisplay480_12120" columnsM="2" columnsL="2" emptySpanM="0" emptySpanL="0" adjustLabelSpan="false"
+														labelSpanM="12" labelSpanL="4" layout="ResponsiveGridLayout" editable="false" width="100%">
+														<f:content>
+															<core:Title/>
+															<Label text="{i18n>actDesc}"/>
+															<Input value="{i18n>DialogModel>/ActivitySelected/0/DisciplineID}"/>
+															<Label text="{i18n>Actgrp}"/>
+															<Input value="{DialogModel>/ActivitySelected/0/GroupID}"/>
+															<Label text="{i18n>ActCode}"/>
+															<Input value="{DialogModel>/ActivitySelected/0/CodeID}"/>
+															<Label text="{i18n>ActHours}"/>
+															<Input value="{DialogModel>/ActivitySelected/0/Hours}"/>
+															<core:Title/>
+															<Label text="{i18n>actDescr}"/>
+															<Input value="{i18n>ActDescdes}"/>
+															<Label text="{i18n>actDescr}"/>
+															<Input value="{i18n>ActgrpDes}"/>
+															<Label text="{i18n>actDescr}"/>
+															<Input value="{i18n>ActCodeDes}"/>
+															<Label text="{i18n>ActQuantity}"/>
+															<Input value="{DialogModel>/ActivitySelected/0/Quantity}"/>
+															<Label text="{i18n>ActUoM}"/>
+															<Input  class="label" value="{i18n>ActUomVal}"/>
+														</f:content>
+													</f:SimpleForm>
+</content>
+		<buttons>
+		
+			<Button id="idbtnupdatesubmit" text="Save" press="onPressAddNewActivityDialogSave"/>
+			<Button text="Close" press="onPressAddNewActivityDialogCancel" />
+		</buttons>
+		
+</Dialog>
+</core:FragmentDefinition>

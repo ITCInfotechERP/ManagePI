@@ -18,17 +18,19 @@ sap.ui.define([
 				"icon": "desktop.ico"
 			});
 
-			//navigate to a specific subsection on open
-			/*	this.oObjectPageLayout = this.byId("ObjectPageLayout");
-				this.oTargetSubSection = this.byId("paymentSubSection");
-				this.oTargetSubSection.setMode("Expanded");
+		 var data = this.getOwnerComponent().getModel("jsonData").getData().Employees;
+		var array1 = [];
+		array1.push(data);
+		var dialogModel = new sap.ui.model.json.JSONModel();
+			this.getView().setModel(dialogModel, "DialogModel");
+			this.getView().getModel("DialogModel").setProperty("/ActivitySelected", array1[0]);
 
-				this.oObjectPageLayout.addEventDelegate({
-					onAfterRendering: function() {
-						//need to wait for the scrollEnablement to be active
-						jQuery.sap.delayedCall(500, this.oObjectPageLayout, this.oObjectPageLayout.scrollToSection, [this.oTargetSubSection.getId()]);
-					}.bind(this)
-				});*/
+
+
+
+
+
+
 
 			this.mGroupFunctions = {
 				PayrollType: function(oContext) {
@@ -78,6 +80,7 @@ sap.ui.define([
 
 		onPressNavToDetailPageOne: function(oEvent) {
 
+          
 			this.getSplitAppObj().to(this.createId("ActivityBookDetailPage1"));
 			this.getView().byId("saveButtonOne").setVisible(true);
 			this.getView().byId("cancelButtonTwo").setVisible(true);
@@ -94,9 +97,47 @@ sap.ui.define([
 			this.getView().byId("saveButtonTwo").setVisible(false);
 			this.getView().byId("submitButtonOne").setVisible(false);
 
-		
+            var listData = this.oModelContext;
+
+			var oArray = [];
+			oArray.push(listData);
+			var dialogModel = new sap.ui.model.json.JSONModel();
+			//this.getView().setModel(dialogModel, "DialogModel");
+			//this.getView().getModel("DialogModel").setProperty("/ActivitySelected", oArray);
+			
+			
+			
+			if (!this._addNewActivityDialog) {
+				this._addNewActivityDialog = sap.ui.xmlfragment("com.itcActivitybook.view.addNewActivity", this);
+				
+			
+
+			}
+			
+			
+				var i18nModel = new sap.ui.model.resource.ResourceModel({
+                            bundleUrl : "i18n/i18n.properties"
+                        });
+                 this._addNewActivityDialog.setModel(i18nModel, "i18n");   
+			
+			this._addNewActivityDialog.setModel(dialogModel, "DialogModel");
+			this._addNewActivityDialog.getModel("DialogModel").setProperty("/ActivitySelected", oArray);
+	
+		jQuery.sap.syncStyleClass("sapUiSizeCompact", this.getView(), this._addNewActivityDialog);
+			this._addNewActivityDialog.open();
+			
 
 		},
+		
+		onPressAddNewActivityDialogSave: function(oEvent){
+			
+		    MessageToast.show("Activity Successfully Added");
+		    	this._addNewActivityDialog.close();
+		},
+              onPressAddNewActivityDialogCancel:function(evt){
+			this._addNewActivityDialog.close();
+		}, 
+ 
 
 		// Navigate to Detail Page 2
 
@@ -313,10 +354,10 @@ sap.ui.define([
 
 		// <! ~~~~~~~~~~~~~~~~~~~~~Show data to detail View, on click of listItems ~~~~~~~~~~~~~~~~>
 		showDetails: function(oEvent) {
-			var oModelContext = oEvent.getParameter("listItem").getBindingContext().getObject();
+			this.oModelContext = oEvent.getParameter("listItem").getBindingContext().getObject();
 
 			var oArray = [];
-			oArray.push(oModelContext);
+			oArray.push(this.oModelContext);
 			var dialogModel = new sap.ui.model.json.JSONModel();
 			this.getView().setModel(dialogModel, "DialogModel");
 			this.getView().getModel("DialogModel").setProperty("/ActivitySelected", oArray);
