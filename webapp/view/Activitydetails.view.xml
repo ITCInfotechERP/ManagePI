@@ -102,10 +102,10 @@
 										<!--	</m:Page>-->
 										<!--</m:detailPages>-->
 										<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Add Activity View  (ID - "ActivityBookDetailPage1") ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-										<m:detailPages>
-											<m:Page id="ActivityBookDetailPage1" title="{i18n>activitycreat}" class="sapUiStdPage sapUiContentPadding">
-												<m:content>
-													<!--<m:VBox>-->
+									<!--	<m:detailPages>
+										 	<m:Page id="ActivityBookDetailPage1" title="{i18n>activitycreat}" class="sapUiStdPage sapUiContentPadding">
+												<m:content> 
+												
 													<f:SimpleForm class="form" id="SimpleFormDisplay480_12120" columnsM="2" columnsL="2" emptySpanM="0" emptySpanL="0" adjustLabelSpan="false"
 														labelSpanM="12" labelSpanL="4" layout="ResponsiveGridLayout" editable="false" width="100%">
 														<f:content>
@@ -127,30 +127,23 @@
 															<m:Input value="{i18n>ActCodeDes}"/>
 															<m:Label text="{i18n>ActQuantity}"/>
 															<m:Input width="80%" value="{i18n>ActValue}"/>
+															
+														
 															<m:Input width="60%" class="label" value="{i18n>ActUomVal}"/>
 														</f:content>
 													</f:SimpleForm>
-													<!--</m:VBox>-->
+												
 												</m:content>
-												<!--<m:footer>-->
-												<!--	<m:Toolbar>-->
-												<!--		<m:ToolbarSpacer/>-->
-												<!--		<m:Button id="saveButtonOne1" visible="true" type="Emphasized" text="Save" press="navToActivityBookDetailPage2"/>-->
-												<!--		<m:Button id="saveButtonTwo1" visible="false"  text="Save" press="navToNextPage"/>-->
-												<!--		<m:Button id="cancelButtonOne1" visible="false" text="Cancel" press="onPressDetailBack"/>-->
-												<!--		<m:Button id="cancelButtonTwo1" visible="true" text="Cancel" press="onNavBack"/>-->
-												<!--	</m:Toolbar>-->
-												<!--    </m:footer>-->
+											
 											</m:Page>
-										</m:detailPages>
+										</m:detailPages>-->
 										
 					
 										
 										
 										<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~  Activity Detail View (ID  "ActivityBookDetailPage2") ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 										<m:detailPages>
-											<m:Page id="ActivityBookDetailPage2" title="{i18n>actiDetail}"  showNavButton="true" 
-												navButtonPress="onPressDetailBack">
+											<m:Page id="ActivityBookDetailPage2" title="{i18n>actiDetail}">
 												<m:content>
 									
 													
@@ -191,7 +184,7 @@
 																									<m:Text id="nameText" text="{DialogModel>/ActivitySelected/0/DisciplineID}"/>
 																									<m:Label text="{i18n>Actgrp}" class="fname"/>
 																									<m:Text text="{DialogModel>/ActivitySelected/0/GroupID}"/>
-																									<m:Label text="{i18n>ActCode }" class="fname"/>
+																									<m:Label text="{i18n>ActCode}" class="fname"/>
 																									<m:Text text="{DialogModel>/ActivitySelected/0/CodeID}"/>
 																									<m:Label text="{i18n>ActHours}" class="fname"/>
 																									<m:Text id="countryText" text="{DialogModel>/ActivitySelected/0/Hours}"/>
@@ -238,7 +231,7 @@
 																<m:Text text="{i18n>payroll}"/>
 															</m:Column>
 															<m:Column minScreenWidth="Desktop" demandPopin="true" hAlign="Center">
-																<m:Text text="{i18n>shouldPI }"/>
+																<m:Text text="{i18n>shouldPI}"/>
 															</m:Column>
 															<m:Column hAlign="End">
 																<m:Text text="{i18n>pibyCHl}"/>
@@ -250,7 +243,7 @@
 																	<m:ObjectIdentifier title="{EmployeeID}"/>
 																	<m:Text text="{Name}"/>
 																	<m:Text text="{PayrollType}"/>
-																	<m:ObjectNumber number="{Should be PI}"/>
+																	<m:ObjectNumber number="{shouldbePI}"/>
 																	<m:ObjectNumber number="{PIByCH}"/>
 																</m:cells>
 															</m:ColumnListItem>
@@ -302,7 +295,7 @@
 																<m:Label text="{i18n>payroll}"/>
 																<m:Input id="payrollInputValue" value="{ActModel>/editActModel/0/PayrollType}"/>
 																<m:Label text="{i18n>shouldPI}"/>
-																<m:Input id="shouldBePiInputValue" description="Hrs" value="{ActModel>/editActModel/0/Should be PI}"/>
+																<m:Input id="shouldBePiInputValue" description="Hrs" value="{ActModel>/editActModel/0/ShouldbePI}"/>
 																<m:Label text="{i18n>pibyCHl}"/>
 																<m:Input id="piByChInputValue" description="Hrs" value="{ActModel>/editActModel/0/PIByCH}"/>
 															</f:content>
@@ -393,7 +386,7 @@
 																	<m:ObjectIdentifier title="{EmployeeID}"/>
 																	<m:Text text="{Name}"/>
 																	<m:Text text="{PayrollType}"/>
-																	<m:ObjectNumber number="{Should be PI}"/>
+																	<m:ObjectNumber number="{shouldbePI}"/>
 																	<m:ObjectNumber number="{PIByCH}"/>
 																</m:cells>
 															</m:ColumnListItem>
