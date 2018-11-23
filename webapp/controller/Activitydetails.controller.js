@@ -18,7 +18,7 @@ sap.ui.define([
 				"icon": "desktop.ico"
 			});
 
-		 var data = this.getOwnerComponent().getModel("jsonData").getData().Employees;
+                var data = this.getOwnerComponent().getModel("jsonData").getData().Employees;
 		var array1 = [];
 		array1.push(data);
 		var dialogModel = new sap.ui.model.json.JSONModel();

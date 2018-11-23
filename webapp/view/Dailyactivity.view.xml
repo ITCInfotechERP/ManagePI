@@ -66,25 +66,25 @@
 										<f:content>
 											<core:Title/>
 											<m:Label text="{i18n>actBookNo}"/>
-											<m:Input value="{i18n>numberValue}"/>
+											<m:Input value="{i18n>numberValue}" enabled="false"/>
 											<m:Label text="{i18n>actDate}"/>
-											<m:Input value="{i18n>dateValue}"/>
+											<m:Input value="{DialogModel>/ActivitySelected/0/ActivityDate}"/>
 											<m:Label text="{i18n>personArea}"/>
-											<m:Input value="{i18n>personArea1}"/>
+											<m:Input value="{DialogModel>/ActivitySelected/0/PersonnelArea}"/>
 											<m:Input value="{i18n>mainTown}"/>
 											<m:Label text="{i18n>personsubArea}"/>
-											<m:Input value="{i18n>personsubArea1 }"/>
+											<m:Input value="{DialogModel>/ActivitySelected/0/PersonnelSubArea}"/>
 											<m:Input value="{i18n>mainTown}"/>
 											<core:Title/>
 											<m:Label text="{i18n>areaIDDes}"/>
-											<m:Input value="{i18n>areaIDValue}"/>
+											<m:Input value="{DialogModel>/ActivitySelected/0/AreaIdDescription}"/>
 											<m:Input value="{i18n>maintownArea}"/>
 											<m:Label text="{i18n>locbuild}"/>
-											<m:Input value="{i18n>personLocationDetail}"/>
+											<m:Input value="{DialogModel>/ActivitySelected/0/LocationBuilding}"/>
 											<m:Label text="{i18n>areaFormanID}"/>
-											<m:Input value="{i18n>idValue}"/>
+											<m:Input value="{DialogModel>/ActivitySelected/0/AreaForemanID}"/>
 											<m:Label text="{i18n>siteEngID}"/>
-											<m:Input value="{i18n>siteEngidVal}"/>
+											<m:Input value="{DialogModel>/ActivitySelected/0/SiteEngineerID}"/>
 										</f:content>
 									</f:SimpleForm>
 								</m:VBox>
