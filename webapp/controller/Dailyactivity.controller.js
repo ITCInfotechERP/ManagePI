@@ -14,7 +14,7 @@ sap.ui.define([
              oRouter.getRoute("activies").attachMatched(this._onRouteMatched, this);
  		}, 
  		
- 		
+ 	// Get Data from selected list item from activityBookList	
  		
  		_onRouteMatched: function(oEvent) {
        var sObjectId = oEvent.getParameter("arguments").row;

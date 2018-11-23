@@ -117,7 +117,7 @@
 							</IconTabBar>
 						</semantic:content>
 						<semantic:customFooterContent>
-							<Button id="editFooterButton" icon="sap-icon://edit" tooltip="Edit" press="navToDailyActivity"/>
+							<Button id="editFooterButton" icon="sap-icon://edit" tooltip="Edit" press="onPressEditNavToDailyActivity"/>
 							<Button text="{i18n>buttonSubmit}" press="onPress"/>
 							<Button text="{i18n>buttonSave}" press="onPress"/>
 							<Button text="{i18n>buttonCancel}" press="onNavBack"/>

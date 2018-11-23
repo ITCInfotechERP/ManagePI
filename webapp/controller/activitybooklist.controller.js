@@ -81,7 +81,7 @@ sap.ui.define([
 
 		
 
-		navToDailyActivity: function (oEvent) {
+		onPressEditNavToDailyActivity: function (oEvent) {
 	
 	
 		var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
@@ -95,10 +95,14 @@ sap.ui.define([
 			row : b
 			});*/
 			
-
-			
-			
 		},
+		
+		// 	navToDailyActivity: function (oEvent) {
+	        
+	 //       this.getRouter().navTo("activies");
+	
+	
+		// },
 		
 		
 		

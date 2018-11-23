@@ -182,7 +182,53 @@ sap.ui.define([
 			this.getView().byId("cancelButtonFive").setVisible(false);
 			this.getView().byId("editButton").setVisible(false);
 			this.getView().byId("submitButtonTwo").setVisible(false);
+			
+			
 		},
+		
+		//  <!---------------------- Open Page 3 In a dialog Box -------------------------->
+		
+		ActivityBookDetailPage3DialogOpen: function(){
+			
+	        var listData = this.oModelContext;
+
+			var oArray = [];
+			oArray.push(listData);
+			var dialogModel = new sap.ui.model.json.JSONModel();
+		
+			if (!this._AddActivityDetailDialog) {
+				this._AddActivityDetailDialog = sap.ui.xmlfragment("com.itcActivitybook.view.AddActivityDetail", this);
+		}
+			
+			
+				var i18nModel = new sap.ui.model.resource.ResourceModel({
+                            bundleUrl : "i18n/i18n.properties"
+                        });
+                 this._AddActivityDetailDialog.setModel(i18nModel, "i18n");   
+			
+			this._AddActivityDetailDialog.setModel(dialogModel, "DialogModel");
+			this._AddActivityDetailDialog.getModel("DialogModel").setProperty("/ActivitySelected", oArray);
+	
+		jQuery.sap.syncStyleClass("sapUiSizeCompact", this.getView(), this._AddActivityDetailDialog);
+			this._AddActivityDetailDialog.open();
+	
+		},
+		
+			onPressAddActivityDetailDialogConfirm: function(oEvent){
+			
+		    MessageToast.show("Confirm the details");
+		    	this._AddActivityDetailDialog.close();
+		},
+              onPressAddActivityDetailDialogCancel:function(evt){
+			this._AddActivityDetailDialog.close();
+		}, 
+		
+		
+		
+		
+		
+		
+		
 
 		// Navigate to detail page three, click on edit button selected one row in the table
 
