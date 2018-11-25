@@ -100,7 +100,7 @@
 				"name": "appHome",
 				"target": "home"
 			}, {
-				"pattern": "activities",
+				"pattern": "activities/{row}",
 				"name": "activies",
 				"target": "activies"
 			}, {

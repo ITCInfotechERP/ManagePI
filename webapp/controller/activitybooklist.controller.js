@@ -13,9 +13,12 @@ sap.ui.define([
 			_oDialog: null,
 			
 		onInit: function () {
+          
+   
 
-			this.getView().setModel(this.getOwnerComponent().getModel("jsonData"));
-			//	this.getView().setModel(this.getOwnerComponent().getModel("json"));
+
+		this.getView().setModel(this.getOwnerComponent().getModel("jsonData"));
+		
 
         var data = this.getOwnerComponent().getModel("jsonData").getData().Employees;
 		var array1 = [];
@@ -78,23 +81,62 @@ sap.ui.define([
 
 		
 
-		navToDailyActivity: function (oEvent) {
-			this.getRouter().navTo("activies");
+		onPressEditNavToDailyActivity: function (oEvent) {
+	
+	
+		var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
+			oRouter.navTo("activies", {
+			row :  JSON.stringify(this.selectedID)
+			});
+			
+		/*	var b = this.selectedID.PSID;
+			var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
+			oRouter.navTo("activies", {
+			row : b
+			});*/
+			
 		},
+		
+		// 	navToDailyActivity: function (oEvent) {
+	        
+	 //       this.getRouter().navTo("activies");
+	
+	
+		// },
+		
+		
+		
+	
+	
+
 
 		navToActivitydetails: function (oEvent) {
 			this.getRouter().navTo("activityDetail");
 		},
 
+
+
+
 		// <! ~~~~~~~~~~~~~~~~~~~~~Show data to detail View, on click of listItems ~~~~~~~~~~~~~~~~>
 		showDetails: function (oEvent) {
-			var oModelContext = oEvent.getParameter("listItem").getBindingContext().getObject();
+			
+			this.getView().byId("editFooterButton").setType("Emphasized");
+			
+			this.oModelContext = oEvent.getParameter("listItem").getBindingContext().getObject();
 
 			var oArray = [];
-			oArray.push(oModelContext);
+			oArray.push(this.oModelContext);
 			var dialogModel = new sap.ui.model.json.JSONModel();
 			this.getView().setModel(dialogModel, "DialogModel");
 			this.getView().getModel("DialogModel").setProperty("/ActivitySelected", oArray);
+			
+		 
+		 	var selectedrow = this.oModelContext;
+		
+			 this.selectedID = selectedrow;
+			
+			
+		
 		},
 		
 		

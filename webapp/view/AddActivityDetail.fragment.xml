@@ -1,0 +1,40 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:f="sap.ui.layout.form" xmlns:l="sap.ui.layout">
+
+<Dialog title="Add Activity Details">
+
+<content> 
+
+
+														<f:SimpleForm id="SimpleFormDisplay4" editable="false" layout="ResponsiveGridLayout" labelSpanXL="3" labelSpanL="3" labelSpanM="3"
+															labelSpanS="12" adjustLabelSpan="false" emptySpanXL="4" emptySpanL="4" emptySpanM="4" emptySpanS="0" columnsXL="1" columnsL="1" columnsM="1"
+															singleContainerFullSize="false">
+															<f:content>
+																<Label text="{i18n>empID}"/>
+																<Input id="employeeInputValueFragment" value="{DialogModel>/ActivitySelected/0/EmployeeID}"/>
+																<Label text="{i18n>empName}"/>
+																<Input id="employeeNameInputValueFragment" value="{DialogModel>/ActivitySelected/0/Name}" enabled="false"/>
+																<Label text="{i18n>payroll}"/>
+																<Input id="payrollInputValueFragment" value="{DialogModel>/ActivitySelected/0/PayrollType}"/>
+																<Label text="{i18n>shouldPI}"/>
+																<Input id="shouldBePiInputValueFragment" description="Hrs" value="{DialogModel>/ActivitySelected/0/Should be PI}"/>
+																<Label text="{i18n>pibyCHl}"/>
+																<Input id="piByChInputValueFragment" description="Hrs" value="{DialogModel>/ActivitySelected/0/PIByCH}"/>
+															</f:content>
+														</f:SimpleForm>
+												
+
+
+
+
+
+
+
+</content>
+		<buttons>
+		
+			<Button id="idbtnupdatesubmitFragment" text="Confirm" press="onPressAddActivityDetailDialogConfirm"/>
+			<Button text="Close" press="onPressAddActivityDetailDialogCancel" />
+		</buttons>
+		
+</Dialog>
+</core:FragmentDefinition>

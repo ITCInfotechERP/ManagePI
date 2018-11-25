@@ -169,6 +169,7 @@
 																						<m:Toolbar height="3rem">
 																							<m:Title text="{i18n>activityView}"/>
 																							<m:ToolbarSpacer/>
+																								<m:Button visible="true" icon="sap-icon://create" type="Emphasized" tooltip="Open Dialog" press="ActivityBookDetailPage3DialogOpen"/>
 																							<m:Button visible="true" icon="sap-icon://create" type="Emphasized" tooltip="{i18n>addEmpIncen}" press="ActivityBookDetailPage3"/>
 																							<m:Button visible="true" tooltip="edit" icon="sap-icon://edit" press="backToAddActivityView"/>
 																							<m:Button visible="true" tooltip="Delete" icon="sap-icon://delete"/>
