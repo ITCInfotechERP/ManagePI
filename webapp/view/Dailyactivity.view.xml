@@ -66,7 +66,7 @@
 										<f:content>
 											<core:Title/>
 											<m:Label text="{i18n>actBookNo}"/>
-											<m:Input value="{i18n>numberValue}" enabled="false"/>
+											<m:Input value="{DialogModel>/ActivitySelected/0/ActivityBookNumber}" enabled="false"/>
 											<m:Label text="{i18n>actDate}"/>
 											<m:Input value="{DialogModel>/ActivitySelected/0/ActivityDate}"/>
 											<m:Label text="{i18n>personArea}"/>

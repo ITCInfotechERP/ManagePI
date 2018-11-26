@@ -69,8 +69,8 @@
 											</VBox>
 										</content>
 									</IconTabFilter>
-									<IconTabSeparator/>
-									<IconTabFilter icon="sap-icon://manager" count="" text="{i18n>actDetails}" key="Activity Details" tooltip="Activity Details">
+									<!--<IconTabSeparator/>-->
+									<IconTabFilter icon="sap-icon://manager" visible="false" count="" text="{i18n>actDetails}" key="Activity Details" tooltip="Activity Details">
 										<content>
 											<Table id="idProductsTable" alternateRowColors="true" mode="SingleSelectLeft" inset="false"
 												items="{ path: '/Employees', sorter: { path: 'DisciplineID' } }">
@@ -79,7 +79,7 @@
 														<ToolbarSpacer/>
 														<Button id="filterButton" tooltip="View Settings" icon="sap-icon://sort" press="openDialog"/>
 														<SearchField width="50%" search="onSearchTableItems"/>
-														<!--<Button icon="sap-icon://add" press="navToActivitydetails"/>-->
+														<Button icon="sap-icon://add" press="navToActivitydetails"/>
 													</Toolbar>
 												</headerToolbar>
 												<columns>
