@@ -110,9 +110,9 @@ sap.ui.define([
 	
 
 
-		navToActivitydetails: function (oEvent) {
-			this.getRouter().navTo("activityDetail");
-		},
+		// navToActivitydetails: function (oEvent) {
+		// 	this.getRouter().navTo("activityDetail");
+		// },
 
 
 

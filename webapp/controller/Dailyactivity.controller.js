@@ -16,18 +16,23 @@ sap.ui.define([
  		
  	// Get Data from selected list item from activityBookList	
  		
- 		_onRouteMatched: function(oEvent) {
-       var sObjectId = oEvent.getParameter("arguments").row;
-       var a = JSON.parse(sObjectId);          //We cannot pass object and array directly, need to convert them in json data.
-                                               // Single value or string can be passed without converting in json data.
-        	var oArray = [];
-			oArray.push(a);
-			var dialogModel = new sap.ui.model.json.JSONModel();
-			this.getView().setModel(dialogModel, "DialogModel");
-			this.getView().getModel("DialogModel").setProperty("/ActivitySelected", oArray);
-        
-       },
- 
+ 	_onRouteMatched: function(oEvent) {
+    var sObjectId = oEvent.getParameter("arguments").row;
+    var oArray = [];
+
+    if (sObjectId) {
+      var a = JSON.parse(sObjectId);
+      //We cannot pass object and array directly, need to convert them in json data.
+      // Single value or string can be passed without converting in json data.
+      oArray.push(a);
+    }
+
+    var dialogModel = new sap.ui.model.json.JSONModel();
+    this.getView().setModel(dialogModel, "DialogModel");
+    this.getView().getModel("DialogModel").setProperty("/ActivitySelected", oArray);
+
+  },
+
 
 
 		

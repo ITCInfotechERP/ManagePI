@@ -28,7 +28,7 @@
 							</items>
 						</List>
 						<semantic:customFooterContent>
-							<OverflowToolbarButton icon="sap-icon://add" press="navToDailyActivity"/>
+							<OverflowToolbarButton icon="sap-icon://add" press="onPressEditNavToDailyActivity"/>
 						</semantic:customFooterContent>
 					</semantic:MasterPage>
 				</masterPages>
@@ -79,7 +79,7 @@
 														<ToolbarSpacer/>
 														<Button id="filterButton" tooltip="View Settings" icon="sap-icon://sort" press="openDialog"/>
 														<SearchField width="50%" search="onSearchTableItems"/>
-														<Button icon="sap-icon://add" press="navToActivitydetails"/>
+														<!--<Button icon="sap-icon://add" press="navToActivitydetails"/>-->
 													</Toolbar>
 												</headerToolbar>
 												<columns>
