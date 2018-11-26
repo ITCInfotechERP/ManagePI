@@ -10,15 +10,15 @@
 															singleContainerFullSize="false">
 															<f:content>
 																<Label text="{i18n>empID}"/>
-																<Input id="employeeInputValueFragment" value="{DialogModel>/ActivitySelected/0/EmployeeID}"/>
+																<Input id="employeeAddInputValueFragment" />
 																<Label text="{i18n>empName}"/>
-																<Input id="employeeNameInputValueFragment" value="{DialogModel>/ActivitySelected/0/Name}" enabled="false"/>
+																<Input id="employeeAddNameInputValueFragment"  enabled="false"/>
 																<Label text="{i18n>payroll}"/>
-																<Input id="payrollInputValueFragment" value="{DialogModel>/ActivitySelected/0/PayrollType}"/>
+																<Input id="payrollIAddnputValueFragment" />
 																<Label text="{i18n>shouldPI}"/>
-																<Input id="shouldBePiInputValueFragment" description="Hrs" value="{DialogModel>/ActivitySelected/0/Should be PI}"/>
+																<Input id="shouldBePiAddInputValueFragment" description="Hrs" />
 																<Label text="{i18n>pibyCHl}"/>
-																<Input id="piByChInputValueFragment" description="Hrs" value="{DialogModel>/ActivitySelected/0/PIByCH}"/>
+																<Input id="piByChAddInputValueFragment" description="Hrs" />
 															</f:content>
 														</f:SimpleForm>
 												
@@ -32,8 +32,8 @@
 </content>
 		<buttons>
 		
-			<Button id="idbtnupdatesubmitFragment" text="Confirm" press="onPressAddActivityDetailDialogConfirm"/>
-			<Button text="Close" press="onPressAddActivityDetailDialogCancel" />
+			<Button id="idbtnupdatesubmitFragment" text="Confirm" press="onPressAddEmployeeDetailDialogConfirm"/>
+			<Button text="Close" press="onPressAddEmployeeDtailDialogCancel" />
 		</buttons>
 		
 </Dialog>

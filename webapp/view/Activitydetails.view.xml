@@ -42,7 +42,7 @@
 						<m:ObjectStatus class="status" title="{i18n>status}" text="{i18n>statusValue}"/>
 					</layout:VerticalLayout>
 					<layout:VerticalLayout width="250px">
-						<m:ObjectStatus class="foreman" text="{i18n>areaForeman}"/>
+						<m:ObjectStatus class="sapUiLargeMarginBegin" text="{i18n>areaForeman}"/>
 						<layout:HorizontalLayout>
 							<m:Image class="img1" src="https://nulm.gov.in/images/user.png" densityAware="true"/>
 							<layout:VerticalLayout>
@@ -52,7 +52,7 @@
 						</layout:HorizontalLayout>
 					</layout:VerticalLayout>
 					<layout:VerticalLayout width="200px">
-						<m:ObjectStatus class="engineer" text="{i18n>areaSiteEngineer}"/>
+						<m:ObjectStatus class="sapUiLargeMarginBegin" text="{i18n>areaSiteEngineer}"/>
 						<layout:HorizontalLayout>
 							<m:Image class="img1" src="https://nulm.gov.in/images/user.png" densityAware="true"/>
 							<layout:VerticalLayout>
@@ -169,8 +169,8 @@
 																						<m:Toolbar height="3rem">
 																							<m:Title text="{i18n>activityView}"/>
 																							<m:ToolbarSpacer/>
-																								<m:Button visible="true" icon="sap-icon://create" type="Emphasized" tooltip="Open Dialog" press="ActivityBookDetailPage3DialogOpen"/>
-																							<m:Button visible="true" icon="sap-icon://create" type="Emphasized" tooltip="{i18n>addEmpIncen}" press="ActivityBookDetailPage3"/>
+																								<m:Button visible="true" icon="sap-icon://create" type="Emphasized" tooltip="{i18n>addEmpIncen}" press="ActivityBookDetailPage3DialogOpen"/>
+																							<!--<m:Button visible="true" icon="sap-icon://create" type="Emphasized"  press="ActivityBookDetailPage3"/>-->
 																							<m:Button visible="true" tooltip="edit" icon="sap-icon://edit" press="backToAddActivityView"/>
 																							<m:Button visible="true" tooltip="Delete" icon="sap-icon://delete"/>
 																						</m:Toolbar>
@@ -216,7 +216,7 @@
 														<m:headerToolbar>
 															<m:Toolbar>
 																<m:ToolbarSpacer/>
-																<m:Button id="tableRowEditButton" icon="sap-icon://edit" tooltip="Edit" press="ActivityBookDetailPage3Advance"/>
+																<m:Button id="tableRowEditButton" icon="sap-icon://edit" tooltip="Edit" press="onPressEditEmployeeTableRowData"/>
 																<m:Button id="filterButton" tooltip="View Settings" icon="sap-icon://sort" press="openDialog"/>
 																<m:SearchField width="50%" search="onSearchTableItems"/>
 															</m:Toolbar>
@@ -244,7 +244,7 @@
 																	<m:ObjectIdentifier title="{EmployeeID}"/>
 																	<m:Text text="{Name}"/>
 																	<m:Text text="{PayrollType}"/>
-																	<m:ObjectNumber number="{shouldbePI}"/>
+																	<m:ObjectNumber number="{Should be PI}"/>
 																	<m:ObjectNumber number="{PIByCH}"/>
 																</m:cells>
 															</m:ColumnListItem>
