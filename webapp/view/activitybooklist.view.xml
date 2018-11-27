@@ -129,14 +129,14 @@
 											<Input value="{DialogModel>/ActivitySelected/0/ActivityDate}"/>
 											<Label text="{i18n>personArea}"/>
 											<Input value="{DialogModel>/ActivitySelected/0/PersonnelArea}"/>
-											<Input value="{i18n>mainTown}"/>
+											<Input/>
 											<Label text="{i18n>personsubArea}"/>
 											<Input value="{DialogModel>/ActivitySelected/0/PersonnelSubArea}"/>
-											<Input value="{i18n>mainTown}"/>
+											<Input/>
 											<core:Title/>
 											<Label text="{i18n>areaIDDes}"/>
 											<Input value="{DialogModel>/ActivitySelected/0/AreaIdDescription}"/>
-											<Input value="{i18n>maintownArea}"/>
+											<Input />
 											<Label text="{i18n>locbuild}"/>
 											<Input value="{DialogModel>/ActivitySelected/0/LocationBuilding}"/>
 											<Label text="{i18n>areaFormanID}"/>

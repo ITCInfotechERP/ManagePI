@@ -104,7 +104,7 @@
 				"name": "activies",
 				"target": "activies"
 			}, {
-				"pattern": "activityDetail",
+				"pattern": "activityDetail/:row:",
 				"name": "activityDetail",
 				"target": "activityDetail"
 			}, {

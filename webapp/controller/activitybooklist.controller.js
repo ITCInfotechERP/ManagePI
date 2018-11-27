@@ -232,7 +232,7 @@ sap.ui.define([
 		
 		
 		// <!------------------------   Code for Aditional Split APP Content  --------------------------------->
-		
+		//  <!----- Passing Data From activityBookList to Activitydetails View ----------------------------------->
 		
 		
 		
@@ -267,8 +267,15 @@ sap.ui.define([
 		
 		
 			navToActivitydetails: function(oEvent) {
-			this.getRouter().navTo("activityDetail");
+				
+				var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
+			oRouter.navTo("activityDetail", {
+			row :  JSON.stringify(this.selectedID)
+			});	
+		
 		},
+		
+		
 		
 			onPressDetailBack : function() {
 			this.getSplitAppObj().backDetail();

@@ -69,8 +69,37 @@ sap.ui.define([
 				}
 
 			};
+			
+			// Passing Data from activityBookList to this.View()
+			// <!------------- This Data will be visible in the Header Section  ------------------->
+			
+			
+			var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
+             oRouter.getRoute("activityDetail").attachMatched(this._onRouteMatched, this);
+ 		}, 
+ 		
+ 	// Get Data from selected list item from activityBookList	
+ 		
+ 	_onRouteMatched: function(oEvent) {
+    var sObjectId = oEvent.getParameter("arguments").row;
+    var oArray = [];
 
-		},
+    if (sObjectId) {
+      var a = JSON.parse(sObjectId);
+      //We cannot pass object and array directly, need to convert them in json data.
+      // Single value or string can be passed without converting in json data.
+      oArray.push(a);
+    }
+
+    var dialogModel = new sap.ui.model.json.JSONModel();
+    this.getView().setModel(dialogModel, "DialogModel");
+    this.getView().getModel("DialogModel").setProperty("/ActivitySelected", oArray);
+
+  },
+			
+			
+
+	
 
 		// Navigate to Dailtactivity View
 
