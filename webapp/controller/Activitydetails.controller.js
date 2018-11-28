@@ -18,6 +18,11 @@ sap.ui.define([
 				"icon": "desktop.ico"
 			});
 
+            var	oSplitApp =	this.getView().byId("SplitAppDemo");
+			oSplitApp.setMode("StretchCompressMode");
+
+
+
                 var data = this.getOwnerComponent().getModel("jsonData").getData().Employees;
 	        	var array1 = [];
 	        	array1.push(data);

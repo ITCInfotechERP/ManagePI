@@ -31,6 +31,9 @@ sap.ui.define([
 
 
 
+      var	oSplitApp =	this.getView().byId("SplitAppDemo");
+			oSplitApp.setMode("StretchCompressMode");
+
 
 
 
@@ -238,6 +241,11 @@ sap.ui.define([
 		
 			onPressNavigateToEditActivity : function(oEvent) {
 			this.getSplitAppObj().to(this.createId("editActivityPage"));
+         
+         	var	oSplitApp =	this.getView().byId("SplitAppDemo");
+			oSplitApp.setMode("PopoverMode"); 
+			
+			
 			
 			this.getView().byId("editActivity").setVisible(false);
 			this.getView().byId("idSubmitButton").setVisible(false);
@@ -279,6 +287,12 @@ sap.ui.define([
 		
 			onPressDetailBack : function() {
 			this.getSplitAppObj().backDetail();
+			
+			//Set Split App Mode
+			var	oSplitApp =	this.getView().byId("SplitAppDemo");
+			oSplitApp.setMode("StretchCompressMode");
+			
+			
 			this.getView().byId("editActivity").setVisible(true);
 			this.getView().byId("idSubmitButton").setVisible(true);
 			this.getView().byId("idSaveButton").setVisible(true);

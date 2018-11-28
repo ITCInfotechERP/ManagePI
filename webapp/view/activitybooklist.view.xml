@@ -190,7 +190,7 @@
 				<ToolbarSpacer/>
 				<Button id="confirmActivity" type="Emphasized" visible="false" text="{i18n>addActDetail}" press="navToActivitydetails"/>
 				<Button id="cancelEditing" text="{i18n>buttonCancel}" visible="false" press="onPressDetailBack"/>
-				<Button id="editActivity" type="Emphasized" icon="sap-icon://edit" tooltip="Edit Activity" press="onPressNavigateToEditActivity"/>
+				<Button id="editActivity" type="Emphasized" icon="sap-icon://edit" tooltip="Edit Activity"  press="onPressNavigateToEditActivity"/>
 				<Button id="editFooterButton" visible="false" icon="sap-icon://edit" tooltip="Edit" press="onPressEditNavToDailyActivity"/>
 				<Button id="idSubmitButton" text="{i18n>buttonSubmit}" press="onPress"/>
 				<Button id="idSaveButton" text="{i18n>buttonSave}" press="onPress"/>
