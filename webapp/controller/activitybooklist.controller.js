@@ -31,6 +31,9 @@ sap.ui.define([
 
 
 
+      var	oSplitApp =	this.getView().byId("SplitAppDemo");
+			oSplitApp.setMode("StretchCompressMode");
+
 
 
 
@@ -110,9 +113,9 @@ sap.ui.define([
 	
 
 
-		navToActivitydetails: function (oEvent) {
-			this.getRouter().navTo("activityDetail");
-		},
+		// navToActivitydetails: function (oEvent) {
+		// 	this.getRouter().navTo("activityDetail");
+		// },
 
 
 
@@ -223,20 +226,106 @@ sap.ui.define([
         	this.getView().byId("filterButton").setType("Emphasized");
         		
         }
-       // var s = oDialog.getSelectedFilterString();
-        	//oView.byId("filterButton").setText(s);
-     // oView.byId("vsdFilterLabel").setVisible(aFilters.length > 0);
+     
      
 
 		
-		}
+		},
 		
-     /* onRefresh: function() {
-      var oDialog = this.getView().getModel().getProperty("/oDialog");
-      var oButton = oDialog._resetButton;
-      oButton.firePress();
-      oDialog.fireConfirm();
-    }*/
+		
+		
+		// <!------------------------   Code for Aditional Split APP Content  --------------------------------->
+		//  <!----- Passing Data From activityBookList to Activitydetails View ----------------------------------->
+		
+		
+		
+			onPressNavigateToEditActivity : function(oEvent) {
+			this.getSplitAppObj().to(this.createId("editActivityPage"));
+         
+         	var	oSplitApp =	this.getView().byId("SplitAppDemo");
+			oSplitApp.setMode("PopoverMode"); 
+			
+			
+			
+			this.getView().byId("editActivity").setVisible(false);
+			this.getView().byId("idSubmitButton").setVisible(false);
+			this.getView().byId("idSaveButton").setVisible(false);
+			this.getView().byId("idCancelButton").setVisible(false);
+			this.getView().byId("idEmailButton").setVisible(false);
+			
+			this.getView().byId("confirmActivity").setVisible(true);
+			this.getView().byId("cancelEditing").setVisible(true);
+		},
+		
+		
+		
+		
+		
+		
+		
+		
+			getSplitAppObj : function() {
+			var result = this.byId("SplitAppDemo");
+			if (!result) {
+				jQuery.sap.log.info("SplitApp object can't be found");
+			}
+			return result;
+		},
+
+		
+		
+			navToActivitydetails: function(oEvent) {
+				
+				var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
+			oRouter.navTo("activityDetail", {
+			row :  JSON.stringify(this.selectedID)
+			});	
+		
+		},
+		
+		
+		
+			onPressDetailBack : function() {
+			this.getSplitAppObj().backDetail();
+			
+			//Set Split App Mode
+			var	oSplitApp =	this.getView().byId("SplitAppDemo");
+			oSplitApp.setMode("StretchCompressMode");
+			
+			
+			this.getView().byId("editActivity").setVisible(true);
+			this.getView().byId("idSubmitButton").setVisible(true);
+			this.getView().byId("idSaveButton").setVisible(true);
+			this.getView().byId("idCancelButton").setVisible(true);
+			this.getView().byId("idEmailButton").setVisible(true);
+			
+			
+			this.getView().byId("confirmActivity").setVisible(false);
+			this.getView().byId("cancelEditing").setVisible(false);
+			
+		}
+
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+    
 
 	});
 });

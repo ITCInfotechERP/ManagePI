@@ -26,38 +26,38 @@
 							<m:Button text="{i18n>buttonEdit}" press="navToDailyActivity" class="editButton"/>
 						</actions>
 						<breadCrumbsLinks>
-							<m:Link class="link" text="{i18n>appBookno}"/>
+							<m:Link class="link" text="{DialogModel>/ActivitySelected/0/ActivityBookNumber}"/>
 						</breadCrumbsLinks>
 					</ObjectPageHeader>
 				</headerTitle>
 				<headerContent>
 					<layout:VerticalLayout width="300px">
-						<m:ObjectStatus class="name" title="{i18n>personArea}" text="{i18n>personArea1}"/>
-						<m:ObjectStatus class="subarea" title="{i18n>personsubArea}" text="{i18n>personsubArea1}"/>
-						<m:ObjectStatus class="location" title="{i18n>personLocation}" text="{i18n>personLocationDetail}"/>
+						<m:ObjectStatus class="name" title="{i18n>personArea}" text="{DialogModel>/ActivitySelected/0/PersonnelArea}"/>
+						<m:ObjectStatus class="subarea" title="{i18n>personsubArea}" text="{DialogModel>/ActivitySelected/0/PersonnelSubArea}"/>
+						<m:ObjectStatus class="location" title="{i18n>personLocation}" text="{DialogModel>/ActivitySelected/0/LocationBuilding}"/>
 					</layout:VerticalLayout>
 					<layout:VerticalLayout width="250px">
-						<m:ObjectStatus class="date" title="{i18n>date}" text="{i18n>dateValue}"/>
-						<m:ObjectStatus class="area" title="{i18n>areaID}" text="{i18n>areaIDValue}"/>
-						<m:ObjectStatus class="status" title="{i18n>status}" text="{i18n>statusValue}"/>
+						<m:ObjectStatus class="date" title="{i18n>date}" text="{DialogModel>/ActivitySelected/0/ActivityDate}"/>
+						<m:ObjectStatus class="area" title="{i18n>areaID}" text="{DialogModel>/ActivitySelected/0/AreaID}"/>
+						<m:ObjectStatus class="status" title="{i18n>status}" text="{DialogModel>/ActivitySelected/0/Status}"/>
 					</layout:VerticalLayout>
 					<layout:VerticalLayout width="250px">
-						<m:ObjectStatus class="foreman" text="{i18n>areaForeman}"/>
+						<m:ObjectStatus class="sapUiLargeMarginBegin" text="{i18n>areaForeman}"/>
 						<layout:HorizontalLayout>
 							<m:Image class="img1" src="https://nulm.gov.in/images/user.png" densityAware="true"/>
 							<layout:VerticalLayout>
-								<m:ObjectStatus class="michael" text="{i18n>areaForemanName}"/>
-								<m:ObjectStatus class="id2" text="{areaForemanID}"/>
+								<m:ObjectStatus class="michael" text="{DialogModel>/ActivitySelected/0/AreaForemanName}"/>
+								<m:ObjectStatus class="id2" text="{DialogModel>/ActivitySelected/0/AreaForemanID}"/>
 							</layout:VerticalLayout>
 						</layout:HorizontalLayout>
 					</layout:VerticalLayout>
 					<layout:VerticalLayout width="200px">
-						<m:ObjectStatus class="engineer" text="{i18n>areaSiteEngineer}"/>
+						<m:ObjectStatus class="sapUiLargeMarginBegin" text="{i18n>areaSiteEngineer}"/>
 						<layout:HorizontalLayout>
 							<m:Image class="img1" src="https://nulm.gov.in/images/user.png" densityAware="true"/>
 							<layout:VerticalLayout>
-								<m:ObjectStatus class="john" text="{i18n>areaEngName}"/>
-								<m:ObjectStatus class="id9" text="{i18n>areaEngID}"/>
+								<m:ObjectStatus class="john" text="{DialogModel>/ActivitySelected/0/SiteEngineerName}"/>
+								<m:ObjectStatus class="id9" text="{DialogModel>/ActivitySelected/0/SiteEngineerID}"/>
 							</layout:VerticalLayout>
 						</layout:HorizontalLayout>
 					</layout:VerticalLayout>
@@ -169,8 +169,8 @@
 																						<m:Toolbar height="3rem">
 																							<m:Title text="{i18n>activityView}"/>
 																							<m:ToolbarSpacer/>
-																								<m:Button visible="true" icon="sap-icon://create" type="Emphasized" tooltip="Open Dialog" press="ActivityBookDetailPage3DialogOpen"/>
-																							<m:Button visible="true" icon="sap-icon://create" type="Emphasized" tooltip="{i18n>addEmpIncen}" press="ActivityBookDetailPage3"/>
+																								<m:Button visible="true" icon="sap-icon://create" type="Emphasized" tooltip="{i18n>addEmpIncen}" press="ActivityBookDetailPage3DialogOpen"/>
+																							<!--<m:Button visible="true" icon="sap-icon://create" type="Emphasized"  press="ActivityBookDetailPage3"/>-->
 																							<m:Button visible="true" tooltip="edit" icon="sap-icon://edit" press="backToAddActivityView"/>
 																							<m:Button visible="true" tooltip="Delete" icon="sap-icon://delete"/>
 																						</m:Toolbar>
@@ -216,7 +216,7 @@
 														<m:headerToolbar>
 															<m:Toolbar>
 																<m:ToolbarSpacer/>
-																<m:Button id="tableRowEditButton" icon="sap-icon://edit" tooltip="Edit" press="ActivityBookDetailPage3Advance"/>
+																<m:Button id="tableRowEditButton" icon="sap-icon://edit" tooltip="Edit" press="onPressEditEmployeeTableRowData"/>
 																<m:Button id="filterButton" tooltip="View Settings" icon="sap-icon://sort" press="openDialog"/>
 																<m:SearchField width="50%" search="onSearchTableItems"/>
 															</m:Toolbar>
@@ -244,7 +244,7 @@
 																	<m:ObjectIdentifier title="{EmployeeID}"/>
 																	<m:Text text="{Name}"/>
 																	<m:Text text="{PayrollType}"/>
-																	<m:ObjectNumber number="{shouldbePI}"/>
+																	<m:ObjectNumber number="{Should be PI}"/>
 																	<m:ObjectNumber number="{PIByCH}"/>
 																</m:cells>
 															</m:ColumnListItem>

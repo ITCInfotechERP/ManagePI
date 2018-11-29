@@ -1,6 +1,5 @@
-<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:semantic="sap.m.semantic"
-	controllerName="com.itcActivitybook.controller.activitybooklist" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:layout="sap.ui.layout"
-	xmlns:f="sap.ui.layout.form">
+<mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns:custom="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1"
+	controllerName="com.itcActivitybook.controller.activitybooklist" xmlns="sap.m" xmlns:f="sap.ui.layout.form" xmlns:core="sap.ui.core">
 	<Page>
 		<customHeader>
 			<Bar class="headerToolBarBackground">
@@ -18,23 +17,10 @@
 			</Bar>
 		</customHeader>
 		<content>
-			<SplitContainer>
-				<masterPages>
-					<semantic:MasterPage  class="activityMasterPageColor sapUiResponsiveContentPadding" title="{i18n>AppActivityBooklst}">
-						<SearchField width="auto" search="onSearchListItems" class="sapUiTinyMargin"/>
-						<List id="List1" mode="SingleSelectMaster" selectionChange="showDetails" items="{ path : '/Employees'}">
-							<items>
-								<ObjectListItem title="{Book}" number="{PSID}" intro="{GroupID}"></ObjectListItem>
-							</items>
-						</List>
-						<semantic:customFooterContent>
-							<OverflowToolbarButton icon="sap-icon://add" press="navToDailyActivity"/>
-						</semantic:customFooterContent>
-					</semantic:MasterPage>
-				</masterPages>
+			<SplitApp id="SplitAppDemo" initialDetail="detail" initialMaster="master" orientationChange="onOrientationChange">
 				<detailPages>
-					<semantic:DetailPage title="{i18n>appActivityBookDtl}" class="activityMasterPageColor">
-						<semantic:content>
+					<Page id="detail" title="{i18n>appActivityBookDtl}" class="sapUiStdPage">
+						<content>
 							<ObjectHeader id="objectHeader" title="{DialogModel>/ActivitySelected/0/Book}" titleActive="false" titlePress="onShowDetailPopover"
 								responsive="true" number="{DialogModel>/ActivitySelected/0/CodeID}">
 								<attributes>
@@ -70,7 +56,7 @@
 										</content>
 									</IconTabFilter>
 									<IconTabSeparator/>
-									<IconTabFilter icon="sap-icon://manager" count="" text="{i18n>actDetails}" key="Activity Details" tooltip="Activity Details">
+									<IconTabFilter icon="sap-icon://manager" visible="false" count="" text="{i18n>actDetails}" key="Activity Details" tooltip="Activity Details">
 										<content>
 											<Table id="idProductsTable" alternateRowColors="true" mode="SingleSelectLeft" inset="false"
 												items="{ path: '/Employees', sorter: { path: 'DisciplineID' } }">
@@ -115,17 +101,241 @@
 									</IconTabFilter>
 								</items>
 							</IconTabBar>
-						</semantic:content>
-						<semantic:customFooterContent>
-							<Button id="editFooterButton" icon="sap-icon://edit" tooltip="Edit" press="onPressEditNavToDailyActivity"/>
-							<Button text="{i18n>buttonSubmit}" press="onPress"/>
-							<Button text="{i18n>buttonSave}" press="onPress"/>
-							<Button text="{i18n>buttonCancel}" press="onNavBack"/>
-							<Button icon="sap-icon://email" tooltip="{i18n>emailTooltip}" press="onShareEmailPress"/>
-						</semantic:customFooterContent>
-					</semantic:DetailPage>
+						</content>
+					</Page>
+						</detailPages>
+						
+					<detailPages>
+					<Page id="editActivityPage" title="{i18n>actBookCreate}"  class="sapUiStdPage">
+						
+			
+						
+						
+						
+						<content>
+						
+						
+						
+						
+						
+						<VBox class="vbox">
+									<f:SimpleForm title="{i18n>bookHeader}" id="SimpleFormDisplay480_12120" columnsM="2" columnsL="2" emptySpanM="0" emptySpanL="0"
+										adjustLabelSpan="false" labelSpanM="12" labelSpanL="4" layout="ResponsiveGridLayout" editable="false">
+										<f:content>
+											<core:Title/>
+											<Label text="{i18n>actBookNo}"/>
+											<Input value="{DialogModel>/ActivitySelected/0/ActivityBookNumber}" enabled="false"/>
+											<Label text="{i18n>actDate}"/>
+											<Input value="{DialogModel>/ActivitySelected/0/ActivityDate}"/>
+											<Label text="{i18n>personArea}"/>
+											<Input value="{DialogModel>/ActivitySelected/0/PersonnelArea}"/>
+											<Input/>
+											<Label text="{i18n>personsubArea}"/>
+											<Input value="{DialogModel>/ActivitySelected/0/PersonnelSubArea}"/>
+											<Input/>
+											<core:Title/>
+											<Label text="{i18n>areaIDDes}"/>
+											<Input value="{DialogModel>/ActivitySelected/0/AreaIdDescription}"/>
+											<Input />
+											<Label text="{i18n>locbuild}"/>
+											<Input value="{DialogModel>/ActivitySelected/0/LocationBuilding}"/>
+											<Label text="{i18n>areaFormanID}"/>
+											<Input value="{DialogModel>/ActivitySelected/0/AreaForemanID}"/>
+											<Label text="{i18n>siteEngID}"/>
+											<Input value="{DialogModel>/ActivitySelected/0/SiteEngineerID}"/>
+										</f:content>
+									</f:SimpleForm>
+								</VBox>
+						
+						
+						
+						
+						
+						</content>
+					</Page>
 				</detailPages>
-			</SplitContainer>
+				
+				
+				
+				
+				
+				
+				
+				<masterPages>
+					<Page class="sapUiResponsiveContentPadding">
+						<customHeader>
+							<Bar>
+								<contentMiddle>
+									<Title text="{i18n>AppActivityBooklst}" level="H3"/>
+								</contentMiddle>
+								<contentRight>
+									<Button icon="sap-icon://add" tooltip="Add New Activity" press="onPressEditNavToDailyActivity"/>
+								</contentRight>
+							</Bar>
+						</customHeader>
+						<content>
+							<SearchField width="auto" search="onSearchListItems" class="sapUiTinyMargin"/>
+							<List id="List1" mode="SingleSelectMaster" selectionChange="showDetails" items="{ path : '/Employees'}">
+								<items>
+									<ObjectListItem title="{Book}" number="{PSID}" intro="{GroupID}"></ObjectListItem>
+								</items>
+							</List>
+						</content>
+					</Page>
+				</masterPages>
+			</SplitApp>
 		</content>
+		<footer>
+			<Toolbar>
+				<ToolbarSpacer/>
+				<Button id="confirmActivity" type="Emphasized" visible="false" text="{i18n>addActDetail}" press="navToActivitydetails"/>
+				<Button id="cancelEditing" text="{i18n>buttonCancel}" visible="false" press="onPressDetailBack"/>
+				<Button id="editActivity" type="Emphasized" icon="sap-icon://edit" tooltip="Edit Activity"  press="onPressNavigateToEditActivity"/>
+				<Button id="editFooterButton" visible="false" icon="sap-icon://edit" tooltip="Edit" press="onPressEditNavToDailyActivity"/>
+				<Button id="idSubmitButton" text="{i18n>buttonSubmit}" press="onPress"/>
+				<Button id="idSaveButton" text="{i18n>buttonSave}" press="onPress"/>
+				<Button id="idCancelButton" text="{i18n>buttonCancel}" press="onNavBack"/>
+				<Button id="idEmailButton" icon="sap-icon://email" tooltip="{i18n>emailTooltip}" press="onShareEmailPress"/>
+			</Toolbar>
+		</footer>
 	</Page>
 </mvc:View>
+
+
+
+
+
+
+
+
+<!--<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:semantic="sap.m.semantic"-->
+<!--	controllerName="com.itcActivitybook.controller.activitybooklist" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:layout="sap.ui.layout"-->
+<!--	xmlns:f="sap.ui.layout.form">-->
+<!--	<Page>-->
+<!--		<customHeader>-->
+<!--			<Bar class="headerToolBarBackground">-->
+<!--				<contentLeft>-->
+<!--					<Button icon="sap-icon://home" tooltip="{i18n>appHome}" press="homeButton"/>-->
+<!--				</contentLeft>-->
+<!--				<contentMiddle>-->
+<!--					<Title text="{i18n>actBook}" level="H3"/>-->
+<!--				</contentMiddle>-->
+<!--				<contentRight>-->
+<!--					<Button icon="sap-icon://bell" tooltip="{i18n>appNotifications}"/>-->
+<!--					<Text text="{i18n>appUser}"/>-->
+<!--					<Button text="{i18n>appLogout}"/>-->
+<!--				</contentRight>-->
+<!--			</Bar>-->
+<!--		</customHeader>-->
+<!--		<content>-->
+<!--			<SplitContainer>-->
+<!--				<masterPages>-->
+<!--					<semantic:MasterPage  class="activityMasterPageColor sapUiResponsiveContentPadding" title="{i18n>AppActivityBooklst}"  floatingFooter="true">-->
+<!--						<SearchField width="auto" search="onSearchListItems" class="sapUiTinyMargin"/>-->
+<!--						<List id="List1" mode="SingleSelectMaster" selectionChange="showDetails" items="{ path : '/Employees'}">-->
+<!--							<items>-->
+<!--								<ObjectListItem title="{Book}" number="{PSID}" intro="{GroupID}"></ObjectListItem>-->
+<!--							</items>-->
+<!--						</List>-->
+<!--						<semantic:customFooterContent>-->
+<!--							<OverflowToolbarButton icon="sap-icon://add" press="onPressEditNavToDailyActivity"/>-->
+<!--						</semantic:customFooterContent>-->
+<!--					</semantic:MasterPage>-->
+<!--				</masterPages>-->
+<!--				<detailPages>-->
+<!--					<semantic:DetailPage title="{i18n>appActivityBookDtl}" class="activityMasterPageColor"  floatingFooter="true">-->
+<!--						<semantic:content>-->
+<!--							<ObjectHeader id="objectHeader" title="{DialogModel>/ActivitySelected/0/Book}" titleActive="false" titlePress="onShowDetailPopover"-->
+<!--								responsive="true" number="{DialogModel>/ActivitySelected/0/CodeID}">-->
+<!--								<attributes>-->
+<!--									<ObjectAttribute text="{DialogModel>/ActivitySelected/0/GroupID}"/>-->
+<!--								</attributes>-->
+<!--							</ObjectHeader>-->
+<!--							<IconTabBar id="iconTabBar" class="tabBar" select="handleIconTabBarSelect">-->
+<!--								<items>-->
+<!--									<IconTabFilter icon="sap-icon://group" text="{i18n>appProjDetails}" key="Emp Data" tooltip="{i18n>appProjectData}">-->
+<!--										<content>-->
+<!--											<VBox class="sapUiSmallMargin">-->
+<!--												<f:SimpleForm id="SimpleFormDisplayColumn_oneGroup234" editable="false" layout="ColumnLayout" columnsM="2" columnsL="3" columnsXL="4">-->
+<!--													<f:content>-->
+<!--														<Label text="{i18n>actBookNo}" class="fname"/>-->
+<!--														<Text id="activityBookNumber" text="{DialogModel>/ActivitySelected/0/Book}"/>-->
+<!--														<Label text="{i18n>actDate}" class="fname"/>-->
+<!--														<Text id="activityDate" text="{DialogModel>/ActivitySelected/0/ActivityDate}"/>-->
+<!--														<Label text="{i18n>personArea}" class="fname"/>-->
+<!--														<Text id="personnelArea" text="{DialogModel>/ActivitySelected/0/PersonnelArea}"/>-->
+<!--														<Label text="{i18n>personsubArea}" class="fname"/>-->
+<!--														<Text id="personnelSubArea" text="{DialogModel>/ActivitySelected/0/PersonnelSubArea}"/>-->
+<!--														<Label text="{i18n>areaIDDes}" class="fname"/>-->
+<!--														<Text id="areaId" text="{DialogModel>/ActivitySelected/0/AreaIdDescription}"/>-->
+<!--														<Label text="{i18n>locbuild}" class="fname"/>-->
+<!--														<Text id="location" text="{DialogModel>/ActivitySelected/0/LocationBuilding}"/>-->
+<!--														<Label text="{i18n>areaFormanID}" class="fname"/>-->
+<!--														<Text id="areaForemanId" text="{DialogModel>/ActivitySelected/0/AreaForemanID}"/>-->
+<!--														<Label text="{i18n>siteEngID}" class="fname"/>-->
+<!--														<Text id="siteEngineerId" text="{DialogModel>/ActivitySelected/0/SiteEngineerID}"/>-->
+<!--													</f:content>-->
+<!--												</f:SimpleForm>-->
+<!--											</VBox>-->
+<!--										</content>-->
+<!--									</IconTabFilter>-->
+<!--<IconTabSeparator/>-->
+<!--									<IconTabFilter icon="sap-icon://manager" visible="false" count="" text="{i18n>actDetails}" key="Activity Details" tooltip="Activity Details">-->
+<!--										<content>-->
+<!--											<Table id="idProductsTable" alternateRowColors="true" mode="SingleSelectLeft" inset="false"-->
+<!--												items="{ path: '/Employees', sorter: { path: 'DisciplineID' } }">-->
+<!--												<headerToolbar>-->
+<!--													<Toolbar>-->
+<!--														<ToolbarSpacer/>-->
+<!--														<Button id="filterButton" tooltip="View Settings" icon="sap-icon://sort" press="openDialog"/>-->
+<!--														<SearchField width="50%" search="onSearchTableItems"/>-->
+<!--														<Button icon="sap-icon://add" press="navToActivitydetails"/>-->
+<!--													</Toolbar>-->
+<!--												</headerToolbar>-->
+<!--												<columns>-->
+<!--													<Column width="13em">-->
+<!--														<Text text="{i18n>ActDescID}"/>-->
+<!--													</Column>-->
+<!--													<Column minScreenWidth="Tablet" demandPopin="true">-->
+<!--														<Text text="{i18n>ActgrpID}"/>-->
+<!--													</Column>-->
+<!--													<Column minScreenWidth="Desktop" demandPopin="true" hAlign="End">-->
+<!--														<Text text="{i18n>ActCodeID}"/>-->
+<!--													</Column>-->
+<!--													<Column minScreenWidth="Desktop" demandPopin="true" hAlign="Center">-->
+<!--														<Text text="{i18n>ActHours}"/>-->
+<!--													</Column>-->
+<!--													<Column hAlign="End">-->
+<!--														<Text text="{i18n>ActQuantity}"/>-->
+<!--													</Column>-->
+<!--												</columns>-->
+<!--												<items>-->
+<!--													<ColumnListItem>-->
+<!--														<cells>-->
+<!--															<ObjectIdentifier title="{DisciplineID}"/>-->
+<!--															<Text text="{GroupID}"/>-->
+<!--															<Text text="{CodeID}"/>-->
+<!--															<ObjectNumber number="{Hours}"/>-->
+<!--															<ObjectNumber number="{Quantity}"/>-->
+<!--														</cells>-->
+<!--													</ColumnListItem>-->
+<!--												</items>-->
+<!--											</Table>-->
+<!--										</content>-->
+<!--									</IconTabFilter>-->
+<!--								</items>-->
+<!--							</IconTabBar>-->
+<!--						</semantic:content>-->
+<!--						<semantic:customFooterContent>-->
+<!--							<Button id="editFooterButton" icon="sap-icon://edit" tooltip="Edit" press="onPressEditNavToDailyActivity"/>-->
+<!--							<Button text="{i18n>buttonSubmit}" press="onPress"/>-->
+<!--							<Button text="{i18n>buttonSave}" press="onPress"/>-->
+<!--							<Button text="{i18n>buttonCancel}" press="onNavBack"/>-->
+<!--							<Button icon="sap-icon://email" tooltip="{i18n>emailTooltip}" press="onShareEmailPress"/>-->
+<!--						</semantic:customFooterContent>-->
+<!--					</semantic:DetailPage>-->
+<!--				</detailPages>-->
+<!--			</SplitContainer>-->
+<!--		</content>-->
+<!--	</Page>-->
+<!--</mvc:View>-->

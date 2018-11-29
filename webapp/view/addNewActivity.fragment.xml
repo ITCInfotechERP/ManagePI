@@ -17,11 +17,11 @@
 															<Input value="{DialogModel>/ActivitySelected/0/Hours}"/>
 															<core:Title/>
 															<Label text="{i18n>actDescr}"/>
-															<Input value="{i18n>ActDescdes}"/>
+															<Input value="{DialogModel>/ActivitySelected/0/Description}"/>
 															<Label text="{i18n>actDescr}"/>
-															<Input value="{i18n>ActgrpDes}"/>
+															<Input value="{DialogModel>/ActivitySelected/0/Description}"/>
 															<Label text="{i18n>actDescr}"/>
-															<Input value="{i18n>ActCodeDes}"/>
+															<Input value="{DialogModel>/ActivitySelected/0/Description}"/>
 															<Label text="{i18n>ActQuantity}"/>
 															<Input value="{DialogModel>/ActivitySelected/0/Quantity}"/>
 															<Label text="{i18n>ActUoM}"/>
@@ -31,7 +31,7 @@
 </content>
 		<buttons>
 		
-			<Button id="idbtnupdatesubmit" text="Save" press="onPressAddNewActivityDialogSave"/>
+			<Button  text="Save" press="onPressAddNewActivityDialogSave"/>
 			<Button text="Close" press="onPressAddNewActivityDialogCancel" />
 		</buttons>
 		

@@ -18,12 +18,17 @@ sap.ui.define([
 				"icon": "desktop.ico"
 			});
 
+            var	oSplitApp =	this.getView().byId("SplitAppDemo");
+			oSplitApp.setMode("StretchCompressMode");
+
+
+
                 var data = this.getOwnerComponent().getModel("jsonData").getData().Employees;
-		var array1 = [];
-		array1.push(data);
-		var dialogModel = new sap.ui.model.json.JSONModel();
-			this.getView().setModel(dialogModel, "DialogModel");
-			this.getView().getModel("DialogModel").setProperty("/ActivitySelected", array1[0]);
+	        	var array1 = [];
+	        	array1.push(data);
+	        	var dialogModel = new sap.ui.model.json.JSONModel();
+		    	this.getView().setModel(dialogModel, "DialogModel");
+		    	this.getView().getModel("DialogModel").setProperty("/ActivitySelected", array1[0]);
 
 
 
@@ -69,8 +74,37 @@ sap.ui.define([
 				}
 
 			};
+			
+			// Passing Data from activityBookList to this.View()
+			// <!------------- This Data will be visible in the Header Section  ------------------->
+			
+			
+			var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
+             oRouter.getRoute("activityDetail").attachMatched(this._onRouteMatched, this);
+ 		}, 
+ 		
+ 	// Get Data from selected list item from activityBookList	
+ 		
+ 	_onRouteMatched: function(oEvent) {
+    var sObjectId = oEvent.getParameter("arguments").row;
+    var oArray = [];
 
-		},
+    if (sObjectId) {
+      var a = JSON.parse(sObjectId);
+      //We cannot pass object and array directly, need to convert them in json data.
+      // Single value or string can be passed without converting in json data.
+      oArray.push(a);
+    }
+
+    var dialogModel = new sap.ui.model.json.JSONModel();
+    this.getView().setModel(dialogModel, "DialogModel");
+    this.getView().getModel("DialogModel").setProperty("/ActivitySelected", oArray);
+
+  },
+			
+			
+
+	
 
 		// Navigate to Dailtactivity View
 
@@ -109,25 +143,24 @@ sap.ui.define([
 			
 			if (!this._addNewActivityDialog) {
 				this._addNewActivityDialog = sap.ui.xmlfragment("com.itcActivitybook.view.addNewActivity", this);
-				
-			
 
 			}
 			
 			
 				var i18nModel = new sap.ui.model.resource.ResourceModel({
                             bundleUrl : "i18n/i18n.properties"
-                        });
+                              });
                  this._addNewActivityDialog.setModel(i18nModel, "i18n");   
 			
-			this._addNewActivityDialog.setModel(dialogModel, "DialogModel");
-			this._addNewActivityDialog.getModel("DialogModel").setProperty("/ActivitySelected", oArray);
+		     	this._addNewActivityDialog.setModel(dialogModel, "DialogModel");
+		     	this._addNewActivityDialog.getModel("DialogModel").setProperty("/ActivitySelected", oArray);
 	
-		jQuery.sap.syncStyleClass("sapUiSizeCompact", this.getView(), this._addNewActivityDialog);
+	      	jQuery.sap.syncStyleClass("sapUiSizeCompact", this.getView(), this._addNewActivityDialog);
 			this._addNewActivityDialog.open();
 			
 
 		},
+		
 		
 		onPressAddNewActivityDialogSave: function(oEvent){
 			
@@ -135,13 +168,13 @@ sap.ui.define([
 		    	this._addNewActivityDialog.close();
 		},
               onPressAddNewActivityDialogCancel:function(evt){
-			this._addNewActivityDialog.close();
+			 this._addNewActivityDialog.close();
 		}, 
  
 
 		// Navigate to Detail Page 2
 
-		navToActivityBookDetailPage2: function(oEvent) {
+	    	navToActivityBookDetailPage2: function(oEvent) {
 			this.getSplitAppObj().to(this.createId("ActivityBookDetailPage2"));
 			this.getSplitAppObj().toMaster(this.createId("master2"));
 
@@ -161,34 +194,34 @@ sap.ui.define([
 
 		// Navigate to Detail Page 3
 
-		ActivityBookDetailPage3: function() {
-			this.getSplitAppObj().to(this.createId("detail3"));
-			this.getSplitAppObj().toMaster(this.createId("master2"));
+		// ActivityBookDetailPage3: function() {
+		// 	this.getSplitAppObj().to(this.createId("detail3"));
+		// 	this.getSplitAppObj().toMaster(this.createId("master2"));
            
              
            
               
             
-			this.getView().byId("submitButtonOne").setVisible(true);
-			this.getView().byId("saveButtonTwo").setVisible(true);
-			this.getView().byId("cancelButtonThree").setVisible(true);
+		// 	this.getView().byId("submitButtonOne").setVisible(true);
+		// 	this.getView().byId("saveButtonTwo").setVisible(true);
+		// 	this.getView().byId("cancelButtonThree").setVisible(true);
 
-			//Hide the Buttons which are not useful in this view
-			this.getView().byId("saveButtonOne").setVisible(false);
-			this.getView().byId("cancelButtonTwo").setVisible(false);
-			this.getView().byId("cancelButtonOne").setVisible(false);
-			this.getView().byId("saveButtonThree").setVisible(false);
-			this.getView().byId("cancelButtonFour").setVisible(false);
-			this.getView().byId("cancelButtonFive").setVisible(false);
-			this.getView().byId("editButton").setVisible(false);
-			this.getView().byId("submitButtonTwo").setVisible(false);
+		// 	//Hide the Buttons which are not useful in this view
+		// 	this.getView().byId("saveButtonOne").setVisible(false);
+		// 	this.getView().byId("cancelButtonTwo").setVisible(false);
+		// 	this.getView().byId("cancelButtonOne").setVisible(false);
+		// 	this.getView().byId("saveButtonThree").setVisible(false);
+		// 	this.getView().byId("cancelButtonFour").setVisible(false);
+		// 	this.getView().byId("cancelButtonFive").setVisible(false);
+		// 	this.getView().byId("editButton").setVisible(false);
+		// 	this.getView().byId("submitButtonTwo").setVisible(false);
 			
 			
-		},
+		// },
 		
 		//  <!---------------------- Open Page 3 In a dialog Box -------------------------->
 		
-		ActivityBookDetailPage3DialogOpen: function(){
+	    	ActivityBookDetailPage3DialogOpen: function(){
 			
 	        var listData = this.oModelContext;
 
@@ -196,31 +229,31 @@ sap.ui.define([
 			oArray.push(listData);
 			var dialogModel = new sap.ui.model.json.JSONModel();
 		
-			if (!this._AddActivityDetailDialog) {
-				this._AddActivityDetailDialog = sap.ui.xmlfragment("com.itcActivitybook.view.AddActivityDetail", this);
+			if (!this._AddEmployeeDetailDialog) {
+				this._AddEmployeeDetailDialog = sap.ui.xmlfragment("com.itcActivitybook.view.AddEmployeeDetail", this);
 		}
 			
 			
 				var i18nModel = new sap.ui.model.resource.ResourceModel({
                             bundleUrl : "i18n/i18n.properties"
                         });
-                 this._AddActivityDetailDialog.setModel(i18nModel, "i18n");   
+                 this._AddEmployeeDetailDialog.setModel(i18nModel, "i18n");   
 			
-			this._AddActivityDetailDialog.setModel(dialogModel, "DialogModel");
-			this._AddActivityDetailDialog.getModel("DialogModel").setProperty("/ActivitySelected", oArray);
+			this._AddEmployeeDetailDialog.setModel(dialogModel, "DialogModel");
+			this._AddEmployeeDetailDialog.getModel("DialogModel").setProperty("/ActivitySelected", oArray);
 	
-		jQuery.sap.syncStyleClass("sapUiSizeCompact", this.getView(), this._AddActivityDetailDialog);
-			this._AddActivityDetailDialog.open();
+		jQuery.sap.syncStyleClass("sapUiSizeCompact", this.getView(), this._AddEmployeeDetailDialog);
+			this._AddEmployeeDetailDialog.open();
 	
 		},
 		
-			onPressAddActivityDetailDialogConfirm: function(oEvent){
+			onPressAddEmployeeDetailDialogConfirm: function(oEvent){
 			
 		    MessageToast.show("Confirm the details");
-		    	this._AddActivityDetailDialog.close();
+		    	this._AddEmployeeDetailDialog.close();
 		},
-              onPressAddActivityDetailDialogCancel:function(evt){
-			this._AddActivityDetailDialog.close();
+              onPressAddEmployeeDtailDialogCancel:function(evt){
+			this._AddEmployeeDetailDialog.close();
 		}, 
 		
 		
@@ -232,35 +265,76 @@ sap.ui.define([
 
 		// Navigate to detail page three, click on edit button selected one row in the table
 
-		ActivityBookDetailPage3Advance: function() {
+		// ActivityBookDetailPage3Advance: function() {
+			
+		// 	// Display Data from selected row in the table		
+		// 	var selectedrow = this.oModel;
+		// 	var actArray = [];
+		// 	actArray.push(selectedrow);
+		// 	var oactmodel = new sap.ui.model.json.JSONModel();
+			
+		// 	this.getView().setModel(oactmodel, "ActModel");
+		// 	this.getView().getModel("ActModel").setProperty("/editActModel", actArray);
+
+		// 	// Navigate to Detail page 3	
+		// 	this.getSplitAppObj().to(this.createId("detail3"));
+		// 	this.getSplitAppObj().toMaster(this.createId("master2"));
+
+		// 	this.getView().byId("submitButtonOne").setVisible(true);
+		// 	this.getView().byId("saveButtonTwo").setVisible(true);
+
+		// 	//Hide the Buttons which are not useful in this view
+		// 	this.getView().byId("saveButtonOne").setVisible(false);
+		// 	this.getView().byId("cancelButtonTwo").setVisible(false);
+		// 	this.getView().byId("cancelButtonOne").setVisible(false);
+		// 	this.getView().byId("saveButtonThree").setVisible(false);
+		// 	this.getView().byId("cancelButtonFour").setVisible(false);
+		// 	this.getView().byId("editButton").setVisible(false);
+		// 	this.getView().byId("submitButtonTwo").setVisible(false);
+		// 	this.getView().byId("cancelButtonThree").setVisible(false);
+		// 	this.getView().byId("cancelButtonFive").setVisible(false);
+
+		// },
+		
+		
+			onPressEditEmployeeTableRowData: function() {
 			
 			// Display Data from selected row in the table		
 			var selectedrow = this.oModel;
 			var actArray = [];
 			actArray.push(selectedrow);
 			var oactmodel = new sap.ui.model.json.JSONModel();
-			this.getView().setModel(oactmodel, "ActModel");
-			this.getView().getModel("ActModel").setProperty("/editActModel", actArray);
+			
+		
 
-			// Navigate to Detail page 3	
-			this.getSplitAppObj().to(this.createId("detail3"));
-			this.getSplitAppObj().toMaster(this.createId("master2"));
-
-			this.getView().byId("submitButtonOne").setVisible(true);
-			this.getView().byId("saveButtonTwo").setVisible(true);
-
-			//Hide the Buttons which are not useful in this view
-			this.getView().byId("saveButtonOne").setVisible(false);
-			this.getView().byId("cancelButtonTwo").setVisible(false);
-			this.getView().byId("cancelButtonOne").setVisible(false);
-			this.getView().byId("saveButtonThree").setVisible(false);
-			this.getView().byId("cancelButtonFour").setVisible(false);
-			this.getView().byId("editButton").setVisible(false);
-			this.getView().byId("submitButtonTwo").setVisible(false);
-			this.getView().byId("cancelButtonThree").setVisible(false);
-			this.getView().byId("cancelButtonFive").setVisible(false);
+				if (!this._editEmployeeDetailDialog) {
+				this._editEmployeeDetailDialog = sap.ui.xmlfragment("com.itcActivitybook.view.EditEmployeeDetail", this);
+		}
+			
+			
+				var i18nModel = new sap.ui.model.resource.ResourceModel({
+                            bundleUrl : "i18n/i18n.properties"
+                        });
+                 this._editEmployeeDetailDialog.setModel(i18nModel, "i18n");   
+			
+			this._editEmployeeDetailDialog.setModel(oactmodel, "ActModel");
+			this._editEmployeeDetailDialog.getModel("ActModel").setProperty("/editActModel", actArray);
+	
+		jQuery.sap.syncStyleClass("sapUiSizeCompact", this.getView(), this._editEmployeeDetailDialog);
+			this._editEmployeeDetailDialog.open();
+			
 
 		},
+		
+			onPressEditEmployeeDetailDialogConfirm: function(oEvent){
+			
+		    MessageToast.show("Confirm the details");
+		    	this._editEmployeeDetailDialog.close();
+		},
+              onPressEditEmployeeDetailDialogCancel:function(evt){
+			this._editEmployeeDetailDialog.close();
+		}, 
+
 
 		activityBook5: function() {
 			this.getSplitAppObj().to(this.createId("detail4"));
