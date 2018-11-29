@@ -27,8 +27,9 @@ sap.ui.define([
 			this.getView().setModel(dialogModel, "DialogModel");
 			this.getView().getModel("DialogModel").setProperty("/ActivitySelected", array1[0]);
 		 
+		 this.getAutoSelectedRow = array1[0][0];
  
-
+         
 
 
       var	oSplitApp =	this.getView().byId("SplitAppDemo");
@@ -87,10 +88,19 @@ sap.ui.define([
 		onPressEditNavToDailyActivity: function (oEvent) {
 	
 	
-		var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
-			oRouter.navTo("activies", {
+		var oRouter = sap.ui.core.UIComponent.getRouterFor(this); 
+		if(this.selectedID){
+				oRouter.navTo("activies", {
 			row :  JSON.stringify(this.selectedID)
 			});
+	
+			
+			
+		}else{
+			oRouter.navTo("activies", {
+			row :  JSON.stringify(this.getAutoSelectedRow)
+			});
+		}
 			
 		/*	var b = this.selectedID.PSID;
 			var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
@@ -241,6 +251,41 @@ sap.ui.define([
 		
 			onPressNavigateToEditActivity : function(oEvent) {
 			this.getSplitAppObj().to(this.createId("editActivityPage"));
+             
+          
+      
+         
+         
+         	var	oSplitApp =	this.getView().byId("SplitAppDemo");
+			oSplitApp.setMode("PopoverMode"); 
+			
+			
+			
+			this.getView().byId("editActivity").setVisible(false);
+			this.getView().byId("idSubmitButton").setVisible(false);
+			this.getView().byId("idSaveButton").setVisible(false);
+			this.getView().byId("idCancelButton").setVisible(false);
+			this.getView().byId("idEmailButton").setVisible(false);
+			
+			this.getView().byId("confirmActivity").setVisible(true);
+			this.getView().byId("cancelEditing").setVisible(true);
+		},
+		
+		
+		
+			onPressNavigateToEditActivityNew : function(oEvent) {
+			this.getSplitAppObj().to(this.createId("editActivityPage"));
+             
+          
+         this.getView().byId("activityBookNumberInput").setValue(null);
+          this.getView().byId("activityDateInput").setValue(null);
+           this.getView().byId("personalAreaInput").setValue(null);
+            this.getView().byId("personalSubAreaInput").setValue(null);
+             this.getView().byId("areaIdInput").setValue(null);
+              this.getView().byId("locationInput").setValue(null);
+              this.getView().byId("areaFormanIdInput").setValue(null);
+              this.getView().byId("siteEngineerIdInput").setValue(null);
+         
          
          	var	oSplitApp =	this.getView().byId("SplitAppDemo");
 			oSplitApp.setMode("PopoverMode"); 
@@ -263,7 +308,6 @@ sap.ui.define([
 		
 		
 		
-		
 			getSplitAppObj : function() {
 			var result = this.byId("SplitAppDemo");
 			if (!result) {
@@ -277,9 +321,19 @@ sap.ui.define([
 			navToActivitydetails: function(oEvent) {
 				
 				var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
-			oRouter.navTo("activityDetail", {
+				if(this.selectedID){
+				oRouter.navTo("activityDetail", {
 			row :  JSON.stringify(this.selectedID)
-			});	
+			});
+	
+			
+			
+		}else{
+			oRouter.navTo("activityDetail", {
+			row :  JSON.stringify(this.getAutoSelectedRow)
+			});
+		}
+			
 		
 		},
 		

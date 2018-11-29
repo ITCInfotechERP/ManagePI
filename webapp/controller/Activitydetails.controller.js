@@ -27,8 +27,8 @@ sap.ui.define([
 	        	var array1 = [];
 	        	array1.push(data);
 	        	var dialogModel = new sap.ui.model.json.JSONModel();
-		    	this.getView().setModel(dialogModel, "DialogModel");
-		    	this.getView().getModel("DialogModel").setProperty("/ActivitySelected", array1[0]);
+		    	this.getView().setModel(dialogModel, "NewDialogModel");
+		    	this.getView().getModel("NewDialogModel").setProperty("/ActivitySelected", array1[0]);
 
 
 

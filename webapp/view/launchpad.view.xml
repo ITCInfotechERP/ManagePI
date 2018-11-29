@@ -90,7 +90,7 @@
 						</headerToolbar>
 						<content>
 							<!--<l:HorizontalLayout>-->
-							<l:Grid defaultSpan="L3 M6 S12" width="auto" vSpacing="0" hSpacing="0">
+							<l:Grid defaultSpan="L4 M6 S12" width="auto" vSpacing="0" hSpacing="0">
 								<l:content>
 									<!--<FlexBox class="panelcol" width="70%" direction="Column" alignItems="Center">-->
 									<VBox>
@@ -135,7 +135,7 @@
 											</Text>
 										</items>
 									</VBox>
-									<VBox>
+									<!--<VBox>
 										<items>
 											<Button class="abboxstyle" press="navToReports" icon="sap-icon://employee">
 												<layoutData>
@@ -148,7 +148,7 @@
 												</layoutData>
 											</Text>
 										</items>
-									</VBox>
+									</VBox>-->
 										
 <!--									</FlexBox>
 									<FlexBox width="70%" direction="Column" alignItems="Center">

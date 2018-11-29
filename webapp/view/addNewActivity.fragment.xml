@@ -3,10 +3,10 @@
 <Dialog title="Create Activity">
 
 <content> 
-	<f:SimpleForm class="form" id="SimpleFormDisplay480_12120" columnsM="2" columnsL="2" emptySpanM="0" emptySpanL="0" adjustLabelSpan="false"
+	<f:SimpleForm class="form sapUiSmallMargin" id="SimpleFormDisplay480_12120" columnsM="2" columnsL="2" emptySpanM="0" emptySpanL="0" adjustLabelSpan="false"
 														labelSpanM="12" labelSpanL="4" layout="ResponsiveGridLayout" editable="false" width="100%">
 														<f:content>
-															<core:Title/>
+															
 															<Label text="{i18n>actDesc}"/>
 															<Input value="{i18n>DialogModel>/ActivitySelected/0/DisciplineID}"/>
 															<Label text="{i18n>Actgrp}"/>
@@ -15,7 +15,7 @@
 															<Input value="{DialogModel>/ActivitySelected/0/CodeID}"/>
 															<Label text="{i18n>ActHours}"/>
 															<Input value="{DialogModel>/ActivitySelected/0/Hours}"/>
-															<core:Title/>
+															
 															<Label text="{i18n>actDescr}"/>
 															<Input value="{DialogModel>/ActivitySelected/0/Description}"/>
 															<Label text="{i18n>actDescr}"/>

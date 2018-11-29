@@ -182,15 +182,15 @@
 																								emptySpanS="0" columnsXL="1" columnsL="1" columnsM="1" singleContainerFullSize="false">
 																								<f:content>
 																									<m:Label text="{i18n>actDesc}" class="fname"/>
-																									<m:Text id="nameText" text="{DialogModel>/ActivitySelected/0/DisciplineID}"/>
+																									<m:Text id="nameText" text="{NewDialogModel>/ActivitySelected/0/DisciplineID}"/>
 																									<m:Label text="{i18n>Actgrp}" class="fname"/>
-																									<m:Text text="{DialogModel>/ActivitySelected/0/GroupID}"/>
+																									<m:Text text="{NewDialogModel>/ActivitySelected/0/GroupID}"/>
 																									<m:Label text="{i18n>ActCode}" class="fname"/>
-																									<m:Text text="{DialogModel>/ActivitySelected/0/CodeID}"/>
+																									<m:Text text="{NewDialogModel>/ActivitySelected/0/CodeID}"/>
 																									<m:Label text="{i18n>ActHours}" class="fname"/>
-																									<m:Text id="countryText" text="{DialogModel>/ActivitySelected/0/Hours}"/>
+																									<m:Text id="countryText" text="{NewDialogModel>/ActivitySelected/0/Hours}"/>
 																									<m:Label text="{i18n>ActQuantity}" class="fname"/>
-																									<m:Text id="countryText1" text="{DialogModel>/ActivitySelected/0/Quantity}"/>
+																									<m:Text id="countryText1" text="{NewDialogModel>/ActivitySelected/0/Quantity}"/>
 																								</f:content>
 																							</f:SimpleForm>
 																						</m:VBox>

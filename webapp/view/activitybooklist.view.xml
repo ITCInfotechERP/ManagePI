@@ -124,25 +124,25 @@
 										<f:content>
 											<core:Title/>
 											<Label text="{i18n>actBookNo}"/>
-											<Input value="{DialogModel>/ActivitySelected/0/ActivityBookNumber}" enabled="false"/>
+											<Input id="activityBookNumberInput" value="{DialogModel>/ActivitySelected/0/ActivityBookNumber}" enabled="false"/>
 											<Label text="{i18n>actDate}"/>
-											<Input value="{DialogModel>/ActivitySelected/0/ActivityDate}"/>
+											<Input  id="activityDateInput" value="{DialogModel>/ActivitySelected/0/ActivityDate}"/>
 											<Label text="{i18n>personArea}"/>
-											<Input value="{DialogModel>/ActivitySelected/0/PersonnelArea}"/>
+											<Input id="personalAreaInput" value="{DialogModel>/ActivitySelected/0/PersonnelArea}"/>
 											<Input/>
 											<Label text="{i18n>personsubArea}"/>
-											<Input value="{DialogModel>/ActivitySelected/0/PersonnelSubArea}"/>
+											<Input  id="personalSubAreaInput" value="{DialogModel>/ActivitySelected/0/PersonnelSubArea}"/>
 											<Input/>
 											<core:Title/>
 											<Label text="{i18n>areaIDDes}"/>
-											<Input value="{DialogModel>/ActivitySelected/0/AreaIdDescription}"/>
+											<Input  id="areaIdInput" value="{DialogModel>/ActivitySelected/0/AreaIdDescription}"/>
 											<Input />
 											<Label text="{i18n>locbuild}"/>
-											<Input value="{DialogModel>/ActivitySelected/0/LocationBuilding}"/>
+											<Input id="locationInput" value="{DialogModel>/ActivitySelected/0/LocationBuilding}"/>
 											<Label text="{i18n>areaFormanID}"/>
-											<Input value="{DialogModel>/ActivitySelected/0/AreaForemanID}"/>
+											<Input id="areaFormanIdInput" value="{DialogModel>/ActivitySelected/0/AreaForemanID}"/>
 											<Label text="{i18n>siteEngID}"/>
-											<Input value="{DialogModel>/ActivitySelected/0/SiteEngineerID}"/>
+											<Input id="siteEngineerIdInput" value="{DialogModel>/ActivitySelected/0/SiteEngineerID}"/>
 										</f:content>
 									</f:SimpleForm>
 								</VBox>
@@ -169,7 +169,8 @@
 									<Title text="{i18n>AppActivityBooklst}" level="H3"/>
 								</contentMiddle>
 								<contentRight>
-									<Button icon="sap-icon://add" tooltip="Add New Activity" press="onPressEditNavToDailyActivity"/>
+										<Button icon="sap-icon://add" tooltip="Add New Activity" press="onPressNavigateToEditActivityNew"/>
+									<!--<Button icon="sap-icon://add" tooltip="Add New Activity" press="onPressEditNavToDailyActivity"/>-->
 								</contentRight>
 							</Bar>
 						</customHeader>
