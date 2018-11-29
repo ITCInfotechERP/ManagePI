@@ -1,3 +1,11 @@
+
+
+
+
+
+
+
+
 <mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns:m="sap.m" xmlns:html="http://www.w3.org/1999/xhtml" xmlns="sap.uxap"
 	xmlns:layout="sap.ui.layout" xmlns:f="sap.ui.layout.form" controllerName="com.itcActivitybook.controller.Activitydetails"  height="100%">
 	<m:Page class="page sapUiContentPadding">
@@ -17,56 +25,64 @@
 			</m:Bar>
 		</m:customHeader>
 		<m:content>
-			<ObjectPageLayout id="ObjectPageLayout" enableLazyLoading="false" showTitleInHeaderContent="false" showHeaderContent="true"
-				useIconTabBar="true">
-				<headerTitle>
-					<ObjectPageHeader objectImageURI="https://nulm.gov.in/images/user.png" objectImageShape="Circle" objectImageAlt="Book Number"
-						id="ObjectPageLayoutHeaderTitle" isObjectIconAlwaysVisible="true" isObjectTitleAlwaysVisible="true" showPlaceholder="true">
-						<actions>
-							<m:Button text="{i18n>buttonEdit}" press="navToDailyActivity" class="editButton"/>
-						</actions>
-						<breadCrumbsLinks>
-							<m:Link class="link" text="{DialogModel>/ActivitySelected/0/ActivityBookNumber}"/>
-						</breadCrumbsLinks>
-					</ObjectPageHeader>
-				</headerTitle>
-				<headerContent>
-					<layout:VerticalLayout width="300px">
-						<m:ObjectStatus class="name" title="{i18n>personArea}" text="{DialogModel>/ActivitySelected/0/PersonnelArea}"/>
-						<m:ObjectStatus class="subarea" title="{i18n>personsubArea}" text="{DialogModel>/ActivitySelected/0/PersonnelSubArea}"/>
-						<m:ObjectStatus class="location" title="{i18n>personLocation}" text="{DialogModel>/ActivitySelected/0/LocationBuilding}"/>
-					</layout:VerticalLayout>
-					<layout:VerticalLayout width="250px">
-						<m:ObjectStatus class="date" title="{i18n>date}" text="{DialogModel>/ActivitySelected/0/ActivityDate}"/>
-						<m:ObjectStatus class="area" title="{i18n>areaID}" text="{DialogModel>/ActivitySelected/0/AreaID}"/>
-						<m:ObjectStatus class="status" title="{i18n>status}" text="{DialogModel>/ActivitySelected/0/Status}"/>
-					</layout:VerticalLayout>
-					<layout:VerticalLayout width="250px">
-						<m:ObjectStatus class="sapUiLargeMarginBegin" text="{i18n>areaForeman}"/>
-						<layout:HorizontalLayout>
-							<m:Image class="img1" src="https://nulm.gov.in/images/user.png" densityAware="true"/>
-							<layout:VerticalLayout>
-								<m:ObjectStatus class="michael" text="{DialogModel>/ActivitySelected/0/AreaForemanName}"/>
-								<m:ObjectStatus class="id2" text="{DialogModel>/ActivitySelected/0/AreaForemanID}"/>
-							</layout:VerticalLayout>
-						</layout:HorizontalLayout>
-					</layout:VerticalLayout>
-					<layout:VerticalLayout width="200px">
-						<m:ObjectStatus class="sapUiLargeMarginBegin" text="{i18n>areaSiteEngineer}"/>
-						<layout:HorizontalLayout>
-							<m:Image class="img1" src="https://nulm.gov.in/images/user.png" densityAware="true"/>
-							<layout:VerticalLayout>
-								<m:ObjectStatus class="john" text="{DialogModel>/ActivitySelected/0/SiteEngineerName}"/>
-								<m:ObjectStatus class="id9" text="{DialogModel>/ActivitySelected/0/SiteEngineerID}"/>
-							</layout:VerticalLayout>
-						</layout:HorizontalLayout>
-					</layout:VerticalLayout>
-				</headerContent>
-				<sections>
-					<ObjectPageSection title="{i18n>areaPlan}">
-						<subSections>
-							<ObjectPageSubSection title="{i18n>areaTitle}">
-								<blocks>
+			
+			<!--New Comment-->
+			
+			
+			<!--<ObjectPageLayout id="ObjectPageLayout" enableLazyLoading="false" showTitleInHeaderContent="false" showHeaderContent="true"-->
+			<!--	useIconTabBar="true">-->
+			<!--	<headerTitle>-->
+			<!--		<ObjectPageHeader objectImageURI="https://nulm.gov.in/images/user.png" objectImageShape="Circle" objectImageAlt="Book Number"-->
+			<!--			id="ObjectPageLayoutHeaderTitle" isObjectIconAlwaysVisible="true" isObjectTitleAlwaysVisible="true" showPlaceholder="true">-->
+			<!--			<actions>-->
+			<!--				<m:Button text="{i18n>buttonEdit}" press="navToDailyActivity" class="editButton"/>-->
+			<!--			</actions>-->
+			<!--			<breadCrumbsLinks>-->
+			<!--				<m:Link class="link" text="{DialogModel>/ActivitySelected/0/ActivityBookNumber}"/>-->
+			<!--			</breadCrumbsLinks>-->
+			<!--		</ObjectPageHeader>-->
+			<!--	</headerTitle>-->
+			<!--	<headerContent>-->
+			<!--		<layout:VerticalLayout width="300px">-->
+			<!--			<m:ObjectStatus class="name" title="{i18n>personArea}" text="{DialogModel>/ActivitySelected/0/PersonnelArea}"/>-->
+			<!--			<m:ObjectStatus class="subarea" title="{i18n>personsubArea}" text="{DialogModel>/ActivitySelected/0/PersonnelSubArea}"/>-->
+			<!--			<m:ObjectStatus class="location" title="{i18n>personLocation}" text="{DialogModel>/ActivitySelected/0/LocationBuilding}"/>-->
+			<!--		</layout:VerticalLayout>-->
+			<!--		<layout:VerticalLayout width="250px">-->
+			<!--			<m:ObjectStatus class="date" title="{i18n>date}" text="{DialogModel>/ActivitySelected/0/ActivityDate}"/>-->
+			<!--			<m:ObjectStatus class="area" title="{i18n>areaID}" text="{DialogModel>/ActivitySelected/0/AreaID}"/>-->
+			<!--			<m:ObjectStatus class="status" title="{i18n>status}" text="{DialogModel>/ActivitySelected/0/Status}"/>-->
+			<!--		</layout:VerticalLayout>-->
+			<!--		<layout:VerticalLayout width="250px">-->
+			<!--			<m:ObjectStatus class="sapUiLargeMarginBegin" text="{i18n>areaForeman}"/>-->
+			<!--			<layout:HorizontalLayout>-->
+			<!--				<m:Image class="img1" src="https://nulm.gov.in/images/user.png" densityAware="true"/>-->
+			<!--				<layout:VerticalLayout>-->
+			<!--					<m:ObjectStatus class="michael" text="{DialogModel>/ActivitySelected/0/AreaForemanName}"/>-->
+			<!--					<m:ObjectStatus class="id2" text="{DialogModel>/ActivitySelected/0/AreaForemanID}"/>-->
+			<!--				</layout:VerticalLayout>-->
+			<!--			</layout:HorizontalLayout>-->
+			<!--		</layout:VerticalLayout>-->
+			<!--		<layout:VerticalLayout width="200px">-->
+			<!--			<m:ObjectStatus class="sapUiLargeMarginBegin" text="{i18n>areaSiteEngineer}"/>-->
+			<!--			<layout:HorizontalLayout>-->
+			<!--				<m:Image class="img1" src="https://nulm.gov.in/images/user.png" densityAware="true"/>-->
+			<!--				<layout:VerticalLayout>-->
+			<!--					<m:ObjectStatus class="john" text="{DialogModel>/ActivitySelected/0/SiteEngineerName}"/>-->
+			<!--					<m:ObjectStatus class="id9" text="{DialogModel>/ActivitySelected/0/SiteEngineerID}"/>-->
+			<!--				</layout:VerticalLayout>-->
+			<!--			</layout:HorizontalLayout>-->
+			<!--		</layout:VerticalLayout>-->
+			<!--	</headerContent>-->
+			<!--	<sections>-->
+			<!--		<ObjectPageSection title="{i18n>areaPlan}">-->
+			<!--			<subSections>-->
+			<!--				<ObjectPageSubSection title="{i18n>areaTitle}">-->
+			<!--					<blocks>-->
+			
+			<!--New Comment-->
+			
+			
 									<m:SplitApp id="SplitAppDemo" initialDetail="detail" initialMaster="master" orientationChange="onOrientationChange">
 										<!--<m:detailPages>-->
 										<!--	<m:Page id="detail" title="Activity Detail" class="sapUiStdPage">-->
@@ -467,12 +483,16 @@
 											</m:Page>
 										</m:masterPages>
 									</m:SplitApp>
-								</blocks>
-							</ObjectPageSubSection>
-						</subSections>
-					</ObjectPageSection>
-				</sections>
-			</ObjectPageLayout>
+									<!--NEw Comment-->
+			<!--					</blocks>-->
+			<!--				</ObjectPageSubSection>-->
+			<!--			</subSections>-->
+			<!--		</ObjectPageSection>-->
+			<!--	</sections>-->
+			<!--</ObjectPageLayout>-->
+			
+			<!--NEw Comment-->
+			
 		</m:content>
 		<m:footer>
 			<m:Toolbar>
@@ -493,3 +513,55 @@
 		</m:footer>
 	</m:Page>
 </mvc:View>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--<mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns:custom="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1"
+	controllerName="com.itcActivitybook.controller.Activitydetails" xmlns:m="sap.m" xmlns:f="sap.ui.layout.form" xmlns:core="sap.ui.core">
+<m:Page class="page sapUiContentPadding">
+	
+	
+	<m:customHeader>
+			<m:Bar class="headerToolBarBackground">
+				<m:contentLeft>
+					<m:Button icon="sap-icon://home" tooltip="{i18n>appHome}" press="homeButton"/>
+				</m:contentLeft>
+				<m:contentMiddle>
+					<m:Title text="{i18n>actBook}" level="H3"/>
+				</m:contentMiddle>
+				<m:contentRight>
+					<m:Button icon="sap-icon://bell" tooltip="Notification"/>
+					<m:Text text="{i18n>appUser}"/>
+					<m:Button text="{i18n>appLogout}"/>
+				</m:contentRight>
+			</m:Bar>
+		</m:customHeader>
+
+</m:Page>
+</mvc:View>-->
+
+

@@ -11,7 +11,11 @@ sap.ui.define([
 		onInit: function() {
 
 			this.getView().setModel(this.getOwnerComponent().getModel("jsonData"));
+	
+	
 			//	this.getView().setModel(this.getOwnerComponent().getModel("json"));
+			
+			//New Comment
 			this.getSplitAppObj().setHomeIcon({
 				"phone": "phone-icon.png",
 				"tablet": "tablet-icon.png",

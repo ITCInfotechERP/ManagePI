@@ -131,12 +131,16 @@ sap.ui.define([
 
 
 		// <! ~~~~~~~~~~~~~~~~~~~~~Show data to detail View, on click of listItems ~~~~~~~~~~~~~~~~>
-		showDetails: function (oEvent) {
+	 showDetails: function (oEvent) {
 			
 			this.getView().byId("editFooterButton").setType("Emphasized");
-			
+				
+				if(this.getView().byId("editActivityPage")){
+				MessageToast.show("Hi");
+			}
 			this.oModelContext = oEvent.getParameter("listItem").getBindingContext().getObject();
-
+            
+            
 			var oArray = [];
 			oArray.push(this.oModelContext);
 			var dialogModel = new sap.ui.model.json.JSONModel();
@@ -148,6 +152,8 @@ sap.ui.define([
 		
 			 this.selectedID = selectedrow;
 			
+			
+		
 			
 		
 		},
@@ -253,6 +259,7 @@ sap.ui.define([
 			this.getSplitAppObj().to(this.createId("editActivityPage"));
              
           
+          
       
          
          
@@ -269,6 +276,10 @@ sap.ui.define([
 			
 			this.getView().byId("confirmActivity").setVisible(true);
 			this.getView().byId("cancelEditing").setVisible(true);
+			
+			
+		
+			 
 		},
 		
 		
@@ -277,11 +288,11 @@ sap.ui.define([
 			this.getSplitAppObj().to(this.createId("editActivityPage"));
              
           
-         this.getView().byId("activityBookNumberInput").setValue(null);
-          this.getView().byId("activityDateInput").setValue(null);
-           this.getView().byId("personalAreaInput").setValue(null);
-            this.getView().byId("personalSubAreaInput").setValue(null);
-             this.getView().byId("areaIdInput").setValue(null);
+              this.getView().byId("activityBookNumberInput").setValue(null);
+              this.getView().byId("activityDateInput").setValue(null);
+              this.getView().byId("personalAreaInput").setValue(null);
+              this.getView().byId("personalSubAreaInput").setValue(null);
+              this.getView().byId("areaIdInput").setValue(null);
               this.getView().byId("locationInput").setValue(null);
               this.getView().byId("areaFormanIdInput").setValue(null);
               this.getView().byId("siteEngineerIdInput").setValue(null);

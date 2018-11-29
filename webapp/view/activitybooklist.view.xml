@@ -171,14 +171,14 @@
 								<contentRight>
 										<Button icon="sap-icon://add" tooltip="Add New Activity" press="onPressNavigateToEditActivityNew"/>
 									<!--<Button icon="sap-icon://add" tooltip="Add New Activity" press="onPressEditNavToDailyActivity"/>-->
-								</contentRight>
+								</contentRight> 
 							</Bar>
 						</customHeader>
 						<content>
 							<SearchField width="auto" search="onSearchListItems" class="sapUiTinyMargin"/>
 							<List id="List1" mode="SingleSelectMaster" selectionChange="showDetails" items="{ path : '/Employees'}">
 								<items>
-									<ObjectListItem title="{Book}" number="{PSID}" intro="{GroupID}"></ObjectListItem>
+									<ObjectListItem  title="{Book}" number="{PSID}" intro="{GroupID}"></ObjectListItem>
 								</items>
 							</List>
 						</content>
