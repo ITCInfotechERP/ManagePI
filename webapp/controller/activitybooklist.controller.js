@@ -3,67 +3,57 @@ sap.ui.define([
 	"com/itcActivitybook/controller/BaseController",
 	"sap/m/MessageToast",
 	"sap/ui/model/Filter",
-	"sap/ui/model/Sorter"
-], function (jQuery, BaseController, MessageToast, Filter, Sorter) {
+	"sap/ui/model/Sorter",
+	"sap/m/MessageBox",
+], function (jQuery, BaseController, MessageToast, Filter, Sorter, MessageBox) {
 	"use strict";
 
 	return BaseController.extend("com.itcActivitybook.controller.activitybooklist", {
-		
-		
-			_oDialog: null,
-			
+
+		_oDialog: null,
+
 		onInit: function () {
-          
-   
 
+			this.getView().setModel(this.getOwnerComponent().getModel("jsonData"));
 
-		this.getView().setModel(this.getOwnerComponent().getModel("jsonData"));
-		
-
-        var data = this.getOwnerComponent().getModel("jsonData").getData().Employees;
-		var array1 = [];
-		array1.push(data);
-		var dialogModel = new sap.ui.model.json.JSONModel();
+			var data = this.getOwnerComponent().getModel("jsonData").getData().Employees;
+			var array1 = [];
+			array1.push(data);
+			var dialogModel = new sap.ui.model.json.JSONModel();
 			this.getView().setModel(dialogModel, "DialogModel");
 			this.getView().getModel("DialogModel").setProperty("/ActivitySelected", array1[0]);
-		 
-		 this.getAutoSelectedRow = array1[0][0];
- 
-         
 
+			this.getAutoSelectedRow = array1[0][0];
 
-      var	oSplitApp =	this.getView().byId("SplitAppDemo");
-			oSplitApp.setMode("StretchCompressMode");
+			this.oSplitApp = this.getView().byId("SplitAppDemo");
+			this.oSplitApp.setMode("StretchCompressMode");
 
-
-
-
-       	this.mGroupFunctions = {
-				GroupID: function(oContext) {
+			this.mGroupFunctions = {
+				GroupID: function (oContext) {
 					var name = oContext.getProperty("GroupID");
 					return {
 						key: name,
 						text: name
 					};
 				},
-				
-					DisciplineID: function(oContext) {
+
+				DisciplineID: function (oContext) {
 					var name = oContext.getProperty("DisciplineID");
 					return {
 						key: name,
 						text: name
 					};
 				},
-				Hours: function(oContext) {
+				Hours: function (oContext) {
 					var hours = oContext.getProperty("Hours");
-				//	var currencyCode = oContext.getProperty("Category");
+					//	var currencyCode = oContext.getProperty("Category");
 					var key, text;
 					if (hours <= 5) {
 						key = "LE5";
 						text = "5 " + "" + "or less";
 					} else if (hours <= 8) {
 						key = "BT5-8";
-						text = "Between 5 and 8" ;
+						text = "Between 5 and 8";
 					} else {
 						key = "GT10";
 						text = "More than 10 ";
@@ -73,94 +63,85 @@ sap.ui.define([
 						text: text
 					};
 				}
-		
+
 			};
-    },
+		},
 
-    onExit: function() {
-      if (this._oDialog) {
-        this._oDialog.destroy();
-      }
-    },
-
-		
+		onExit: function () {
+			if (this._oDialog) {
+				this._oDialog.destroy();
+			}
+		},
 
 		onPressEditNavToDailyActivity: function (oEvent) {
-	
-	
-		var oRouter = sap.ui.core.UIComponent.getRouterFor(this); 
-		if(this.selectedID){
-				oRouter.navTo("activies", {
-			row :  JSON.stringify(this.selectedID)
-			});
-	
-			
-			
-		}else{
-			oRouter.navTo("activies", {
-			row :  JSON.stringify(this.getAutoSelectedRow)
-			});
-		}
-			
-		/*	var b = this.selectedID.PSID;
-			var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
-			oRouter.navTo("activies", {
-			row : b
-			});*/
-			
-		},
-		
-		// 	navToDailyActivity: function (oEvent) {
-	        
-	 //       this.getRouter().navTo("activies");
-	
-	
-		// },
-		
-		
-		
-	
-	
 
+			var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
+			if (this.selectedID) {
+				oRouter.navTo("activies", {
+					row: JSON.stringify(this.selectedID)
+				});
+
+			} else {
+				oRouter.navTo("activies", {
+					row: JSON.stringify(this.getAutoSelectedRow)
+				});
+			}
+
+			/*	var b = this.selectedID.PSID;
+				var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
+				oRouter.navTo("activies", {
+				row : b
+				});*/
+
+		},
+
+		// 	navToDailyActivity: function (oEvent) {
+
+		//       this.getRouter().navTo("activies");
+
+		// },
 
 		// navToActivitydetails: function (oEvent) {
 		// 	this.getRouter().navTo("activityDetail");
 		// },
 
-
-
-
 		// <! ~~~~~~~~~~~~~~~~~~~~~Show data to detail View, on click of listItems ~~~~~~~~~~~~~~~~>
-	 showDetails: function (oEvent) {
-			
+		showDetails: function (oEvent) {
+
 			this.getView().byId("editFooterButton").setType("Emphasized");
-				
-				if(this.getView().byId("editActivityPage")){
-				MessageToast.show("Hi");
-			}
+			var mode = this.oSplitApp.getMode();
+			var that = this;
+
 			this.oModelContext = oEvent.getParameter("listItem").getBindingContext().getObject();
-            
-            
 			var oArray = [];
 			oArray.push(this.oModelContext);
 			var dialogModel = new sap.ui.model.json.JSONModel();
 			this.getView().setModel(dialogModel, "DialogModel");
 			this.getView().getModel("DialogModel").setProperty("/ActivitySelected", oArray);
-			
-		 
-		 	var selectedrow = this.oModelContext;
-		
-			 this.selectedID = selectedrow;
-			
-			
-		
-			
-		
+
+			var selectedrow = this.oModelContext;
+
+			this.selectedID = selectedrow;
+			if (mode !== "StretchCompressMode") {
+				// var bCompact = !!this.getView().$().closest(".sapUiSizeCompact").length;
+				MessageBox.warning(
+					"The detail page is in edit mode, click Ok to continue to navigate to display mode.", {
+						actions: [sap.m.MessageBox.Action.OK, sap.m.MessageBox.Action.CANCEL],
+						// styleClass: bCompact ? "sapUiSizeCompact" : "",
+						onClose: function (sAction) {
+							if (sAction === "OK") {
+								that.onPressDetailBack();
+							}
+							MessageToast.show("Action selected: " + sAction);
+						}
+					}
+				);
+
+			}
+
 		},
-		
-		
-		
-			// <! ~~~~~~~~~~~~~~~~~~~~~ Search Bar filter for list items  ~~~~~~~~~~~~~~~~>
+
+		// <! ~~~~~~~~~~~~~~~~~~~~~ Search Bar filter for list items  ~~~~~~~~~~~~~~~~>
 		onSearchListItems: function (oEvent) {
 			var aFilters = [];
 			var sQuery = oEvent.getSource().getValue();
@@ -172,8 +153,8 @@ sap.ui.define([
 			var binding = list.getBinding("items");
 			binding.filter(aFilters);
 		},
-		
-			// <! ~~~~~~~~~~~~~~~~~~~~~ Search Bar filter for Table items  ~~~~~~~~~~~~~~~~>
+
+		// <! ~~~~~~~~~~~~~~~~~~~~~ Search Bar filter for Table items  ~~~~~~~~~~~~~~~~>
 		onSearchTableItems: function (oEvent) {
 			var aFilters = [];
 			var sQuery = oEvent.getSource().getValue();
@@ -186,8 +167,8 @@ sap.ui.define([
 			binding.filter(aFilters);
 
 		},
-		
-			openDialog: function (oEvent) {
+
+		openDialog: function (oEvent) {
 			if (!this._oDialog) {
 				this._oDialog = sap.ui.xmlfragment("com.itcActivitybook.view.Dialog", this);
 			}
@@ -196,13 +177,12 @@ sap.ui.define([
 			this._oDialog.open();
 			this.getView().getModel().setProperty("/oDialog", this._oDialog);
 		},
-		
-		
-			handleConfirm: function(oEvent) {
-           
+
+		handleConfirm: function (oEvent) {
+
 			var oView = this.getView();
 			var oList = oView.byId("idProductsTable");
-           // var oDialog = this.getView().getModel().getProperty("/oDialog");
+			// var oDialog = this.getView().getModel().getProperty("/oDialog");
 			var mParams = oEvent.getParameters();
 			var oBinding = oList.getBinding("items");
 
@@ -236,90 +216,61 @@ sap.ui.define([
 			});
 			oBinding.filter(aFilters);
 
-        // update filter bar
-        if(aFilters.length > 0 || aSorters.length > 0){
-        		
-        	this.getView().byId("filterButton").setType("Emphasized");
-        		
-        }
-     
-     
+			// update filter bar
+			if (aFilters.length > 0 || aSorters.length > 0) {
 
-		
+				this.getView().byId("filterButton").setType("Emphasized");
+
+			}
+
 		},
-		
-		
-		
+
 		// <!------------------------   Code for Aditional Split APP Content  --------------------------------->
 		//  <!----- Passing Data From activityBookList to Activitydetails View ----------------------------------->
-		
-		
-		
-			onPressNavigateToEditActivity : function(oEvent) {
+
+		onPressNavigateToEditActivity: function (oEvent) {
 			this.getSplitAppObj().to(this.createId("editActivityPage"));
-             
-          
-          
-      
-         
-         
-         	var	oSplitApp =	this.getView().byId("SplitAppDemo");
-			oSplitApp.setMode("PopoverMode"); 
-			
-			
-			
+
+			this.oSplitApp = this.getView().byId("SplitAppDemo");
+			this.oSplitApp.setMode("PopoverMode");
+
 			this.getView().byId("editActivity").setVisible(false);
 			this.getView().byId("idSubmitButton").setVisible(false);
 			this.getView().byId("idSaveButton").setVisible(false);
 			this.getView().byId("idCancelButton").setVisible(false);
 			this.getView().byId("idEmailButton").setVisible(false);
-			
+
 			this.getView().byId("confirmActivity").setVisible(true);
 			this.getView().byId("cancelEditing").setVisible(true);
-			
-			
-		
-			 
+
 		},
-		
-		
-		
-			onPressNavigateToEditActivityNew : function(oEvent) {
+
+		onPressNavigateToEditActivityNew: function (oEvent) {
 			this.getSplitAppObj().to(this.createId("editActivityPage"));
-             
-          
-              this.getView().byId("activityBookNumberInput").setValue(null);
-              this.getView().byId("activityDateInput").setValue(null);
-              this.getView().byId("personalAreaInput").setValue(null);
-              this.getView().byId("personalSubAreaInput").setValue(null);
-              this.getView().byId("areaIdInput").setValue(null);
-              this.getView().byId("locationInput").setValue(null);
-              this.getView().byId("areaFormanIdInput").setValue(null);
-              this.getView().byId("siteEngineerIdInput").setValue(null);
-         
-         
-         	var	oSplitApp =	this.getView().byId("SplitAppDemo");
-			oSplitApp.setMode("PopoverMode"); 
-			
-			
-			
+
+			this.getView().byId("activityBookNumberInput").setValue(null);
+			this.getView().byId("activityDateInput").setValue(null);
+			this.getView().byId("personalAreaInput").setValue(null);
+			this.getView().byId("personalSubAreaInput").setValue(null);
+			this.getView().byId("areaIdInput").setValue(null);
+			this.getView().byId("locationInput").setValue(null);
+			this.getView().byId("areaFormanIdInput").setValue(null);
+			this.getView().byId("siteEngineerIdInput").setValue(null);
+
+			this.oSplitApp = this.getView().byId("SplitAppDemo");
+			this.oSplitApp.setMode("PopoverMode");
+
 			this.getView().byId("editActivity").setVisible(false);
 			this.getView().byId("idSubmitButton").setVisible(false);
 			this.getView().byId("idSaveButton").setVisible(false);
 			this.getView().byId("idCancelButton").setVisible(false);
 			this.getView().byId("idEmailButton").setVisible(false);
-			
+
 			this.getView().byId("confirmActivity").setVisible(true);
 			this.getView().byId("cancelEditing").setVisible(true);
 		},
-		
-		
-		
-		
-		
-		
-		
-			getSplitAppObj : function() {
+
+		getSplitAppObj: function () {
 			var result = this.byId("SplitAppDemo");
 			if (!result) {
 				jQuery.sap.log.info("SplitApp object can't be found");
@@ -327,70 +278,39 @@ sap.ui.define([
 			return result;
 		},
 
-		
-		
-			navToActivitydetails: function(oEvent) {
-				
-				var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
-				if(this.selectedID){
+		navToActivitydetails: function (oEvent) {
+
+			var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
+			if (this.selectedID) {
 				oRouter.navTo("activityDetail", {
-			row :  JSON.stringify(this.selectedID)
-			});
-	
-			
-			
-		}else{
-			oRouter.navTo("activityDetail", {
-			row :  JSON.stringify(this.getAutoSelectedRow)
-			});
-		}
-			
-		
+					row: JSON.stringify(this.selectedID)
+				});
+
+			} else {
+				oRouter.navTo("activityDetail", {
+					row: JSON.stringify(this.getAutoSelectedRow)
+				});
+			}
+
 		},
-		
-		
-		
-			onPressDetailBack : function() {
+
+		onPressDetailBack: function () {
 			this.getSplitAppObj().backDetail();
-			
+
 			//Set Split App Mode
-			var	oSplitApp =	this.getView().byId("SplitAppDemo");
-			oSplitApp.setMode("StretchCompressMode");
-			
-			
+			this.oSplitApp = this.getView().byId("SplitAppDemo");
+			this.oSplitApp.setMode("StretchCompressMode");
+
 			this.getView().byId("editActivity").setVisible(true);
 			this.getView().byId("idSubmitButton").setVisible(true);
 			this.getView().byId("idSaveButton").setVisible(true);
 			this.getView().byId("idCancelButton").setVisible(true);
 			this.getView().byId("idEmailButton").setVisible(true);
-			
-			
+
 			this.getView().byId("confirmActivity").setVisible(false);
 			this.getView().byId("cancelEditing").setVisible(false);
-			
-		}
 
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-    
+		}
 
 	});
 });
