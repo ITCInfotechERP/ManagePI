@@ -21,7 +21,8 @@ sap.ui.define([
 			array1.push(data);
 			var dialogModel = new sap.ui.model.json.JSONModel();
 			this.getView().setModel(dialogModel, "DialogModel");
-			this.getView().getModel("DialogModel").setProperty("/ActivitySelected", array1[0]);
+			this.getView().setModel(dialogModel, "DViewModel");
+			this.getView().getModel("DViewModel").setProperty("/ActivitySelected", array1[0]);
 
 			this.getAutoSelectedRow = array1[0][0];
 
@@ -116,12 +117,13 @@ sap.ui.define([
 			var oArray = [];
 			oArray.push(this.oModelContext);
 			var dialogModel = new sap.ui.model.json.JSONModel();
-			this.getView().setModel(dialogModel, "DialogModel");
-			this.getView().getModel("DialogModel").setProperty("/ActivitySelected", oArray);
+			this.getView().setModel(dialogModel, "DViewModel");
+			this.getView().getModel("DViewModel").setProperty("/ActivitySelected", oArray);
 
 			var selectedrow = this.oModelContext;
 
 			this.selectedID = selectedrow;
+
 			if (mode !== "StretchCompressMode") {
 				// var bCompact = !!this.getView().$().closest(".sapUiSizeCompact").length;
 				MessageBox.warning(
