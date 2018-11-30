@@ -483,8 +483,8 @@ sap.ui.define([
 			var oArray = [];
 			oArray.push(this.oModelContext);
 			var dialogModel = new sap.ui.model.json.JSONModel();
-			this.getView().setModel(dialogModel, "DialogModel");
-			this.getView().getModel("DialogModel").setProperty("/ActivitySelected", oArray);
+			this.getView().setModel(dialogModel, "NewDialogModel");
+			this.getView().getModel("NewDialogModel").setProperty("/ActivitySelected", oArray);
 
 		},
 

@@ -151,30 +151,41 @@
 										
 										<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~  Activity Detail View (ID  "ActivityBookDetailPage2") ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 										<m:detailPages>
+											
 											<m:Page id="ActivityBookDetailPage2" title="{i18n>actiDetail}">
 												<m:content>
-									
 													
-													<ObjectPageLayout id="ObjectPageLayoutTwo"  selectedSection="section"  showTitleInHeaderContent="false" useIconTabBar="true" showAnchorBar="true">
-														<headerTitle>    
+									<m:ObjectHeader id="objectHeader" title="{NewDialogModel>/ActivitySelected/0/Activity}" titleActive="false" titlePress="onShowDetailPopover"
+								responsive="true" number="{NewDialogModel>/ActivitySelected/0/LocationBuilding}">
+								<m:attributes>
+									<m:ObjectAttribute text="{NewDialogModel>/ActivitySelected/0/GroupID}"/>
+								</m:attributes>
+							</m:ObjectHeader>
+													
+													<!--<ObjectPageLayout id="ObjectPageLayoutTwo"  selectedSection="section"  showTitleInHeaderContent="false" useIconTabBar="true" showAnchorBar="true">-->
+														<!--<headerTitle>    -->
  
 
-															<ObjectPageHeader>
-																<actions>
+															<!--<ObjectPageHeader>-->
+															<!--	<actions>-->
 																	<!--<ObjectPageHeaderActionButton icon="sap-icon://pull-down" text="show section" type="Emphasized" tooltip="pull-down"/>-->
 																	<!--<ObjectPageHeaderActionButton icon="sap-icon://show" text="show state" type="Emphasized" tooltip="show"/>-->
-																</actions>
-															</ObjectPageHeader>
-														</headerTitle>
-														<sections>
-															<ObjectPageSection>
-																<subSections>
-																	<ObjectPageSubSection id="section" title="Activity Detail">
-																		<blocks>
-																		
+															<!--	</actions>-->
+															<!--</ObjectPageHeader>-->
+														<!--</headerTitle>-->
+														<!--<sections>-->
+														<!--	<ObjectPageSection>-->
+														<!--		<subSections>-->
+														<!--			<ObjectPageSubSection id="section" title="{i18n>activityDetail}">-->
+														<!--				<blocks>-->
+															
+								<m:IconTabBar id="iconTabBar" class="tabBar" select="handleIconTabBarSelect">
+								<m:items>
+								<m:IconTabFilter icon="sap-icon://activity-items" text="{i18n>activityDetail}" key="Emp Data" tooltip="{i18n>activityDetail}">
+								<m:content>			
 																			<m:Panel width="auto" class="sapUiResponsiveMargin" accessibleRole="Region">
 																					<m:headerToolbar>
-																						<m:Toolbar height="3rem">
+																						<m:Toolbar height="2.5rem">
 																							<m:Title text="{i18n>activityView}"/>
 																							<m:ToolbarSpacer/>
 																								<m:Button visible="true" icon="sap-icon://create" type="Emphasized" tooltip="{i18n>addEmpIncen}" press="ActivityBookDetailPage3DialogOpen"/>
@@ -185,7 +196,7 @@
 																					</m:headerToolbar>
 																					<m:content>
 																						<m:VBox class="sapUiSmallMargin">
-																							<f:SimpleForm id="SimpleFormDisplay354" editable="false" layout="ResponsiveGridLayout" title="{DialogModel>/ActivitySelected/0/Activity}"
+																							<f:SimpleForm id="SimpleFormDisplay354" editable="false" layout="ResponsiveGridLayout" title="{NewDialogModel>/ActivitySelected/0/Activity}"
 																								labelSpanXL="3" labelSpanL="3" labelSpanM="3" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="4" emptySpanL="4" emptySpanM="4"
 																								emptySpanS="0" columnsXL="1" columnsL="1" columnsM="1" singleContainerFullSize="false">
 																								<f:content>
@@ -205,17 +216,24 @@
 																					</m:content>
 																				</m:Panel>
 																				
-																		</blocks>
-																	</ObjectPageSubSection>
-																</subSections>
-															</ObjectPageSection>
-															
-															
-															<ObjectPageSection >
-																<subSections>
-																	<ObjectPageSubSection id="sectionTwo" title="Employee Detail">
-																		<blocks>
+									</m:content>
+									</m:IconTabFilter>
+									<m:IconTabSeparator/>
 																			
+																				
+															<!--			</blocks>-->
+															<!--		</ObjectPageSubSection>-->
+															<!--	</subSections>-->
+															<!--</ObjectPageSection>-->
+															
+															
+															<!--<ObjectPageSection >-->
+															<!--	<subSections>-->
+															<!--		<ObjectPageSubSection id="sectionTwo" title="Employee Incentive">-->
+															<!--			<blocks>-->
+													
+										<m:IconTabFilter icon="sap-icon://group" visible="true" count="" text="{i18n>employeeIncentive}" key="Activity Details" tooltip="Activity Details">
+										<m:content>						
 														<m:Table id="idProductsTable" alternateRowColors="true" 
 														mode="SingleSelectLeft" 
 														selectionChange="onSelectionChange"
@@ -260,16 +278,20 @@
 													</m:Table> 			
 				
 																			
-																		</blocks>
-																	</ObjectPageSubSection>
-																</subSections>
-															</ObjectPageSection>
+															<!--			</blocks>-->
+															<!--		</ObjectPageSubSection>-->
+															<!--	</subSections>-->
+															<!--</ObjectPageSection>-->
 														
 														
 			
 			
-														</sections>
-													</ObjectPageLayout>
+													<!--	</sections>-->
+													<!--</ObjectPageLayout>-->
+													</m:content>
+									</m:IconTabFilter>
+								</m:items>
+							</m:IconTabBar>
 												</m:content>
 												<!--<m:footer>-->
 												<!--	<m:Toolbar>-->
@@ -474,6 +496,15 @@
 												<!--</m:footer>-->
 											</m:Page>
 										</m:masterPages>
+										
+										
+										
+										
+										
+										
+										
+										
+										
 									</m:SplitApp>
 									<!--NEw Comment-->
 			<!--					</blocks>-->
