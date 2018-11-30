@@ -156,7 +156,7 @@
 												<m:content>
 													
 									<m:ObjectHeader id="objectHeader" title="{NewDialogModel>/ActivitySelected/0/Activity}" titleActive="false" titlePress="onShowDetailPopover"
-								responsive="true" number="{NewDialogModel>/ActivitySelected/0/LocationBuilding}">
+								responsive="true" number="{NewDialogModel>/ActivitySelected/0/Quantity}">
 								<m:attributes>
 									<m:ObjectAttribute text="{NewDialogModel>/ActivitySelected/0/GroupID}"/>
 								</m:attributes>
