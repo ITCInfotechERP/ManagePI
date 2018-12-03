@@ -155,10 +155,10 @@
 											<m:Page id="ActivityBookDetailPage2" title="{i18n>actiDetail}">
 												<m:content>
 													
-									<m:ObjectHeader id="objectHeader" title="{NewDialogModel>/ActivitySelected/0/Activity}" titleActive="false" titlePress="onShowDetailPopover"
-								responsive="true" number="{NewDialogModel>/ActivitySelected/0/Quantity}">
+									<m:ObjectHeader id="objectHeader" title="{NewDialogModel>/ActivitySelected/0/ActivityDet/0/Activity}" titleActive="false" titlePress="onShowDetailPopover"
+								responsive="true" number="{NewDialogModel>/ActivitySelected/0/ActivityDet/0/Quantity}">
 								<m:attributes>
-									<m:ObjectAttribute text="{NewDialogModel>/ActivitySelected/0/GroupID}"/>
+									<m:ObjectAttribute text="{NewDialogModel>/ActivitySelected/0/ActivityDet/0/GroupID}"/>
 								</m:attributes>
 							</m:ObjectHeader>
 													
@@ -185,7 +185,7 @@
 								<m:content>			
 																			<m:Panel width="auto" class="sapUiResponsiveMargin" accessibleRole="Region">
 																					<m:headerToolbar>
-																						<m:Toolbar height="2.5rem">
+																						<m:Toolbar height="2.8rem">
 																							<m:Title text="{i18n>activityView}"/>
 																							<m:ToolbarSpacer/>
 																								<m:Button visible="true" icon="sap-icon://create" type="Emphasized" tooltip="{i18n>addEmpIncen}" press="ActivityBookDetailPage3DialogOpen"/>
@@ -201,15 +201,15 @@
 																								emptySpanS="0" columnsXL="1" columnsL="1" columnsM="1" singleContainerFullSize="false">
 																								<f:content>
 																									<m:Label text="{i18n>actDesc}" class="fname"/>
-																									<m:Text id="nameText" text="{NewDialogModel>/ActivitySelected/0/DisciplineID}"/>
+																									<m:Text id="nameText" text="{NewDialogModel>/ActivitySelected/0/ActivityDet/0/DisciplineID}"/>
 																									<m:Label text="{i18n>Actgrp}" class="fname"/>
-																									<m:Text text="{NewDialogModel>/ActivitySelected/0/GroupID}"/>
+																									<m:Text text="{NewDialogModel>/ActivitySelected/0/ActivityDet/0/GroupID}"/>
 																									<m:Label text="{i18n>ActCode}" class="fname"/>
-																									<m:Text text="{NewDialogModel>/ActivitySelected/0/CodeID}"/>
+																									<m:Text text="{NewDialogModel>/ActivitySelected/0/ActivityDet/0/CodeID}"/>
 																									<m:Label text="{i18n>ActHours}" class="fname"/>
-																									<m:Text id="countryText" text="{NewDialogModel>/ActivitySelected/0/Hours}"/>
+																									<m:Text id="countryText" text="{NewDialogModel>/ActivitySelected/0/ActivityDet/0/Hours}"/>
 																									<m:Label text="{i18n>ActQuantity}" class="fname"/>
-																									<m:Text id="countryText1" text="{NewDialogModel>/ActivitySelected/0/Quantity}"/>
+																									<m:Text id="countryText1" text="{NewDialogModel>/ActivitySelected/0/ActivityDet/0/Quantity}"/>
 																								</f:content>
 																							</f:SimpleForm>
 																						</m:VBox>
@@ -267,11 +267,11 @@
 														<m:items>
 															<m:ColumnListItem>
 																<m:cells>
-																	<m:ObjectIdentifier title="{EmployeeID}"/>
-																	<m:Text text="{Name}"/>
-																	<m:Text text="{PayrollType}"/>
-																	<m:ObjectNumber number="{Should be PI}"/>
-																	<m:ObjectNumber number="{PIByCH}"/>
+																	<m:ObjectIdentifier title="{ActivityDet/0/EmployeeInc/0/EmployeeID}"/>
+																	<m:Text text="{ActivityDet/0/EmployeeInc/0/Name}"/>
+																	<m:Text text="{ActivityDet/0/EmployeeInc/0/PayrollType}"/>
+																	<m:ObjectNumber number="{ActivityDet/0/EmployeeInc/0/Should be PI}"/>
+																	<m:ObjectNumber number="{ActivityDet/0/EmployeeInc/0/PIByCH}"/>
 																</m:cells>
 															</m:ColumnListItem>
 														</m:items>
@@ -482,7 +482,7 @@
 												<m:content>
 													<m:List id="List1" mode="SingleSelectMaster" selectionChange="showDetails" items="{ path : '/Employees'}">
 														<m:items>
-															<m:ObjectListItem title="{Activity}" number="{PSID}" intro="{GroupID}"/>
+															<m:ObjectListItem title="{ActivityDet/0/Activity}" number="{ActivityDet/0/PSID}" intro="{ActivityDet/0/GroupID}"/>
 														</m:items>
 													</m:List>
 												</m:content>

@@ -33,9 +33,10 @@
 						</customHeader>
 						<content>
 							<SearchField width="auto" search="onSearchListItems" class="sapUiTinyMargin"/>
+						
 							<List id="List1" mode="SingleSelectMaster" selectionChange="showDetails" items="{ path : '/Employees'}">
 								<items>
-									<ObjectListItem title="{Book}" number="{PSID}" intro="{GroupID}"></ObjectListItem>
+									<ObjectListItem title="{Book}" number="{ActivityDate}" intro="{ActivityBookNumber}"></ObjectListItem>
 								</items>
 							</List>
 						</content>
@@ -45,9 +46,9 @@
 					<Page id="detail" title="{i18n>appActivityBookDtl}" class="sapUiStdPage">
 						<content>
 							<ObjectHeader id="objectHeader" title="{DViewModel>/ActivitySelected/0/Book}" titleActive="false" titlePress="onShowDetailPopover"
-								responsive="true" number="{DViewModel>/ActivitySelected/0/CodeID}">
+								responsive="true" number="{DViewModel>/ActivitySelected/0/ActivityDet/0/CodeID}">
 								<attributes>
-									<ObjectAttribute text="{DViewModel>/ActivitySelected/0/GroupID}"/>
+									<ObjectAttribute text="{DViewModel>/ActivitySelected/0/ActivityDet/0/GroupID}"/>
 								</attributes>
 							</ObjectHeader>
 							<IconTabBar id="iconTabBar" class="tabBar" select="handleIconTabBarSelect">
