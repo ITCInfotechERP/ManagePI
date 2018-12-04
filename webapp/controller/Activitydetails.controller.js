@@ -2,28 +2,32 @@ sap.ui.define([
 	"com/itcActivitybook/controller/BaseController",
 	"sap/m/MessageToast",
 	"sap/ui/model/Filter",
-	"sap/ui/model/Sorter"
-], function(BaseController, MessageToast, Filter, Sorter) {
+	"sap/ui/model/Sorter",
+	 "sap/ui/core/message/Message",
+    "sap/ui/core/MessageType",
+    "sap/ui/core/ValueState"
+], function(BaseController, MessageToast, Filter, Sorter, Message, MessageType, ValueState ) {
 	"use strict";
 
 	return BaseController.extend("com.itcActivitybook.controller.Activitydetails", {
 
 		onInit: function() {
 
+        
+
+	// Message Manager Code Start
+			var oMessageManager = sap.ui.getCore().getMessageManager();
+		 this.getView().setModel(oMessageManager.getMessageModel(), "message");
+			oMessageManager.registerObject(this.getView(), true);
+			//Message Manager Code End
+
+
 			this.getView().setModel(this.getOwnerComponent().getModel("jsonData"));
 	
 	
 			//	this.getView().setModel(this.getOwnerComponent().getModel("json"));
 			
-			//New Comment
-			this.getSplitAppObj().setHomeIcon({
-				"phone": "phone-icon.png",
-				"tablet": "tablet-icon.png",
-				"icon": "desktop.ico"
-			});
-
-            var	oSplitApp =	this.getView().byId("SplitAppDemo");
-			oSplitApp.setMode("StretchCompressMode");
+		
 
 
 
@@ -35,6 +39,20 @@ sap.ui.define([
 		    	this.getView().getModel("NewDialogModel").setProperty("/ActivitySelected", array1[0]);
 
 
+
+
+                          
+
+
+             	//New Comment
+			this.getSplitAppObj().setHomeIcon({
+				"phone": "phone-icon.png",
+				"tablet": "tablet-icon.png",
+				"icon": "desktop.ico"
+			});
+
+            var	oSplitApp =	this.getView().byId("SplitAppDemo");
+			oSplitApp.setMode("StretchCompressMode");
 
 
 
@@ -108,6 +126,8 @@ sap.ui.define([
 			
 			
 
+
+       
 	
 
 		// Navigate to Dailtactivity View
@@ -149,6 +169,15 @@ sap.ui.define([
 				this._addNewActivityDialog = sap.ui.xmlfragment("com.itcActivitybook.view.addNewActivity", this);
 
 			}
+			
+			
+			// Message Manager Code Start
+			   var oMessageManager = sap.ui.getCore().getMessageManager();
+			   this._addNewActivityDialog.setModel(oMessageManager.getMessageModel(), "message" );
+		       oMessageManager.registerObject(this._addNewActivityDialog, true);
+		    	//Message Manager Code End
+
+			
 			
 			
 				var i18nModel = new sap.ui.model.resource.ResourceModel({
@@ -237,6 +266,13 @@ sap.ui.define([
 				this._AddEmployeeDetailDialog = sap.ui.xmlfragment("com.itcActivitybook.view.AddEmployeeDetail", this);
 		}
 			
+			// Message Manager Code Start
+			   var oMessageManager = sap.ui.getCore().getMessageManager();
+			   this._AddEmployeeDetailDialog.setModel(oMessageManager.getMessageModel(), "message" );
+		       oMessageManager.registerObject(this._AddEmployeeDetailDialog, true);
+		    	//Message Manager Code End
+
+			
 			
 				var i18nModel = new sap.ui.model.resource.ResourceModel({
                             bundleUrl : "i18n/i18n.properties"
@@ -303,6 +339,12 @@ sap.ui.define([
 		
 			onPressEditEmployeeTableRowData: function() {
 			
+			
+		
+		 
+			
+			
+			
 			// Display Data from selected row in the table		
 			var selectedrow = this.oModel;
 			var actArray = [];
@@ -315,6 +357,11 @@ sap.ui.define([
 				this._editEmployeeDetailDialog = sap.ui.xmlfragment("com.itcActivitybook.view.EditEmployeeDetail", this);
 		}
 			
+				// Message Manager Code Start
+			   var oMessageManager = sap.ui.getCore().getMessageManager();
+			   this._editEmployeeDetailDialog.setModel(oMessageManager.getMessageModel(), "message" );
+		       oMessageManager.registerObject(this._editEmployeeDetailDialog, true);
+		    	//Message Manager Code End
 			
 				var i18nModel = new sap.ui.model.resource.ResourceModel({
                             bundleUrl : "i18n/i18n.properties"
@@ -325,10 +372,45 @@ sap.ui.define([
 			this._editEmployeeDetailDialog.getModel("ActModel").setProperty("/editActModel", actArray);
 	
 		jQuery.sap.syncStyleClass("sapUiSizeCompact", this.getView(), this._editEmployeeDetailDialog);
+	
 			this._editEmployeeDetailDialog.open();
+		
+		
+		
+		
+		
+		
+		
 			
 
 		},
+		
+		
+		
+			// Message Manager Code Start
+            onMessagePopoverPress : function (oEvent) {
+            this._getMessagePopover().openBy(oEvent.getSource());
+        },
+         onMessagePopoverPressOne : function (oEvent) {
+            this._getMessagePopover().openBy(oEvent.getSource());
+        },
+         onMessagePopoverPressTwo : function (oEvent) {
+            this._getMessagePopover().openBy(oEvent.getSource());
+        },
+        
+        
+         _getMessagePopover : function () {
+            // create popover lazily (singleton)
+            if (!this._oMessagePopover) {
+                this._oMessagePopover = sap.ui.xmlfragment(this.getView().getId(),"com.itcActivitybook.view.MessagePopover", this);
+                this._editEmployeeDetailDialog.addDependent(this._oMessagePopover);
+            }
+            return this._oMessagePopover;
+        },
+        	// Message Manager Code End
+        	
+        	
+        	
 		
 			onPressEditEmployeeDetailDialogConfirm: function(oEvent){
 			

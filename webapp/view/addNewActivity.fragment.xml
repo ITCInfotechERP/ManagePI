@@ -1,40 +1,45 @@
 <core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:f="sap.ui.layout.form" xmlns:l="sap.ui.layout">
-
-<Dialog title="Create Activity">
-
-<content> 
-	<f:SimpleForm id="SimpleFormDisplay3" editable="false" layout="ResponsiveGridLayout" labelSpanXL="3" labelSpanL="3" labelSpanM="3"
-															labelSpanS="12" adjustLabelSpan="false" emptySpanXL="4" emptySpanL="4" emptySpanM="4" emptySpanS="0" columnsXL="1" columnsL="1" columnsM="1"
-															singleContainerFullSize="false">
-														<f:content>
-															
-															<Label text="{i18n>actDesc}"/>
-															<Input value="{i18n>DialogModel>/ActivitySelected/0/DisciplineID}"/>
-															<Label text="{i18n>Actgrp}"/>
-															<Input value="{DialogModel>/ActivitySelected/0/GroupID}"/>
-															<Label text="{i18n>ActCode}"/>
-															<Input value="{DialogModel>/ActivitySelected/0/CodeID}"/>
-															<Label text="{i18n>ActHours}"/>
-															<Input value="{DialogModel>/ActivitySelected/0/Hours}"/>
-															
-															<Label text="{i18n>actDescr}"/>
-															<Input value="{DialogModel>/ActivitySelected/0/Description}"/>
-															<Label text="{i18n>actDescr}"/>
-															<Input value="{DialogModel>/ActivitySelected/0/Description}"/>
-															<Label text="{i18n>actDescr}"/>
-															<Input value="{DialogModel>/ActivitySelected/0/Description}"/>
-															<Label text="{i18n>ActQuantity}"/>
-															<Input value="{DialogModel>/ActivitySelected/0/Quantity}"/>
-															<Label text="{i18n>ActUoM}"/>
-															<Input  class="label" value="{i18n>ActUomVal}"/>
-														</f:content>
-													</f:SimpleForm>
-</content>
+	<Dialog title="Create Activity">
+		<content>
+			<f:SimpleForm id="SimpleFormDisplay3" editable="false" layout="ResponsiveGridLayout" labelSpanXL="3" labelSpanL="3" labelSpanM="3"
+				labelSpanS="12" adjustLabelSpan="false" emptySpanXL="4" emptySpanL="4" emptySpanM="4" emptySpanS="0" columnsXL="1" columnsL="1" columnsM="1"
+				singleContainerFullSize="false">
+				<f:content>
+					<Label text="{i18n>actDesc}"/>
+					<Input
+						value="{path: 'DialogModel>/ActivitySelected/0/DisciplineID', type: 'sap.ui.model.type.String', constraints: { minLength: 3, maxLength: 10 }}"/>
+					<Label text="{i18n>Actgrp}"/>
+					<Input
+						value="{path: 'DialogModel>/ActivitySelected/0/GroupID', type: 'sap.ui.model.type.String', constraints: { minLength: 3, maxLength: 10 }}"/>
+					<Label text="{i18n>ActCode}"/>
+					<Input
+						value="{path: 'DialogModel>/ActivitySelected/0/CodeID', type: 'sap.ui.model.type.String', constraints: { minLength: 3, maxLength: 10 }}"/>
+					<Label text="{i18n>ActHours}"/>
+					<Input
+						value="{path: 'DialogModel>/ActivitySelected/0/Hours', type: 'sap.ui.model.type.String', constraints: { minLength: 3, maxLength: 10 }}"/>
+					<Label text="{i18n>actDescr}"/>
+					<Input
+						value="{path: 'DialogModel>/ActivitySelected/0/Description', type: 'sap.ui.model.type.String', constraints: { minLength: 3, maxLength: 10 }}"/>
+					<Label text="{i18n>actDescr}"/>
+					<Input
+						value="{path: 'DialogModel>/ActivitySelected/0/Description', type: 'sap.ui.model.type.String', constraints: { minLength: 3, maxLength: 10 }}"/>
+					<Label text="{i18n>actDescr}"/>
+					<Input
+						value="{path: 'DialogModel>/ActivitySelected/0/Description', type: 'sap.ui.model.type.String', constraints: { minLength: 3, maxLength: 10 }}"/>
+					<Label text="{i18n>ActQuantity}"/>
+					<Input
+						value="{path: 'DialogModel>/ActivitySelected/0/Quantity', type: 'sap.ui.model.type.String', constraints: { minLength: 3, maxLength: 10 }}"/>
+					<Label text="{i18n>ActUoM}"/>
+					<Input class="label"
+						value="{path: 'DialogModel>/ActivitySelected/0/UoM', type: 'sap.ui.model.type.String', constraints: { minLength: 3, maxLength: 10 }}"/>
+				</f:content>
+			</f:SimpleForm>
+		</content>
 		<buttons>
-		
-			<Button  text="Save" press="onPressAddNewActivityDialogSave"/>
-			<Button text="Close" press="onPressAddNewActivityDialogCancel" />
+			<Button icon="sap-icon://alert" text="{= ${message>/}.length }" visible="{= ${message>/}.length > 0 }" type="Emphasized"
+				press="onMessagePopoverPressTwo"/>
+			<Button text="Save" press="onPressAddNewActivityDialogSave"/>
+			<Button text="Close" press="onPressAddNewActivityDialogCancel"/>
 		</buttons>
-		
-</Dialog>
+	</Dialog>
 </core:FragmentDefinition>

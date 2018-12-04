@@ -5,14 +5,33 @@ sap.ui.define([
 	"sap/ui/model/Filter",
 	"sap/ui/model/Sorter",
 	"sap/m/MessageBox",
-], function (jQuery, BaseController, MessageToast, Filter, Sorter, MessageBox) {
+	"sap/ui/core/message/Message",
+    "sap/ui/core/MessageType",
+    "sap/ui/core/ValueState",
+     "sap/ui/model/BindingMode"
+    
+], function (jQuery, BaseController, MessageToast, Filter, Sorter, MessageBox, Message, MessageType, ValueState, BindingMode) {
 	"use strict";
+
+
+
+
+
 
 	return BaseController.extend("com.itcActivitybook.controller.activitybooklist", {
 
 		_oDialog: null,
 
 		onInit: function () {
+			
+			// Message Manager Code Start
+			var oMessageManager = sap.ui.getCore().getMessageManager();
+			this.getView().setModel(oMessageManager.getMessageModel(), "message");
+			oMessageManager.registerObject(this.getView(), true);
+			//Message Manager Code End
+			
+			
+			
 
 			this.getView().setModel(this.getOwnerComponent().getModel("jsonData"));
 
@@ -25,6 +44,17 @@ sap.ui.define([
 			this.getView().getModel("DViewModel").setProperty("/ActivitySelected", array1[0]);
 
 			this.getAutoSelectedRow = array1[0][0];
+			
+			
+			
+		
+  
+			
+		
+			
+		
+		
+			
 
 			this.oSplitApp = this.getView().byId("SplitAppDemo");
 			this.oSplitApp.setMode("StretchCompressMode");
@@ -67,6 +97,12 @@ sap.ui.define([
 
 			};
 		},
+           // MessageManager Code Start
+         
+    
+  	
+       
+
 
 		onExit: function () {
 			if (this._oDialog) {
@@ -74,6 +110,22 @@ sap.ui.define([
 			}
 		},
 
+          	// Message Manager Code Start
+            onMessagePopoverPress : function (oEvent) {
+            this._getMessagePopover().openBy(oEvent.getSource());
+        },
+        
+        
+         _getMessagePopover : function () {
+            // create popover lazily (singleton)
+            if (!this._oMessagePopover) {
+                this._oMessagePopover = sap.ui.xmlfragment(this.getView().getId(),"com.itcActivitybook.view.MessagePopover", this);
+                this.getView().addDependent(this._oMessagePopover);
+            }
+            return this._oMessagePopover;
+        },
+        	// Message Manager Code End
+        
 		onPressEditNavToDailyActivity: function (oEvent) {
 
 			var oRouter = sap.ui.core.UIComponent.getRouterFor(this);

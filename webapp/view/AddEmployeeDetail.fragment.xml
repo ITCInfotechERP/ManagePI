@@ -1,40 +1,36 @@
 <core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:f="sap.ui.layout.form" xmlns:l="sap.ui.layout">
-
-<Dialog title="Add Activity Details">
-
-<content> 
-
-
-														<f:SimpleForm id="SimpleFormDisplay4" editable="false" layout="ResponsiveGridLayout" labelSpanXL="3" labelSpanL="3" labelSpanM="3"
-															labelSpanS="12" adjustLabelSpan="false" emptySpanXL="4" emptySpanL="4" emptySpanM="4" emptySpanS="0" columnsXL="1" columnsL="1" columnsM="1"
-															singleContainerFullSize="false">
-															<f:content>
-																<Label text="{i18n>empID}"/>
-																<Input id="employeeAddInputValueFragment" />
-																<Label text="{i18n>empName}"/>
-																<Input id="employeeAddNameInputValueFragment"  enabled="false"/>
-																<Label text="{i18n>payroll}"/>
-																<Input id="payrollIAddnputValueFragment" />
-																<Label text="{i18n>shouldPI}"/>
-																<Input id="shouldBePiAddInputValueFragment" description="Hrs" />
-																<Label text="{i18n>pibyCHl}"/>
-																<Input id="piByChAddInputValueFragment" description="Hrs" />
-															</f:content>
-														</f:SimpleForm>
-												
-
-
-
-
-
-
-
-</content>
+	<Dialog title="Add Activity Details">
+		<content>
+			<f:SimpleForm id="SimpleFormDisplay4" editable="false" layout="ResponsiveGridLayout" labelSpanXL="3" labelSpanL="3" labelSpanM="3"
+				labelSpanS="12" adjustLabelSpan="false" emptySpanXL="4" emptySpanL="4" emptySpanM="4" emptySpanS="0" columnsXL="1" columnsL="1" columnsM="1"
+				singleContainerFullSize="false">
+				<f:content>
+					<Label text="{i18n>empID}"/>
+					<Input id="employeeAddInputValueFragment"
+						value="{ path: 'DialogModel>/ActivitySelected/0/EmployeeId', type: 'sap.ui.model.type.String', constraints: { minLength: 3, maxLength: 10 } }"/>
+					<Label text="{i18n>empName}"/>
+					<Input id="employeeAddNameInputValueFragment"
+						value="{ path: 'DialogModel>/ActivitySelected/0/EmployeeName', type: 'sap.ui.model.type.String', constraints: { minLength: 3, maxLength: 10 } }"
+						enabled="false"/>
+					<Label text="{i18n>payroll}"/>
+					<Input id="payrollIAddnputValueFragment"
+						value="{ path: 'DialogModel>/ActivitySelected/0/EmployeePayRol', type: 'sap.ui.model.type.String', constraints: { minLength: 3, maxLength: 10 } }"/>
+					<Label text="{i18n>shouldPI}"/>
+					<Input id="shouldBePiAddInputValueFragment"
+						value="{ path: 'DialogModel>/ActivitySelected/0/EmployeeShouldPI', type: 'sap.ui.model.type.String', constraints: { minLength: 3, maxLength: 10 } }"
+						description="Hrs"/>
+					<Label text="{i18n>pibyCHl}"/>
+					<Input id="piByChAddInputValueFragment"
+						value="{ path: 'DialogModel>/ActivitySelected/0/EmployeePIBYCH', type: 'sap.ui.model.type.String', constraints: { minLength: 3, maxLength: 10 } }"
+						description="Hrs"/>
+				</f:content>
+			</f:SimpleForm>
+		</content>
 		<buttons>
-		
+			<Button icon="sap-icon://alert" text="{= ${message>/}.length }" visible="{= ${message>/}.length > 0 }" type="Emphasized"
+				press="onMessagePopoverPressOne"/>
 			<Button id="idbtnupdatesubmitFragment" text="Confirm" press="onPressAddEmployeeDetailDialogConfirm"/>
-			<Button text="Close" press="onPressAddEmployeeDtailDialogCancel" />
+			<Button text="Close" press="onPressAddEmployeeDtailDialogCancel"/>
 		</buttons>
-		
-</Dialog>
+	</Dialog>
 </core:FragmentDefinition>

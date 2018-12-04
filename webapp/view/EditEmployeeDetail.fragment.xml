@@ -1,40 +1,34 @@
 <core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:f="sap.ui.layout.form" xmlns:l="sap.ui.layout">
-
-<Dialog title="Add Activity Details">
-
-<content> 
-
-
-															<f:SimpleForm id="SimpleFormDisplay11" editable="false" layout="ResponsiveGridLayout" labelSpanXL="3" labelSpanL="3" labelSpanM="3"
-															labelSpanS="12" adjustLabelSpan="false" emptySpanXL="4" emptySpanL="4" emptySpanM="4" emptySpanS="0" columnsXL="1" columnsL="1" columnsM="1"
-															singleContainerFullSize="false">
-															<f:content>
-																<Label text="{i18n>empID}"/>
-																<Input id="employeeInputValueFragment" value="{ActModel>/editActModel/0/EmployeeID}"/>
-																<Label text="{i18n>empName}"/>
-																<Input id="employeeNameInputValueFragment" value="{ActModel>/editActModel/0/Name}" enabled="false"/>
-																<Label text="{i18n>payroll}"/>
-																<Input id="payrollInputValueFragment" value="{ActModel>/editActModel/0/PayrollType}"/>
-																<Label text="{i18n>shouldPI}"/>
-																<Input id="shouldBePiInputValueFragment" description="Hrs" value="{ActModel>/editActModel/0/Should be PI}"/>
-																<Label text="{i18n>pibyCHl}"/>
-																<Input id="piByChInputValueFragment" description="Hrs" value="{ActModel>/editActModel/0/PIByCH}"/>
-															</f:content>
-														</f:SimpleForm>
-												
-
-
-
-
-
-
-
-</content>
+	<Dialog title="Add Activity Details">
+		<content>
+			<f:SimpleForm id="SimpleFormDisplay11" editable="false" layout="ResponsiveGridLayout" labelSpanXL="3" labelSpanL="3" labelSpanM="3"
+				labelSpanS="12" adjustLabelSpan="false" emptySpanXL="4" emptySpanL="4" emptySpanM="4" emptySpanS="0" columnsXL="1" columnsL="1" columnsM="1"
+				singleContainerFullSize="false">
+				<f:content>
+					<Label text="{i18n>empID}"/>
+					<Input id="employeeInputValueFragment"
+						value="{path: 'ActModel>/editActModel/0/ActivityDet/0/EmployeeInc/0/EmployeeID', type: 'sap.ui.model.type.String', constraints: { minLength: 3, maxLength: 10 }}"/>
+					<Label text="{i18n>empName}"/>
+					<Input id="employeeNameInputValueFragment"
+						value="{path: 'ActModel>/editActModel/0/ActivityDet/0/EmployeeInc/0/Name', type: 'sap.ui.model.type.String', constraints: { minLength: 3, maxLength: 10 }}"
+						enabled="false"/>
+					<Label text="{i18n>payroll}"/>
+					<Input id="payrollInputValueFragment"
+						value="{path: 'ActModel>/editActModel/0/ActivityDet/0/EmployeeInc/0/PayrollType', type: 'sap.ui.model.type.String', constraints: { minLength: 3, maxLength: 10 }}"/>
+					<Label text="{i18n>shouldPI}"/>
+					<Input id="shouldBePiInputValueFragment" description="Hrs"
+						value="{path: 'ActModel>/editActModel/0/ActivityDet/0/EmployeeInc/0/Should be PI', type: 'sap.ui.model.type.String', constraints: { minLength: 3, maxLength: 10 }}"/>
+					<Label text="{i18n>pibyCHl}"/>
+					<Input id="piByChInputValueFragment" description="Hrs"
+						value="{path: 'ActModel>/editActModel/0/ActivityDet/0/EmployeeInc/0/PIByCH', type: 'sap.ui.model.type.String', constraints: { minLength: 3, maxLength: 10 }}"/>
+				</f:content>
+			</f:SimpleForm>
+		</content>
 		<buttons>
-		
+			<Button icon="sap-icon://alert" text="{= ${message>/}.length }" visible="{= ${message>/}.length > 0 }" type="Emphasized"
+				press="onMessagePopoverPress"/>
 			<Button id="idbtnupdatesubmit" text="Confirm" press="onPressEditEmployeeDetailDialogConfirm"/>
-			<Button text="Close" press="onPressEditEmployeeDetailDialogCancel" />
+			<Button text="Close" press="onPressEditEmployeeDetailDialogCancel"/>
 		</buttons>
-		
-</Dialog>
+	</Dialog>
 </core:FragmentDefinition>

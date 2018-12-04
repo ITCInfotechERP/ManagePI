@@ -519,6 +519,7 @@
 		</m:content>
 		<m:footer>
 			<m:Toolbar>
+					
 				<m:ToolbarSpacer/>
 				<m:Button id="submitButtonTwo" visible="false" type="Emphasized" text="{i18n>buttonSubmit}" press="onEscapePreventDialog"/>
 				<m:Button id="editButton" visible="false" text="{i18n>buttonEdit}" type="Emphasized" press="ActivityBookDetailPage3Advance"/>
