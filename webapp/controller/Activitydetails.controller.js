@@ -195,6 +195,29 @@ sap.ui.define([
 		},
 		
 		
+		//Message Maganer Code Start 
+		
+          onMessagePopoverPressTwo : function (oEvent) {
+            this._getMessagePopoverTwo().openBy(oEvent.getSource());
+        },
+          _getMessagePopoverTwo : function () {
+            // create popover lazily (singleton)
+            if (!this._oMessagePopover) {
+                this._oMessagePopover = sap.ui.xmlfragment(this.getView().getId(),"com.itcActivitybook.view.MessagePopover", this);
+                this._addNewActivityDialog.addDependent(this._oMessagePopover);
+            }
+            return this._oMessagePopover;
+        },
+		
+		// Message Manager Code End
+		
+		
+		
+		
+		
+		
+		
+		
 		onPressAddNewActivityDialogSave: function(oEvent){
 			
 		    MessageToast.show("Activity Successfully Added");
@@ -296,10 +319,22 @@ sap.ui.define([
 			this._AddEmployeeDetailDialog.close();
 		}, 
 		
+		//Message Manager Code Start
+		
+		  onMessagePopoverPressOne : function (oEvent) {
+            this._getMessagePopoverOne().openBy(oEvent.getSource());
+        },
+          _getMessagePopoverOne : function () {
+            // create popover lazily (singleton)
+            if (!this._oMessagePopover) {
+                this._oMessagePopover = sap.ui.xmlfragment(this.getView().getId(),"com.itcActivitybook.view.MessagePopover", this);
+               this._AddEmployeeDetailDialog.addDependent(this._oMessagePopover);
+            }
+            return this._oMessagePopover;
+        },
 		
 		
-		
-		
+		//Message Manager Code End
 		
 		
 
@@ -374,31 +409,16 @@ sap.ui.define([
 		jQuery.sap.syncStyleClass("sapUiSizeCompact", this.getView(), this._editEmployeeDetailDialog);
 	
 			this._editEmployeeDetailDialog.open();
-		
-		
-		
-		
-		
-		
-		
 			
-
 		},
 		
 		
 		
 			// Message Manager Code Start
-            onMessagePopoverPress : function (oEvent) {
+			
+         onMessagePopoverPress : function (oEvent) {
             this._getMessagePopover().openBy(oEvent.getSource());
         },
-         onMessagePopoverPressOne : function (oEvent) {
-            this._getMessagePopover().openBy(oEvent.getSource());
-        },
-         onMessagePopoverPressTwo : function (oEvent) {
-            this._getMessagePopover().openBy(oEvent.getSource());
-        },
-        
-        
          _getMessagePopover : function () {
             // create popover lazily (singleton)
             if (!this._oMessagePopover) {
@@ -407,6 +427,7 @@ sap.ui.define([
             }
             return this._oMessagePopover;
         },
+       
         	// Message Manager Code End
         	
         	
