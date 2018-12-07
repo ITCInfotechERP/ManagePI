@@ -29,7 +29,7 @@ sap.ui.define([
 			this.getView().setModel(oMessageManager.getMessageModel(), "message");
 			oMessageManager.registerObject(this.getView(), true);
 			//Message Manager Code End
-			
+		
 			
 			
 

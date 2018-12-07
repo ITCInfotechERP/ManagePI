@@ -50,7 +50,7 @@
 		"SiteEngineerName": "Madison Brown",
 
           "ActivityDet": [{
-       	"Activity": "Activity 2",
+       	"Activity": "Activity 01",
 		"PSID": "870394932",
 		"CodeID": "C-602",
 		"GroupID": "B-602",
@@ -65,9 +65,38 @@
 		"Should be PI": "3",
 		"PIByCH": "4"
         	
+        },
+        {
+       	"EmployeeID": "T87393502",
+		"Name": "Michael Jackson",
+		"PayrollType": "Type  2",
+		"Should be PI": "5",
+		"PIByCH": "9"
+        }
+        
+        ]
+          	
+         },
+         
+         {
+       	"Activity": "Activity 02",
+		"PSID": "870394932",
+		"CodeID": "C-654",
+		"GroupID": "B-262",
+		"DisciplineID": "D-932",
+		"Hours": "7",
+		"Quantity": "23 UoM",
+       
+        "EmployeeInc":[{
+       	"EmployeeID": "R98793501",
+		"Name": "Reece Martin",
+		"PayrollType": "Type  1",
+		"Should be PI": "3",
+		"PIByCH": "4"
+        	
         }]
           	
-         }]
+         } ]
 	
 	
 	}, {
